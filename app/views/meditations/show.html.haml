@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @meditation.title
+%p
+  %b Passage:
+  = @meditation.passage
+
+= link_to 'Edit', edit_meditation_path(@meditation)
+\|
+= link_to 'Back', meditations_path

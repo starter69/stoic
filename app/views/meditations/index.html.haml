@@ -1,0 +1,21 @@
+%h1 Listing meditations
+
+%table
+  %tr
+    %th Title
+    %th Passage
+    %th
+    %th
+    %th
+
+  - @meditations.each do |meditation|
+    %tr
+      %td= meditation.title
+      %td= meditation.passage
+      %td= link_to 'Show', meditation
+      %td= link_to 'Edit', edit_meditation_path(meditation)
+      %td= link_to 'Destroy', meditation, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Meditation', new_meditation_path
