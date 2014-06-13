@@ -1,4 +1,6 @@
 StoicCompass::Application.routes.draw do
+  resources :doctrines
+
   get "welcome/index"
   resources :meditations
 

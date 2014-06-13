@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @doctrine.title
+%p
+  %b Explanation:
+  = @doctrine.explanation
+%p
+  %b Category:
+  = @doctrine.category
+
+= link_to 'Edit', edit_doctrine_path(@doctrine)
+\|
+= link_to 'Back', doctrines_path

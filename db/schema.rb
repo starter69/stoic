@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140612143716) do
+ActiveRecord::Schema.define(version: 20140613083309) do
+
+  create_table "doctrines", force: true do |t|
+    t.string   "title"
+    t.text     "explanation"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "meditations", force: true do |t|
     t.string   "title"
     t.text     "passage"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "category"
   end
 
 end
