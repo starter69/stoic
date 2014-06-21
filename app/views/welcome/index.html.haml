@@ -1,50 +1,41 @@
+%ul.nav.nav-pills
+  %li.active
+    %a{:href => "index"} Homepage
+  %li
+    %a{:href => "about"} About
+  %li
+    %a{:href => "contact"} Contact
+%center
+  .page-header
+    %h3
+      Marcus Aurelius' Compass
+    %big An Application to Guide Stoic Philosophical Practice
 
+%center
+  .container
+    .row
+      .col-sm-4
+        .thumbnail
+          = image_tag "doctrine.png", width: 300
+          .caption
+            %h5 Stoic Philosophy Explained
+            %p How was philosophy understood in ancient times? Read our description of the ideas behind Stoicism as a practice.
+          = button_to "The Stoic Doctrines", doctrines_path, method: :get, class: "btn btn-danger btn-large"
+      .col-sm-4.col
+        .thumbnail
+          = image_tag "exercise.png", width: 300
+          .caption
+            %h5 Practice Stoic Exercises
+            %p How can you make Stoic philosophy into a lived practice? Run written and audio exercises we developed - and create your own.
+          = button_to "My Stoic Exercises", doctrines_path, method: :get, class: "btn btn-success btn-large"
+      .col-sm-4.col
+        .thumbnail
+          = image_tag "meditation.png", width: 300
+          .caption
+            %h5 Read an Emperor's Meditations
+            %p How can the journal entries of a man who died 2,000 years ago stil be useful? Read meditations from Marcus Aurelius that we selected as inspirational and instructive for practicing Stoic philosophy today.
+          = button_to "Marcus Aurelius' Meditations", meditations_path, method: :get, class: "btn btn-primary btn-large"
 
-.container
-  .row
-    .col-sm-8.col-sm-offset-1
-      .page-header
-        %h1
-          Marcus Aurelius' Compass
-        %big An Application to Guide Stoic Philosophical Practice
-
-.container
-  .row
-    .col-sm-4.col-sm-offset-3
-      .thumbnail
-        %img{:alt => "...", "data-src" => "holder.js/300x200"}
-        .caption
-          %h5 Thumbnail label
-          %p ...
-        = button_to "The Stoic Doctrines", doctrines_path, method: :get, class: "btn btn-danger btn-large"
-  .row
-    .col-sm-4.col-sm-offset-3
-      .thumbnail
-        %img{:alt => "...", "data-src" => "holder.js/300x200"}
-        .caption
-          %h5 Thumbnail label
-          %p ...
-        = button_to "My Stoic Exercises", doctrines_path, method: :get, class: "btn btn-success btn-large"
-  .row
-    .col-sm-4.col-sm-offset-3
-      .thumbnail
-        %img{:alt => "...", "data-src" => "holder.js/300x200"}
-        .caption
-          %h5 Thumbnail label
-          %p ...
-        = button_to "Meditations (Marcus Aurelius)", meditations_path, method: :get, class: "btn btn-primary btn-large"
-.row
-  .col-sm-6.col-md-1
-  .col-sm-6.col-md-1
-  .col-sm-6.col-md-1
-    .thumbnail
-      %img{:alt => "...", "data-src" => "holder.js/300x200"}
-        .caption
-          %h3 Thumbnail label
-          %p ...
-          %p
-            %a.btn.btn-primary{:href => "#", :role => "button"} Button
-            %a.btn.btn-default{:href => "#", :role => "button"} Button
 
 %br
 %br

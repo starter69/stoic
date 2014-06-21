@@ -6,11 +6,6 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    %ul.nav.nav-pills
-      %li.active
-        %a{:href => "#"} Homepage
-      %li
-        %a{:href => "#"} About
-      %li
-        %a{:href => "#"} Contact
-    \#{yield}
+    = yield
+    %center
+      = image_tag "footer.png"
