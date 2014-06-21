@@ -1,15 +1,50 @@
-%h1
-  Marcus Aurelius' Compass
-%h4
-  An Application to Guide Stoic Philosophical Practice
-%h3
-  = link_to "Stoic Doctrines", doctrines_path
-%h3
-  Stoic Exercises
-/ = link_to "Stoic Exercises", exercises_path
-%h3
-  = link_to "Marcus Aurelius Meditations", meditations_path
 
+
+.container
+  .row
+    .col-sm-8.col-sm-offset-1
+      .page-header
+        %h1
+          Marcus Aurelius' Compass
+        %big An Application to Guide Stoic Philosophical Practice
+
+.container
+  .row
+    .col-sm-4.col-sm-offset-3
+      .thumbnail
+        %img{:alt => "...", "data-src" => "holder.js/300x200"}
+        .caption
+          %h5 Thumbnail label
+          %p ...
+        = button_to "The Stoic Doctrines", doctrines_path, method: :get, class: "btn btn-danger btn-large"
+  .row
+    .col-sm-4.col-sm-offset-3
+      .thumbnail
+        %img{:alt => "...", "data-src" => "holder.js/300x200"}
+        .caption
+          %h5 Thumbnail label
+          %p ...
+        = button_to "My Stoic Exercises", doctrines_path, method: :get, class: "btn btn-success btn-large"
+  .row
+    .col-sm-4.col-sm-offset-3
+      .thumbnail
+        %img{:alt => "...", "data-src" => "holder.js/300x200"}
+        .caption
+          %h5 Thumbnail label
+          %p ...
+        = button_to "Meditations (Marcus Aurelius)", meditations_path, method: :get, class: "btn btn-primary btn-large"
+.row
+  .col-sm-6.col-md-1
+  .col-sm-6.col-md-1
+  .col-sm-6.col-md-1
+    .thumbnail
+      %img{:alt => "...", "data-src" => "holder.js/300x200"}
+        .caption
+          %h3 Thumbnail label
+          %p ...
+          %p
+            %a.btn.btn-primary{:href => "#", :role => "button"} Button
+            %a.btn.btn-default{:href => "#", :role => "button"} Button
 
 %br
 %br
