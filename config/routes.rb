@@ -5,6 +5,7 @@ StoicCompass::Application.routes.draw do
   get "about" => "welcome#about"
   get "contact" => "welcome#contact"
   get "doctrines_index" => "doctrines#index"
+  get "doctrines_introduction" => "doctrines#introduction"
   resources :meditations
 
   root "welcome#index"

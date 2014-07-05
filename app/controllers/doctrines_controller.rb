@@ -1,0 +1,2 @@
+class DoctrinesController < ApplicationController
+end
