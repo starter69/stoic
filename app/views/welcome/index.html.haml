@@ -20,14 +20,14 @@
           .caption
             %h5 Stoic Philosophy Explained
             %p How was philosophy understood in ancient times? Read our description of the ideas behind Stoicism as a practice.
-          = button_to "The Stoic Doctrines", doctrines_path, method: :get, class: "btn btn-danger btn-large"
+          = button_to "The Stoic Doctrines", doctrines_index_path, method: :get, class: "btn btn-danger btn-large"
       .col-sm-4.col
         .thumbnail
           = image_tag "exercise.png"
           .caption
             %h5 Practice Stoic Exercises
             %p How can you make Stoic philosophy into a lived practice? Run written and audio exercises we developed - and create your own.
-          = button_to "My Stoic Exercises", doctrines_path, method: :get, class: "btn btn-success btn-large"
+          = button_to "My Stoic Exercises", meditations_path, method: :get, class: "btn btn-success btn-large"
       .col-sm-4.col
         .thumbnail
           = image_tag "meditation.png"
