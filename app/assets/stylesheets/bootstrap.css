@@ -4270,6 +4270,20 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   vertical-align: baseline;
   border-radius: .25em;
 }
+
+.alessio {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 65%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+
 .label[href]:hover,
 .label[href]:focus {
   color: #fff;
