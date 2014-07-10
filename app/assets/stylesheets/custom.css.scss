@@ -3,10 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
+
 .doctrine_button {
   font-size: 1em;
 }
 
+.doctrine_insert {
+  font-size: 1em;
+  margin-left:1em
+}
+
+.tab_over {
+  margin-left:1em
+}
+
 .doctrine_title {
-  color: #c12e2a;
+  color: #a94442;
+}
+
+.key {
+  color: #B0B0B0;
+}
+
+.label a:hover {
+color: #d3d3d3;
 }
