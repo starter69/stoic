@@ -4,9 +4,12 @@
 
 
 
-
 .doctrine_button {
   font-size: 1em;
+}
+
+a.doctrine_button:hover {
+background-color: #777
 }
 
 .doctrine_insert {
@@ -22,10 +25,10 @@
   color: #a94442;
 }
 
-.key {
-  color: #B0B0B0;
+#light {
+  color: #fff;
 }
 
-.label a:hover {
-color: #d3d3d3;
+.key {
+  color: #B0B0B0;
 }

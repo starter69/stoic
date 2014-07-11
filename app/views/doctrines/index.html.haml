@@ -13,6 +13,7 @@
   %li
     %a{:href => "meditations"} Meditations
 
+
 %center
 .container
   .row
@@ -30,7 +31,7 @@
               %h4.panel-title
                 %a.doctrine_button{href: "doctrines_introduction", "class" => "label"}
                   Introduction to Stoic Philosophy
-                %a.doctrine_button.small{"data-parent" => "#accordion1", "data-toggle" => "collapse", href: "#collapseOne", "class" => "label label-default"}
+                %a.tab_over{"data-parent" => "#accordion1", "data-toggle" => "collapse", href: "#collapseOne", "class" => "label label-default", "id" => "light"}
                   Abstract
                   %span.glyphicon.glyphicon-chevron-down
             #collapseOne.panel-collapse.collapse
@@ -52,9 +53,10 @@
                     .panel.panel-default
                       .panel-heading
                         %h4.panel-title
-                          %a.doctrine_insert{href: "doctrines_disciplines_intro", "class" => "label"}
+                          %a.doctrine_button.tab_over{href: "doctrines_disciplines_intro", "class" => "label"}
                             Overview
-                          %a{"data-parent" => "#accordion2", "data-toggle" => "collapse", href: "#collapseInnerOne", "class" => "label label-default"}
+                          %a.tab_over{"data-parent" => "#accordion1", "data-toggle" => "collapse", href: "#collapseInnerOne", "class" => "label label-default", "id" => "light"}
+                            Abstract
                             %span.glyphicon.glyphicon-chevron-down
                       #collapseInnerOne.panel-collapse.collapse
                         .panel-body.tab_over
@@ -62,9 +64,10 @@
                     .panel.panel-default
                       .panel-heading
                         %h4.panel-title
-                          %a.doctrine_insert{href: "doctrines_assent", "class" => "label"}
+                          %a.doctrine_button.tab_over{href: "doctrines_assent", "class" => "label"}
                             Discipline of Assent
-                          %a{"data-parent" => "#accordion2", "data-toggle" => "collapse", href: "#collapseInnerTwo", "class" => "label label-default"}
+                          %a.tab_over{"data-parent" => "#accordion1", "data-toggle" => "collapse", href: "#collapseInnerTwo", "class" => "label label-default", "id" => "light"}
+                            Abstract
                             %span.glyphicon.glyphicon-chevron-down
                       #collapseInnerTwo.panel-collapse.collapse
                         .panel-body.tab_over
@@ -72,9 +75,10 @@
                     .panel.panel-default
                       .panel-heading
                         %h4.panel-title
-                          %a.doctrine_insert{href: "doctrines_desire", "class" => "label"}
+                          %a.doctrine_button.tab_over{href: "doctrines_desire", "class" => "label"}
                             Discipline of Desire
-                          %a{"data-parent" => "#accordion2", "data-toggle" => "collapse", href: "#collapseInnerThree", "class" => "label label-default"}
+                          %a.tab_over{"data-parent" => "#accordion1", "data-toggle" => "collapse", href: "#collapseInnerThree", "class" => "label label-default", "id" => "light"}
+                            Abstract
                             %span.glyphicon.glyphicon-chevron-down
                       #collapseInnerThree.panel-collapse.collapse
                         .panel-body.tab_over
@@ -82,9 +86,10 @@
                     .panel.panel-default
                       .panel-heading
                         %h4.panel-title
-                          %a.doctrine_insert{href: "doctrines_action", "class" => "label"}
+                          %a.doctrine_button.tab_over{href: "doctrines_action", "class" => "label"}
                             Discipline of Action
-                          %a{"data-parent" => "#accordion2", "data-toggle" => "collapse", href: "#collapseInnerFour", "class" => "label label-default"}
+                          %a.tab_over{"data-parent" => "#accordion1", "data-toggle" => "collapse", href: "#collapseInnerFour", "class" => "label label-default", "id" => "light"}
+                            Abstract
                             %span.glyphicon.glyphicon-chevron-down
                       #collapseInnerFour.panel-collapse.collapse
                         .panel-body.tab_over
@@ -92,7 +97,7 @@
           .panel.panel-default
             .panel-heading
               %h4.panel-title
-                %a.doctrine_button{"data-parent" => "#accordion1", "data-toggle" => "collapse", href: "#collapseThree", "class" => "label"}
+                %a.doctrine_button{"data-parent" => "#accordion2", "data-toggle" => "collapse", href: "#collapseThree", "class" => "label"}
                   The Dogmas
             #collapseThree.panel-collapse.collapse
               .panel-body
@@ -103,9 +108,10 @@
                     .panel.panel-default
                       .panel-heading
                         %h4.panel-title
-                          %a.doctrine_insert{href: "doctrines_disciplines_intro", "class" => "label"}
+                          %a.doctrine_button.tab_over{href: "doctrines_disciplines_intro", "class" => "label"}
                             Overview
-                          %a{"data-parent" => "#accordion3", "data-toggle" => "collapse", href: "#collapseInnerOne2", "class" => "label label-default"}
+                          %a.tab_over{"data-parent" => "#accordion3", "data-toggle" => "collapse", href: "#collapseInnerOne2", "class" => "label label-default", "id" => "light"}
+                            Abstract
                             %span.glyphicon.glyphicon-chevron-down
                       #collapseInnerOne2.panel-collapse.collapse
                         .panel-body.tab_over

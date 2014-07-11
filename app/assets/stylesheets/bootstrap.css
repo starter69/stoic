@@ -4454,7 +4454,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 a.label:hover,
 a.label:focus {
-  color: #a9a9a9;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
