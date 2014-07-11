@@ -10,6 +10,8 @@ StoicCompass::Application.routes.draw do
   get "doctrines_desire" => "doctrines#desire"
   get "doctrines_action" => "doctrines#action"
   get "doctrines_disciplines_intro" => "doctrines#disciplines_intro"
+  get "doctrines_dogmas_intro" => "doctrines#dogmas_intro"
+
   resources :meditations
 
   root "welcome#index"
