@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @exercise.title
+%p
+  %b General description:
+  = @exercise.general_description
+%p
+  %b Text question:
+  = @exercise.text_question
+%p
+  %b Category:
+  = @exercise.category
+
+= link_to 'Edit', edit_exercise_path(@exercise)
+\|
+= link_to 'Back', exercises_path
