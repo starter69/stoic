@@ -6,6 +6,14 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
+    = render partial: "layouts/navbar"
     = yield
+
+
+    %br/
+    %br/
+    %br/
+    %br/
+
     %center
       = image_tag "footer.png"
