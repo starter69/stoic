@@ -1,4 +1,6 @@
 StoicCompass::Application.routes.draw do
+  resources :exercises
+
   get "welcome/index"
 
   get "index" => "welcome#index"

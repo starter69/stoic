@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140613083309) do
+ActiveRecord::Schema.define(version: 20140711081026) do
 
-  create_table "doctrines", force: true do |t|
+  create_table "exercises", force: true do |t|
     t.string   "title"
-    t.text     "explanation"
+    t.string   "general_description"
+    t.text     "text_question"
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
