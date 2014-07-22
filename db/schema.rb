@@ -11,12 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711081026) do
+ActiveRecord::Schema.define(version: 20140722124806) do
+
+  create_table "e_answers", force: true do |t|
+    t.integer  "e_question_id"
+    t.text     "answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "e_questions", force: true do |t|
+    t.integer  "exercise_id"
+    t.text     "question"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "exercises", force: true do |t|
     t.string   "title"
     t.string   "general_description"
-    t.text     "text_question"
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"

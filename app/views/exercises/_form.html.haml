@@ -16,9 +16,7 @@
   .field
     = f.label :category
     = f.text_field :category
-  .field
-    = f.label :text_question
-    = f.text_field :text_question
-
+  = f.fields_for :e_questions do |e_builder|
+    = render "e_question_fields", :f => e_builder
   .actions
     = f.submit 'Save'

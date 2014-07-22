@@ -1,4 +1,4 @@
-class ExercisesController < ApplicationController
+  class ExercisesController < ApplicationController
   before_action :set_exercise, only: [:show, :edit, :update, :destroy]
 
   # GET /exercises
@@ -15,6 +15,9 @@ class ExercisesController < ApplicationController
   # GET /exercises/new
   def new
     @exercise = Exercise.new
+    3.times do
+      e_question = @exercise.e_questions.build
+    end
   end
 
   # GET /exercises/1/edit
@@ -69,6 +72,6 @@ class ExercisesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
-      params.require(:exercise).permit(:title, :general_description, :text_question, :category)
+      params.require(:exercise).permit(:title, :general_description, :text_question, :category, :questions_attributes)
     end
 end
