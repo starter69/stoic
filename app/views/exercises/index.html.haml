@@ -6,15 +6,17 @@
     %th General description
     %th Text question
     %th Category
-    %th
-    %th
-    %th
+    %th Question
+    %th Question
+    %th Question
 
   - @exercises.each do |exercise|
     %tr
       %td= exercise.title
       %td= exercise.general_description
       %td= exercise.category
+      - exercise.e_questions.each do |e_question|
+        %td= e_question.question
       %td= link_to 'Show', exercise
       %td= link_to 'Edit', edit_exercise_path(exercise)
       %td= link_to 'Destroy', exercise, :method => :delete, :data => { :confirm => 'Are you sure?' }

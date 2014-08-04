@@ -22,6 +22,7 @@
 
   # GET /exercises/1/edit
   def edit
+
   end
 
   # POST /exercises
@@ -72,6 +73,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
-      params.require(:exercise).permit(:title, :general_description, :text_question, :category, :questions_attributes)
+      params.require(:exercise).permit(:title, :general_description, :text_question, :category, e_questions_attributes: [:question], e_answers_attributes: [:answer])
     end
 end
