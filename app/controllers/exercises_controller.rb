@@ -17,6 +17,7 @@
     @exercise = Exercise.new
     3.times do
       e_question = @exercise.e_questions.build
+      e_question.e_answers.build
     end
   end
 
@@ -73,6 +74,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
-      params.require(:exercise).permit(:title, :general_description, :text_question, :category, e_questions_attributes: [:question], e_answers_attributes: [:answer])
+      params.require(:exercise).permit(:title, :general_description, :text_question, :category, e_questions_attributes: [:question, e_answers_attributes: [:answer]])
     end
 end

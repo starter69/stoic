@@ -14,10 +14,20 @@
   - @exercise.e_questions.each do |e_question|
     %tr
       %td= e_question.question
-    = form_for([e_question, :e_answer]) do |f|
-      .field
-        = f.fields_for :e_answers do |e_builder|
-          = render "e_answer_fields", :f => e_builder
+    - e_question.e_answers.each do |e_answer|
+      %tr
+        %b Answers:
+        %td= e_answer.answer
+
+
+
+
+/ %p
+/   %b Answers:
+/   - @exercise.e_question.e_answers.each do |e_answer|
+/     %tr
+/       %td= e_answer
+
 
 = link_to 'Edit', edit_exercise_path(@exercise)
 \|

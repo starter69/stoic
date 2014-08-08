@@ -3,5 +3,8 @@
   = f.text_area :question, :rows => 3
   = f.check_box :_destroy
   = f.label :_destroy, "Remove Question"
+%p
+  = f.fields_for :e_answers do |a_builder|
+    = render "e_answer_fields", :f => a_builder
 
 
