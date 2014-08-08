@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Tally:
+  = @rehearsal.tally
+
+= link_to 'Edit', edit_rehearsal_path(@rehearsal)
+\|
+= link_to 'Back', rehearsals_path

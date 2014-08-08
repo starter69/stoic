@@ -1,0 +1,14 @@
+= semantic_form_for @rehearsal do |f|
+  = f.inputs do
+    = f.input :tally
+%p
+  %b Questions:
+  - @exercise.e_questions.each do |e_question|
+    %tr
+      %td= e_question.question
+%p
+  = f.fields_for :e_answers do |a_builder|
+    = render "e_answer_fields", :f => a_builder
+
+  = f.actions do
+    = f.action :submit, :as => :input
