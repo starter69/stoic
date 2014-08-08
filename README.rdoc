@@ -1,5 +1,24 @@
 == README
 
+NEXT STEPS: AUgust 8, 2014
+- Create Run-Through Controller and Model
+Run-Through - accepts nested attributes for answers
+- Answers - belongs to run-through and question
+run.through has many questions through exercise (or accepts_nested_attributes_for)
+- Question - has many answers through run-times
+- Exercise - has many run-throughs
+
+So then undo the answers wired up to the exercises
+questions will no longer have direct access to answers
+
+run-through.question.answer.each do build
+
+
+Category of Disciplines and Virtues should be a read-only database, and make the input a drop-down list - i.e. it should be its own model. Each exercise will belong to a category, and each category will have many exercises.
+That way, in the future when I want to use that for tags or for drop-down lists, there won't be the possibility of someone inputting a false piece of data that breaks the category
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 gem 'haml-rails'
 gem 'formtastic'
+gem 'better_errors'
 
 group :assets do
 end
