@@ -20,6 +20,10 @@ StoicCompass::Application.routes.draw do
 
   resources :meditations
 
+  # map.resources :exercises do |exercise|
+  #   exercise.resources :rehearsals
+  # end
+
   root "welcome#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

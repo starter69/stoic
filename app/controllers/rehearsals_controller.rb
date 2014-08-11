@@ -15,7 +15,7 @@ class RehearsalsController < ApplicationController
   # GET /rehearsals/new
   def new
     @rehearsal = Rehearsal.new
-    @exercise = Exercise.last
+    @exercise = Exercise.find(params[:exercise])
   end
 
   # GET /rehearsals/1/edit
