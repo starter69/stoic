@@ -17,7 +17,7 @@ class RehearsalsController < ApplicationController
     @rehearsal = Rehearsal.new
     @exercise = Exercise.find(params[:exercise])
     e_question = @exercise.e_questions
-    e_question.e_answers.build
+    e_question.e_answers.each { build }
    end
 
   # GET /rehearsals/1/edit
