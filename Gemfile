@@ -5,6 +5,7 @@ gem 'rails', '4.0.0'
 gem 'haml-rails'
 gem 'formtastic'
 gem 'better_errors'
+gem 'pry'
 
 group :assets do
 end

@@ -20,9 +20,6 @@ StoicCompass::Application.routes.draw do
 
   resources :meditations
 
-  # map.resources :exercises do |exercise|
-  #   exercise.resources :rehearsals
-  # end
 
   root "welcome#index"
 
