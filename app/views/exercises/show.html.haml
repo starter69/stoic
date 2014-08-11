@@ -19,14 +19,25 @@
         %b Answers:
         %td= e_answer.answer
 
+= redirect_to "rehearsals/form"
+
+/ = semantic_form_for @rehearsal do |f|
+/   = f.inputs do
+/     = f.input :tally
+/   %p
+/     %b Questions:
+/     - @exercise.e_questions.each do |e_question|
+/       %tr
+/         %td= e_question.question
+/   %p
+/     = f.fields_for :e_answers do |a_builder|
+/       = render "e_answer_fields", :f => a_builder
+
+/     = f.actions do
+/       = f.action :submit, :as => :input
 
 
 
-/ %p
-/   %b Answers:
-/   - @exercise.e_question.e_answers.each do |e_answer|
-/     %tr
-/       %td= e_answer
 
 
 = link_to 'Edit', edit_exercise_path(@exercise)

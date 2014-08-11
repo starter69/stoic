@@ -18,6 +18,14 @@ Category of Disciplines and Virtues should be a read-only database, and make the
 That way, in the future when I want to use that for tags or for drop-down lists, there won't be the possibility of someone inputting a false piece of data that breaks the category
 
 
+From Christoph:
+use Scope to set up security for answers
+
+- if user
+- where user.id = current.id
+
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
