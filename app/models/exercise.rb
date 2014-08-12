@@ -1,4 +1,5 @@
 class Exercise < ActiveRecord::Base
+  has_many :e_answers, through: :e_questions
   has_many :e_questions
   has_many :rehearsals
   accepts_nested_attributes_for :rehearsals
