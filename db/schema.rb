@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808113235) do
+ActiveRecord::Schema.define(version: 20140813150256) do
 
   create_table "e_answers", force: true do |t|
     t.integer  "e_question_id"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140808113235) do
     t.integer  "tally"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "exercise_id"
   end
 
 end

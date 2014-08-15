@@ -1,17 +1,17 @@
 = form_for @rehearsal do |f|
-  .field
-    = f.label :tally
-    = f.number_field :tally
-  .field
-    = f.fields_for :e_answers do |e_builder|
-      = render "e_answer_fields", :f => e_builder
+
+  = f.label :tally, "Tally"
+  = f.number_field :tally
 
   %p
     %b Questions:
-    - @exercise.e_questions.each do |e_question|
+    - @rehearsal.exercise.e_questions.each do |e_question|
       %tr
         %td= e_question.question
-    %p
+      %p
+        = f.fields_for :e_answers, e_question.e_answers do |builder|
+          = builder.label :answer, "Answer"
+          = builder.text_field :answer
 
 
   .actions
