@@ -4,6 +4,15 @@
   %b Tally:
   = @rehearsal.tally
 
+  %b Answers:
+  - @rehearsal.e_answers.each do |e_answer|
+    %tr
+      %td= e_answer.answer
+    / - e_question.e_answers.each do |e_answer|
+    /   %tr
+    /     %b Answers:
+    /     %td= e_answer.answer
+
 = link_to 'Edit', edit_rehearsal_path(@rehearsal)
 \|
 = link_to 'Back', rehearsals_path

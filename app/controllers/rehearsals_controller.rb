@@ -14,14 +14,13 @@ class RehearsalsController < ApplicationController
 
   # GET /rehearsals/new
   def new
-
     @exercise = Exercise.find(params[:exercise])
     @rehearsal = Rehearsal.new(exercise_id: @exercise.id)
     e_questions = @rehearsal.exercise.e_questions
     e_questions.each do |e_question|
       e_question.e_answers.build
     end
-   end
+  end
 
   # GET /rehearsals/1/edit
   def edit
@@ -75,6 +74,6 @@ class RehearsalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rehearsal_params
-      params.require(:rehearsal).permit(:tally, e_questions_attributes: [:question, e_answers_attributes: [:answer]])
+      params.require(:rehearsal).permit(:tally, e_answers_attributes: [:answer])
     end
 end

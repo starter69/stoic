@@ -11,7 +11,7 @@
       %p
         = f.fields_for :e_answers, e_question.e_answers do |builder|
           = builder.label :answer, "Answer"
-          = builder.text_field :answer
+          = builder.text_area :answer
 
 
   .actions

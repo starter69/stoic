@@ -19,7 +19,6 @@
       e_question = @exercise.e_questions.build
       e_question.e_answers.build
     end
-  binding.pry
   end
 
   # GET /exercises/1/edit
