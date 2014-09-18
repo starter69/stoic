@@ -1,0 +1,19 @@
+%h1 Listing rehearsals
+
+%table
+  %tr
+    %th Tally
+    %th
+    %th
+    %th
+
+  - @rehearsals.each do |rehearsal|
+    %tr
+      %td= rehearsal.tally
+      %td= link_to 'Show', rehearsal
+      %td= link_to 'Edit', edit_rehearsal_path(rehearsal)
+      %td= link_to 'Destroy', rehearsal, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Rehearsal', new_rehearsal_path

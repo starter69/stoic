@@ -1,4 +1,6 @@
 StoicCompass::Application.routes.draw do
+  resources :rehearsals
+
   resources :exercises
 
   get "welcome/index"
@@ -17,6 +19,7 @@ StoicCompass::Application.routes.draw do
   resources :e_question, :has_many => [:e_answers]
 
   resources :meditations
+
 
   root "welcome#index"
 

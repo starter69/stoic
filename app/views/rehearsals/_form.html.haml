@@ -1,0 +1,19 @@
+= form_for @rehearsal do |f|
+
+  = f.label :tally, "Tally"
+  = f.number_field :tally
+
+  %p
+    %b Questions:
+    - @rehearsal.e_answers.each_with_index do |e_answer, index|
+      %tr
+        %td= e_answer.e_question.question
+      %p
+        = f.fields_for :e_answers, e_answer do |builder|
+          = builder.label :answer, "Answer"
+          = builder.text_area :answer
+          = hidden_field_tag "rehearsal[e_answers_attributes]#{index}[e_question_id]", e_answer.e_question.id
+
+  = hidden_field_tag 'rehearsal[exercise_id]', @rehearsal.exercise.id
+  .actions
+    = f.submit 'Save'
