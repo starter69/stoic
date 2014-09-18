@@ -15,10 +15,10 @@ class RehearsalsController < ApplicationController
   # GET /rehearsals/new
   def new
     @exercise = Exercise.find(params[:exercise])
-    @rehearsal = Rehearsal.new(exercise_id: @exercise.id)
+    @rehearsal = @exercise.rehearsals.new
     e_questions = @rehearsal.exercise.e_questions
     e_questions.each do |e_question|
-      e_question.e_answers.build
+      @rehearsal.e_answers.build(:e_question_id => e_question.id )
     end
   end
 
@@ -30,7 +30,7 @@ class RehearsalsController < ApplicationController
   # POST /rehearsals.json
   def create
     @rehearsal = Rehearsal.new(rehearsal_params)
-
+    binding.pry
     respond_to do |format|
       if @rehearsal.save
         format.html { redirect_to @rehearsal, notice: 'Rehearsal was successfully created.' }
@@ -74,6 +74,6 @@ class RehearsalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rehearsal_params
-      params.require(:rehearsal).permit(:tally, e_answers_attributes: [:answer])
+      params.require(:rehearsal).permit(:tally, :exercise_id, e_answers_attributes: [:answer, :e_question_id])
     end
 end

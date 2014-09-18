@@ -5,14 +5,15 @@
 
   %p
     %b Questions:
-    - @rehearsal.exercise.e_questions.each do |e_question|
+    - @rehearsal.e_answers.each_with_index do |e_answer, index|
       %tr
-        %td= e_question.question
+        %td= e_answer.e_question.question
       %p
-        = f.fields_for :e_answers, e_question.e_answers do |builder|
+        = f.fields_for :e_answers, e_answer do |builder|
           = builder.label :answer, "Answer"
           = builder.text_area :answer
+          = hidden_field_tag "rehearsal[e_answers_attributes]#{index}[e_question_id]", e_answer.e_question.id
 
-
+  = hidden_field_tag 'rehearsal[exercise_id]', @rehearsal.exercise.id
   .actions
     = f.submit 'Save'
