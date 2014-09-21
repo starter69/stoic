@@ -6,7 +6,6 @@
       %ul
         - @exercise.errors.full_messages.each do |msg|
           %li= msg
-
   .field
     = f.label :title
     = f.text_field :title
@@ -16,8 +15,11 @@
   .field
     = f.label :category
     = f.text_field :category
-  .field
+  %h3 Exercise Questions
+  #e_questions.field
     = f.fields_for :e_questions do |e_builder|
       = render "e_question_fields", :f => e_builder
+    .links
+      = link_to_add_association 'add question', f, :e_questions
   .actions
     = f.submit 'Save'

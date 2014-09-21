@@ -30,7 +30,6 @@ class RehearsalsController < ApplicationController
   # POST /rehearsals.json
   def create
     @rehearsal = Rehearsal.new(rehearsal_params)
-    binding.pry
     respond_to do |format|
       if @rehearsal.save
         format.html { redirect_to @rehearsal, notice: 'Rehearsal was successfully created.' }

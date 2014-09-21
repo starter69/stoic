@@ -1,19 +1,29 @@
-%h1 Listing rehearsals
+%h1 Listing rehearsals&nbsp;#{link_to 'Rehearse a new exercise', exercises_path}
 
 %table
   %tr
-    %th Tally
-    %th
-    %th
-    %th
+    %th Exercise
+    %th Description
+    %th Category
 
   - @rehearsals.each do |rehearsal|
     %tr
-      %td= rehearsal.tally
+      %td= rehearsal.exercise.title
+      %td= rehearsal.exercise.general_description
+      %td= rehearsal.exercise.category
+    - rehearsal.exercise.e_questions.each do |e_question|
+      %tr
+        %td Question:&nbsp;
+        %td= e_question.question
+      - e_question.e_answers.each do |e_answer|
+        %tr
+          %td Answer:&nbsp;
+          %td= e_answer.answer
+          %td= e_answer.created_at.strftime("%B %d, %Y, at %H:%M")
       %td= link_to 'Show', rehearsal
       %td= link_to 'Edit', edit_rehearsal_path(rehearsal)
       %td= link_to 'Destroy', rehearsal, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Rehearsal', new_rehearsal_path
+
