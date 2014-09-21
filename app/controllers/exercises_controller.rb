@@ -74,6 +74,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
-      params.require(:exercise).permit(:title, :general_description, :category, :_destroy, e_questions_attributes: [:question, :_destroy])
+      params.require(:exercise).permit(:_destroy, :title, :general_description, :category, e_questions_attributes: [:question, :_destroy])
     end
 end
