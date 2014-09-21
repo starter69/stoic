@@ -11,13 +11,14 @@
     %tr
       %td Question:&nbsp;
       %td= e_question.question
-    = binding.pry
-    - e_question.each do |e_answer|
+    - e_question.e_answers.each do |e_answer|
       %tr
-        / %td Answer:&nbsp;
-        / %td= e_answer.e_answer.answer
+        %td Answer:&nbsp;
+        %td= e_answer.answer
+        %td= e_answer.created_at
 
 
 = link_to 'Edit', edit_rehearsal_path(@rehearsal)
 \|
 = link_to 'Back', rehearsals_path
+
