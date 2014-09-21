@@ -15,9 +15,10 @@
       %tr
         %td Answer:&nbsp;
         %td= e_answer.answer
-        %td= e_answer.created_at
+        %td= e_answer.created_at.strftime("%B %d, %Y, at %H:%M")
 
-
+%h3= link_to 'View my rehearsals of my exercises', rehearsals_path
+\|
 = link_to 'Edit', edit_rehearsal_path(@rehearsal)
 \|
 = link_to 'Back', rehearsals_path
