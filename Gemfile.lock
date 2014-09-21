@@ -27,6 +27,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.2)
     builder (3.1.4)
+    cocoon (1.2.6)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -37,8 +38,6 @@ GEM
     coffee-script-source (1.7.0)
     erubis (2.7.0)
     execjs (2.1.0)
-    formtastic (2.2.1)
-      actionpack (>= 3.0)
     haml (4.0.5)
       tilt
     haml-rails (0.5.1)
@@ -129,8 +128,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cocoon
   coffee-rails (~> 4.0.0)
-  formtastic
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails

@@ -1,8 +1,7 @@
 %p
   = f.label :question, "Question"
   = f.text_area :question, :rows => 3
-  = f.check_box :_destroy
-  = f.label :_destroy, "Remove Question"
+  = link_to_remove_association "remove exercise question", f
 
 
 
