@@ -1,4 +1,5 @@
 StoicCompass::Application.routes.draw do
+  devise_for :users, controllers: {registrations: "my_devise/registrations"}
   resources :rehearsals
 
   resources :exercises

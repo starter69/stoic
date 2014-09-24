@@ -1,8 +1,5 @@
 = form_for @rehearsal do |f|
-
-  = f.label :tally, "Tally"
-  = f.number_field :tally
-
+  = f.hidden_field :user_id
   %p
     %b Questions:
     - @rehearsal.e_answers.each_with_index do |e_answer, index|

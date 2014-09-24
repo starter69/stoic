@@ -1,4 +1,5 @@
 class Exercise < ActiveRecord::Base
+  belongs_to :user
   has_many :e_answers, through: :e_questions
   has_many :e_questions, :dependent => :destroy
   has_many :rehearsals

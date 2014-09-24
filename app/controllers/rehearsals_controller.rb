@@ -1,10 +1,11 @@
 class RehearsalsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_rehearsal, only: [:show, :edit, :update, :destroy]
 
   # GET /rehearsals
   # GET /rehearsals.json
   def index
-    @rehearsals = Rehearsal.all
+    @rehearsals = Rehearsal.where(user_id:current_user.id)
   end
 
   # GET /rehearsals/1
@@ -30,6 +31,7 @@ class RehearsalsController < ApplicationController
   # POST /rehearsals.json
   def create
     @rehearsal = Rehearsal.new(rehearsal_params)
+    @rehearsal.user_id = current_user.id
     respond_to do |format|
       if @rehearsal.save
         format.html { redirect_to @rehearsal, notice: 'Rehearsal was successfully created.' }
