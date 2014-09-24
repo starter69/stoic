@@ -2,8 +2,10 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
-gem 'haml-rails'
-gem 'cocoon'
+gem 'haml', '4.0.5'
+gem 'cocoon', '1.2.6'
+gem 'devise', '3.3.0'
+ruby '2.0.0'
 
 group :assets do
 end

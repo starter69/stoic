@@ -1,10 +1,11 @@
   class ExercisesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_exercise, only: [:show, :edit, :update, :destroy]
 
   # GET /exercises
   # GET /exercises.json
   def index
-    @exercises = Exercise.all
+    @exercises = Exercise.where(user_id:current_user.id)
   end
 
   # GET /exercises/1
@@ -30,7 +31,7 @@
   # POST /exercises.json
   def create
     @exercise = Exercise.new(exercise_params)
-
+    @exercise.user_id = current_user.id
     respond_to do |format|
       if @exercise.save
         format.html { redirect_to @exercise, notice: 'Exercise was successfully created.' }
