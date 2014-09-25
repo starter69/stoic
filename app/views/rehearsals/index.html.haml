@@ -12,6 +12,9 @@
       %td= rehearsal.exercise.general_description
       %td=  "#{rehearsal.exercise.category}&nbsp;&nbsp;".html_safe
       %td= rehearsal.created_at.strftime("%B %d, %Y, at %H:%M")
+      %td= link_to 'Show', rehearsal
+      %td= link_to 'Edit', edit_rehearsal_path(rehearsal)
+      %td= link_to 'Destroy', rehearsal, :method => :delete, :data => { :confirm => 'Are you sure?' }
     - rehearsal.exercise.e_questions.each do |e_question|
       %tr
         %td Question:&nbsp;
@@ -20,9 +23,6 @@
         %tr
           %td Answer:&nbsp;
           %td= e_answer.answer
-      %td= link_to 'Show', rehearsal
-      %td= link_to 'Edit', edit_rehearsal_path(rehearsal)
-      %td= link_to 'Destroy', rehearsal, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
