@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ruby '2.0.0'
 gem 'rails', '4.0.0'
 gem 'haml', '4.0.5'
 gem 'cocoon', '1.2.6'
 gem 'devise', '3.3.0'
-ruby '2.0.0'
+gem 'cancancan', '~> 1.9'
 
 group :assets do
 end
