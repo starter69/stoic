@@ -1,0 +1,14 @@
+  - @users.each do |user|
+    %tr
+      %td= user.email
+      %td= user.sign_in_count
+      %td= user.current_sign_in_at.strftime("%d %b. %Y")
+      %td= user.last_sign_in_at.strftime("%d %b. %Y")
+      %td= user.admin?
+      %td= link_to 'Show', user
+      %td= link_to 'Edit', edit_user_path(user)
+      %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New User', new_user_path
