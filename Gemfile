@@ -8,6 +8,7 @@ gem 'cocoon', '1.2.6'
 gem 'devise', '3.3.0'
 gem 'cancancan', '~> 1.9'
 
+
 group :assets do
 end
 
@@ -15,6 +16,9 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'pry'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :production do

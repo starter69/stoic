@@ -2,6 +2,7 @@
 .nested-fields
   = f.label :question, "Question"
   = f.text_area :question, :rows => 3
+  = f.hidden_field :id
   = link_to_remove_association "remove exercise question", f
 
 

@@ -3,19 +3,19 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
 
-config.action_mailer.raise_delivery_errors = true
+# config.action_mailer.raise_delivery_errors = true
 
-config.action_mailer.delivery_method = :smtp
+# config.action_mailer.delivery_method = :smtp
 
-config.action_mailer.smtp_settings = {
-address: "smtp.gmail.com",
-port: 587,
-domain: ENV["GMAIL_DOMAIN"],
-authentication: "plain",
-enable_starttls_auto: true,
-user_name: ENV["GMAIL_USERNAME"],
-password: ENV["GMAIL_PASSWORD"]
-}
+# config.action_mailer.smtp_settings = {
+# address: "smtp.gmail.com",
+# port: 587,
+# domain: ENV["GMAIL_DOMAIN"],
+# authentication: "plain",
+# enable_starttls_auto: true,
+# user_name: ENV["GMAIL_USERNAME"],
+# password: ENV["GMAIL_PASSWORD"]
+# }
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

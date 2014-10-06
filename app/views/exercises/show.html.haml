@@ -20,7 +20,13 @@
 
 %td= link_to 'Rehearse this Exercise', new_rehearsal_path(:exercise => @exercise.id)
 \|
-= link_to 'Edit', edit_exercise_path(@exercise)
-\|
+- if @exercise.global && current_user.admin
+  = link_to 'Edit', edit_exercise_path(@exercise)
+  \|
 = link_to 'Back', exercises_path
 
+- if @exercise.global
+  %br
+  %br
+  %b Stoic Compass Exercise
+  This exercise is published globally across all of Stoic Compass and its users.
