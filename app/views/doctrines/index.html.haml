@@ -1,5 +1,4 @@
 
-
 %center
 
 .container
@@ -7,101 +6,41 @@
     .col-md-8
       %h2.page-header
         .doctrine_title
-          The Stoic Doctrines
+          The Stoic Doctrine
           %br
         %small An explanation of the doctrines and dogmas behind ancient Stoic philosophy in the Greek and Roman period.
-      %h4{:align => "right"}
-      #accordion1.accordion
+        %a.tab_over_header{"data-parent" => "#accordion0", "data-toggle" => "collapse", href: "#collapseZero", "class" => "label label-default", "id" => "light"}
+          Abstract
+          %span.glyphicon.glyphicon-chevron-down
+        #collapseZero.panel-collapse.collapse
+          %h5 Question every opinion. Let only your reason be the judge of your truths.
+          %h5 There is no such a thing as "official stoic opinions" that every good stoic should share. Stoic students are encouraged to challenge the views and arguments of their teachers as well as to be confronted with opinions from other schools of philosophy. Nevertheless, there are some subjects  upon which previous generations of stoics have worked hard and with great results. These are offered to the new generations of stoic philosopher as a precious starting point for their own work.
+
+          %h5 This part is divided into three main sections: Principles, Disciplines and Subjects.
+
+          %h5 The Dogmas (general principles) address core philosophical matters, which need to be discussed and settled before further speculation or exercise. Here we present the positions that most ancient Stoics shared, but we also address possible criticisms and other possible opinions on these matters.
+
+          %h5 The Disciplines subdivide the human experience into three main fields. This threefold partition is the main point of reference in the Quadrant of Marcus Aurelius' Compass. The Disciplines are the secret which gives dynamism and rhythm to Marcus Aurelius' Meditations. In this part we'll not only learn their internal structure and reciprocal connections but also start using them to interpret Marcus Aurelius and to produce our own meditations.
+
+          %h5 Under "Subjects of  Meditation" we understand some primary, general matters, which are necessarily found in most human life-experiences. From death to political engagement, every subject will be analysed in the light of stoic Principles and Disciplines and we'll be shown how to make these the object of active Meditation.
+
+.container
+  .row
+    .col-md-8
+      #accordion.accordion
         #accordion.panel-group
-          .panel.panel-default
+          .panel.panel-danger
             .panel-heading
               %h4.panel-title
                 %a.doctrine_button{href: "doctrines_introduction", "class" => "label"}
                   Introduction to Stoic Philosophy
-                %a.tab_over{"data-parent" => "#accordion1", "data-toggle" => "collapse", href: "#collapseOne", "class" => "label label-default", "id" => "light"}
-                  Abstract
-                  %span.glyphicon.glyphicon-chevron-down
-            #collapseOne.panel-collapse.collapse
-              .panel-body
-                Anim pariatur cliche
-                %span{"data-content" => "And here's some amazing content. It's very engaging. Right?", "data-toggle" => "popover", title: "Popover title", type: "button"} reprehenderit
-                reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-          .panel.panel-default
-            .panel-heading
-              %h4.panel-title
-                %a.doctrine_button{"data-parent" => "#accordion1", "data-toggle" => "collapse", href: "#collapseTwo", "class" => "label"}
-                  The Disciplines
-            #collapseTwo.panel-collapse.collapse
-              .panel-body
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-              .accordion-inner
-                #accordion2.accordion
-                  #accordion.panel-group
-                    .panel.panel-default
-                      .panel-heading
-                        %h4.panel-title
-                          %a.doctrine_button.tab_over{href: "doctrines_disciplines_intro", "class" => "label"}
-                            Overview
-                          %a.tab_over{"data-parent" => "#accordion1", "data-toggle" => "collapse", href: "#collapseInnerOne", "class" => "label label-default", "id" => "light"}
-                            Abstract
-                            %span.glyphicon.glyphicon-chevron-down
-                      #collapseInnerOne.panel-collapse.collapse
-                        .panel-body.tab_over
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    .panel.panel-default
-                      .panel-heading
-                        %h4.panel-title
-                          %a.doctrine_button.tab_over{href: "doctrines_assent", "class" => "label"}
-                            Discipline of Assent
-                          %a.tab_over{"data-parent" => "#accordion1", "data-toggle" => "collapse", href: "#collapseInnerTwo", "class" => "label label-default", "id" => "light"}
-                            Abstract
-                            %span.glyphicon.glyphicon-chevron-down
-                      #collapseInnerTwo.panel-collapse.collapse
-                        .panel-body.tab_over
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    .panel.panel-default
-                      .panel-heading
-                        %h4.panel-title
-                          %a.doctrine_button.tab_over{href: "doctrines_desire", "class" => "label"}
-                            Discipline of Desire
-                          %a.tab_over{"data-parent" => "#accordion1", "data-toggle" => "collapse", href: "#collapseInnerThree", "class" => "label label-default", "id" => "light"}
-                            Abstract
-                            %span.glyphicon.glyphicon-chevron-down
-                      #collapseInnerThree.panel-collapse.collapse
-                        .panel-body.tab_over
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    .panel.panel-default
-                      .panel-heading
-                        %h4.panel-title
-                          %a.doctrine_button.tab_over{href: "doctrines_action", "class" => "label"}
-                            Discipline of Action
-                          %a.tab_over{"data-parent" => "#accordion1", "data-toggle" => "collapse", href: "#collapseInnerFour", "class" => "label label-default", "id" => "light"}
-                            Abstract
-                            %span.glyphicon.glyphicon-chevron-down
-                      #collapseInnerFour.panel-collapse.collapse
-                        .panel-body.tab_over
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-          .panel.panel-default
-            .panel-heading
-              %h4.panel-title
-                %a.doctrine_button{"data-parent" => "#accordion2", "data-toggle" => "collapse", href: "#collapseThree", "class" => "label"}
-                  The Dogmas
-            #collapseThree.panel-collapse.collapse
-              .panel-body
-                Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-              .accordion-inner
-                #accordion3.accordion
-                  #accordion.panel-group
-                    .panel.panel-default
-                      .panel-heading
-                        %h4.panel-title
-                          %a.doctrine_button.tab_over{href: "doctrines_dogmas_intro", "class" => "label"}
-                            Overview
-                          %a.tab_over{"data-parent" => "#accordion3", "data-toggle" => "collapse", href: "#collapseInnerOne2", "class" => "label label-default", "id" => "light"}
-                            Abstract
-                            %span.glyphicon.glyphicon-chevron-down
-                      #collapseInnerOne2.panel-collapse.collapse
-                        .panel-body.tab_over
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          = render '/doctrines/panels/introduction_panel'
+          = render '/doctrines/panels/dogmas_panel'
+          = render '/doctrines/panels/disciplines_panel'
+          = render '/doctrines/panels/meditations_panel'
+          = render '/doctrines/panels/compass_panel'
+
+
+
 
 
