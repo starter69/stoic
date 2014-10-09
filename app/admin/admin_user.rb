@@ -5,7 +5,7 @@ ActiveAdmin.register AdminUser do
     selectable_column
     id_column
     column :email
-    column :current_sign_in_at
+    column "Last sign in at", :current_sign_in_at
     column :sign_in_count
     column :created_at
     actions
