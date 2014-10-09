@@ -1,10 +1,12 @@
 StoicCompass::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users, controllers: {registrations: "my_devise/registrations"}
+  resources :users, only: [:index]
   resources :rehearsals
 
   resources :exercises
 
-  get "welcome/index"
 
   get "index" => "welcome#index"
   get "about" => "welcome#about"
@@ -16,9 +18,7 @@ StoicCompass::Application.routes.draw do
   get "doctrines_action" => "doctrines#action"
   get "doctrines_disciplines_intro" => "doctrines#disciplines_intro"
   get "doctrines_dogmas_intro" => "doctrines#dogmas_intro"
-
-  resources :e_question, :has_many => [:e_answers]
-
+  get "users" => "users#index"
   resources :meditations
 
 

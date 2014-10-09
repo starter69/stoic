@@ -1,11 +1,13 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+ruby '2.0.0'
+gem 'rails', '4.0.4'
 gem 'haml', '4.0.5'
 gem 'cocoon', '1.2.6'
 gem 'devise', '3.3.0'
-ruby '2.0.0'
+gem 'cancancan', '~> 1.9'
+gem 'activeadmin', github: 'activeadmin'
 
 group :assets do
 end
@@ -14,6 +16,9 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'pry'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :production do

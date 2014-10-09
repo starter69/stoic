@@ -1,5 +1,30 @@
 %h1 Listing exercises
 
+%p These shared exercises are available for all users to do!
+
+%table
+  %tr
+    %th Title
+    %th General description
+    %th Discipline
+    %th Question
+    %th Question
+    %th Question
+
+  - @global_exercises.each do |global_exercise|
+    %tr{class: "exercise_#{global_exercise.id}"}
+      %td= global_exercise.title
+      %td= global_exercise.general_description
+      %td= global_exercise.category
+      - global_exercise.e_questions.each do |e_question|
+        %td= e_question.question
+      %td= link_to 'Show', global_exercise
+      %td= link_to 'Rehearse', new_rehearsal_path(:exercise => global_exercise.id)
+
+%br
+%br
+%p Create, Edit and Rehearse Your Own Custom Exercises
+
 %table
   %tr
     %th Title
@@ -10,7 +35,7 @@
     %th Question
 
   - @exercises.each do |exercise|
-    %tr
+    %tr{class: "exercise_#{exercise.id}"}
       %td= exercise.title
       %td= exercise.general_description
       %td= exercise.category
@@ -20,7 +45,6 @@
       %td= link_to 'Rehearse', new_rehearsal_path(:exercise => exercise.id)
       %td= link_to 'Edit', edit_exercise_path(exercise)
       %td= link_to 'Destroy', exercise, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
 %br
 
 = link_to 'New Exercise', new_exercise_path

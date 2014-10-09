@@ -1,5 +1,22 @@
 == README
 
+NEXT STEPS for Mailer Sept 26 2014
+- Google Devise set up mailer
+- Get CanCan set up
+- Set up check boxes for users in user index to "activate" the admin boolean
+- Set up check boxes in admin dashboard to create global exercises
+- Create boolean paramater in exercises to be 'global'
+- In the view for create exercise
+  if user.admin? == true
+    display tickbox
+    send to custom admin_create method that includes the global boolean
+  else
+    use normal create method
+- Also update cancan Ability model
+  - admin? CAN access admin_create
+  - regular user CANNOT access admin_create
+
+
 NEXT STEPS: AUgust 8, 2014
 - Create Rehearsal Controller and Model
 Rehearsal - accepts nested attributes for answers
