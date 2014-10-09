@@ -30,7 +30,9 @@ RSpec.feature 'Admin Flags Global Exercise' do
   end
   def flag_it_as_global
     visit edit_exercise_path(@exercise.id)
-    check("global")
+    save_and_open_page
+    binding.pry
+    check 'Publish this exercise globally to all stoic compass users'
   end
 
 

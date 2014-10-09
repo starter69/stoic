@@ -6,6 +6,7 @@
   # GET /exercises.json
   def index
     @exercises = Exercise.where(user_id:current_user.id)
+    @global_exercises = Exercise.where(global:true)
   end
 
   # GET /exercises/1
