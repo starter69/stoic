@@ -10,6 +10,9 @@ class Ability
       else
         can :update, User, :id => user.id
         can :read, :all
+        can :read, Rehearsal, :user_id => user.id
+        can :update, Exercise, :user_id => user.id
+        cannot :update, Meditation
       end
     #
     # The first argument to `can` is the action you are giving the user

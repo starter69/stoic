@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    binding.pry
-    @users = User.all
-  end
+  #Load CanCan roles for Controller
+  load_and_authorize_resource
+
+  # def index
+  #   @users = User.all
+  # end
 
 end

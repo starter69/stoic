@@ -2,6 +2,9 @@ class RehearsalsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_rehearsal, only: [:show, :edit, :update, :destroy]
 
+  #Load CanCan roles for Controller
+  load_and_authorize_resource
+
   # GET /rehearsals
   # GET /rehearsals.json
   def index

@@ -20,7 +20,7 @@
 
 %td= link_to 'Rehearse this Exercise', new_rehearsal_path(:exercise => @exercise.id)
 \|
-- if @exercise.global && current_user.admin
+- if can? :update, @exercise
   = link_to 'Edit', edit_exercise_path(@exercise)
   \|
 = link_to 'Back', exercises_path

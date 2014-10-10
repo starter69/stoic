@@ -17,9 +17,10 @@
       %td= meditation.passage
       %td= meditation.created_at.strftime("%d %b. %Y")
       %td= link_to 'Show', meditation
-      %td= link_to 'Edit', edit_meditation_path(meditation)
-      %td= link_to 'Destroy', meditation, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - if can? :update, meditation
+        %td= link_to 'Edit', edit_meditation_path(meditation)
+        %td= link_to 'Destroy', meditation, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-
-= link_to 'New Meditation', new_meditation_path
+- if can? :update, @meditations
+  = link_to 'New Meditation', new_meditation_path

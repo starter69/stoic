@@ -1,4 +1,7 @@
 class MeditationsController < ApplicationController
+  #Load CanCan roles for Controller
+  load_and_authorize_resource
+
   before_action :set_meditation, only: [:show, :edit, :update, :destroy]
 
   # GET /meditations
