@@ -11,7 +11,12 @@ class Ability
         can :update, User, :id => user.id
         can :read, :all
         can :read, Rehearsal, :user_id => user.id
+        can :destroy, Rehearsal, :user_id => user.id
+        can :create, Rehearsal
+        can :update, Rehearsal, :user_id => user.id
         can :update, Exercise, :user_id => user.id
+        can :create, Exercise, :user_id => user.id
+        can :destroy, Exercise, :user_id => user.id
         cannot :update, Meditation
       end
     #

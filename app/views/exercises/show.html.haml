@@ -18,6 +18,7 @@
       %td Question:&nbsp;
       %td= e_question.question
 
+
 %td= link_to 'Rehearse this Exercise', new_rehearsal_path(:exercise => @exercise.id)
 \|
 - if can? :update, @exercise
@@ -30,3 +31,23 @@
   %br
   %b Stoic Compass Exercise
   This exercise is published globally across all of Stoic Compass and its users.
+
+
+%h3
+  %b Past Rehearsals
+%table
+  - if @rehearsal != nil
+    - @rehearsal.exercise.e_questions.each do |e_question|
+      %tr
+        %td Question:&nbsp;
+        %td= e_question.question
+      - @exercise.rehearsals.each do |rehearsal|
+        %td= link_to 'Edit', edit_rehearsal_path(rehearsal)
+        %td= link_to 'Destroy', rehearsal, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - e_question.e_answers.each do |e_answer|
+        %tr
+          %td Answer:&nbsp;
+          %td= e_answer.answer
+          %td= e_answer.created_at.strftime("%B %d, %Y, at %H:%M")
+          %td= Time.zone.name
+
