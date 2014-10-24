@@ -15,9 +15,7 @@
   # GET /exercises/1
   # GET /exercises/1.json
   def show
-    @rehearsal = @exercise.rehearsals.new(id: 120)
-    #Why do I need to have a .new method here? I know that it works, but why can't I just have
-    #@rehearsal = @exercise.rehearsals?
+    @rehearsals = @exercise.rehearsals
   end
 
   # GET /exercises/new

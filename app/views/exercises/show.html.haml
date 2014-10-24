@@ -1,53 +1,47 @@
-%p#notice= notice
-
-%h3
-  %b Title:
-  = @exercise.title
-%p
-  %b General description:
-  = @exercise.general_description
-%p
-  %b Category:
-  = @exercise.category
-%h3
-  %b Exercise Questions
-%table
-  %tbody
-  - @exercise.e_questions.each do |e_question|
-    %tr
-      %td Question:&nbsp;
-      %td= e_question.question
-
-
-%td= link_to 'Rehearse this Exercise', new_rehearsal_path(:exercise => @exercise.id)
-\|
-- if can? :update, @exercise
-  = link_to 'Edit', edit_exercise_path(@exercise)
-  \|
-= link_to 'Back', exercises_path
-
-- if @exercise.global
-  %br
-  %br
-  %b Stoic Compass Exercise
-  This exercise is published globally across all of Stoic Compass and its users.
-
-
-%h3
-  %b Past Rehearsals
-%table
-  - if @rehearsal != nil
-    - @rehearsal.exercise.e_questions.each do |e_question|
-      %tr
-        %td Question:&nbsp;
-        %td= e_question.question
-      - @exercise.rehearsals.each do |rehearsal|
-        %td= link_to 'Edit', edit_rehearsal_path(rehearsal)
-        %td= link_to 'Destroy', rehearsal, :method => :delete, :data => { :confirm => 'Are you sure?' }
-      - e_question.e_answers.each do |e_answer|
+.panel.panel-warning
+  %h3.panel-heading
+    = @exercise.title
+  .panel-body
+    = @exercise.general_description
+    Category:
+    = @exercise.category
+    %h5.page-header.exercise_title
+      Steps to the Exercise
+    %table.table.table-bordered.table-responsive
+      %tbody
+      - @exercise.e_questions.each do |e_question|
         %tr
-          %td Answer:&nbsp;
-          %td= e_answer.answer
-          %td= e_answer.created_at.strftime("%B %d, %Y, at %H:%M")
-          %td= Time.zone.name
+          %td= e_question.question
+
+%h3.page-header.exercise_title
+  Past Rehearsals
+%table.table.table-striped.table-condensed.table-responsive
+  %tbody
+  %th Date Rehearsed
+  %th Location
+  - @exercise.e_questions.each do |e_question|
+    %th= e_question.question
+  %th Options
+  - @rehearsals.each do |rehearsal|
+    %tr
+      %td= rehearsal.created_at.strftime("%B %d, %Y, at %H:%M")
+      %td= Time.zone.name
+      - rehearsal.e_answers.each do |e_answer|
+        %td= e_answer.answer
+      %td= link_to 'Edit', edit_rehearsal_path(rehearsal)
+
+
+= link_to 'Rehearse this Exercise', new_rehearsal_path(:exercise => @exercise.id), class: "btn btn-warning"
+- if can? :update, @exercise
+  = link_to 'Edit', edit_exercise_path(@exercise), class: "btn btn-warning"
+= link_to 'Back', exercises_path, class: "btn btn-warning"
+%br
+%br
+.panel.panel-warning
+  .panel-heading
+    - if @exercise.global
+      %b Stoic Compass Expert Exercise
+      This exercise is published globally across all of Stoic Compass and its users.
+
+
 

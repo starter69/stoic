@@ -5,3 +5,5 @@
 = link_to 'Show', @rehearsal
 \|
 = link_to 'Back', rehearsals_path
+\|
+= link_to 'Destroy', @rehearsal, :method => :delete, :data => { :confirm => 'Are you sure?' }
