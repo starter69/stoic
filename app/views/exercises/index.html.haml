@@ -1,5 +1,3 @@
-
-
 .container
   .row
     %h2.page-header.exercise_title Stoic Philosophical Exercises
@@ -11,20 +9,12 @@
           %th
           %th General description
           %th Discipline
-          %th Question
-          %th Question
-          %th Question
-          %th Question
-          %th Question
         - @global_exercises.each do |global_exercise|
           %tr{class: "exercise_#{global_exercise.id}"}
             %td= link_to global_exercise.title, global_exercise, class: "btn btn-default"
             %td= link_to 'Rehearse', new_rehearsal_path(:exercise => global_exercise.id), class: "btn btn-warning"
             %td= global_exercise.general_description
             %td= global_exercise.category
-            - global_exercise.e_questions.each do |e_question|
-              %td= e_question.question
-
 .container
   .row
     .panel.panel-warning
@@ -39,16 +29,10 @@
           %th
           %th General description
           %th Discipline
-          %th Question
-          %th Question
-          %th Question
-          %th Question
-          %th Question
         - @exercises.each do |exercise|
           %tr{class: "exercise_#{exercise.id}"}
             %td= link_to exercise.title, exercise, class: "btn btn-default"
             %td= link_to 'Rehearse', new_rehearsal_path(:exercise => exercise.id), class: "btn btn-warning"
             %td= exercise.general_description
             %td= exercise.category
-            - exercise.e_questions.each do |e_question|
-              %td= e_question.question
+
