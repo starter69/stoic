@@ -15,6 +15,7 @@
   # GET /exercises/1
   # GET /exercises/1.json
   def show
+    @rehearsals = @exercise.rehearsals
   end
 
   # GET /exercises/new

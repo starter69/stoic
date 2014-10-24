@@ -44,7 +44,7 @@
       %td= link_to 'Show', exercise
       %td= link_to 'Rehearse', new_rehearsal_path(:exercise => exercise.id)
       %td= link_to 'Edit', edit_exercise_path(exercise)
-      %td= link_to 'Destroy', exercise, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Delete Exercise', exercise, :method => :delete, :data => { :confirm => 'Are you sure?' }
 %br
 
 = link_to 'New Exercise', new_exercise_path

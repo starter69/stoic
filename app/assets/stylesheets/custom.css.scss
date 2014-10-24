@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.h5 {
+  margin: 0 !important;
+}
 
 .doctrine_button {
   font-size: 1em;
@@ -32,6 +34,10 @@ background-color: #777
 
 .doctrine_title {
   color: #a94442;
+}
+
+.exercise_title {
+  color: #eb9316;
 }
 
 #light {

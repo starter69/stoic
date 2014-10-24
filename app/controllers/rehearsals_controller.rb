@@ -37,7 +37,7 @@ class RehearsalsController < ApplicationController
     @rehearsal.user_id = current_user.id
     respond_to do |format|
       if @rehearsal.save
-        format.html { redirect_to @rehearsal, notice: 'Rehearsal was successfully created.' }
+        format.html { redirect_to @rehearsal.exercise, notice: 'Rehearsal was successfully created.' }
         format.json { render action: 'show', status: :created, location: @rehearsal }
       else
         format.html { render action: 'new' }
@@ -51,7 +51,7 @@ class RehearsalsController < ApplicationController
   def update
     respond_to do |format|
       if @rehearsal.update(rehearsal_params)
-        format.html { redirect_to @rehearsal, notice: 'Rehearsal was successfully updated.' }
+        format.html { redirect_to @rehearsal.exercise, notice: 'Rehearsal was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -65,7 +65,7 @@ class RehearsalsController < ApplicationController
   def destroy
     @rehearsal.destroy
     respond_to do |format|
-      format.html { redirect_to rehearsals_url }
+      format.html { redirect_to @rehearsal.exercise }
       format.json { head :no_content }
     end
   end
