@@ -22,39 +22,36 @@
     .col-md-4
       - if can? :update, @exercise
         = link_to 'Edit Exercise', edit_exercise_path(@exercise), class: "btn btn-default"
-
-
-
+        = link_to 'Delete Exercise', @exercise, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default"
   %h3.page-header.exercise_title
     Past Rehearsals
   %table.table.table-striped.table-condensed.table-responsive
     %tbody
     %th Date Rehearsed
     %th Location
-    %th Options
+    %th
     - @exercise.e_questions.each do |e_question|
       %th= e_question.question
     - @rehearsals.each do |rehearsal|
       %tr
-        %td= rehearsal.created_at.strftime("%B %d, %Y, at %H:%M")
+        %td= rehearsal.created_at.strftime("%B %d, %Y at %H:%M")
         %td= Time.zone.name
         %td= link_to 'Edit', edit_rehearsal_path(rehearsal)
         - rehearsal.e_answers.each do |e_answer|
           %td= e_answer.answer
-  %br
-  .panel.panel-warning
-    .panel-heading
-      - if @exercise.global
+  - if @exercise.global
+    %br
+    .panel.panel-warning
+      .panel-heading
         %b Stoic Compass Expert Exercise
         This exercise is published globally across all of Stoic Compass and its users.
 .container
   .row
     .col-md-8
       .panel.panel-warning
-        Steps in the Exercise
+        %b Steps in the Exercise
         %table.table.table-bordered.table-responsive
           %tbody
           - @exercise.e_questions.each do |e_question|
             %tr
               %td= e_question.question
-

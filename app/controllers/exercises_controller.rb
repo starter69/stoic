@@ -15,7 +15,7 @@
   # GET /exercises/1
   # GET /exercises/1.json
   def show
-    @rehearsals = @exercise.rehearsals
+    @rehearsals = @exercise.rehearsals.where(user_id:current_user.id)
   end
 
   # GET /exercises/new
