@@ -8,24 +8,28 @@
           %li= msg
   .field
     = f.hidden_field :user_id
-  .field
+  .form-group.col-md-6
     = f.label :title
-    = f.text_field :title
-  .field
+    = f.text_field :title, class: "form-control"
+  .form-group.col-md-6
     = f.label :general_description
-    = f.text_area :general_description
-  .field
+    = f.text_area :general_description, class: "form-control", rows: "4"
+  .form-inline.form-group
     = f.label :category
-    = f.text_field :category
-  - if current_user.admin
-    .field
-      = f.label "Publish this exercise globally to all Stoic Compass users"
-      = f.check_box :global
+    = f.text_field :category, class: "form-control"
+
   %h3 Exercise Questions
-  #e_questions.field
+  #e_questions.form-inline.form-group.col-md-6
     = f.fields_for :e_questions do |e_builder|
       = render "e_question_fields", :f => e_builder
+    %br
     .links
-      = link_to_add_association 'add question', f, :e_questions
-  .actions
-    = f.submit 'Save'
+      = link_to_add_association 'Add New Question', f, :e_questions, class: "btn btn-default"
+  - if current_user.admin
+    .form-inline.form-group
+      = f.label "Publish this exercise globally to all Stoic Compass users"
+      = f.check_box :global, class: "checkbox"
+  %center
+    .actions
+      = f.submit 'Save Exercise', class: "btn btn-warning"
+  %br

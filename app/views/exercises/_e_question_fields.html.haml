@@ -1,9 +1,8 @@
 %p
 .nested-fields
-  = f.label :question, "Question"
-  = f.text_area :question, :rows => 3
+  = f.text_area :question, class: "form-control", rows: "2"
   = f.hidden_field :id
-  = link_to_remove_association "remove exercise question", f
+  = link_to_remove_association "Remove Question", f, class: "btn btn-default"
 
 
 

@@ -1,7 +1,9 @@
-%h1 Editing exercise
-
-= render 'form'
-
-= link_to 'Show', @exercise
-\|
-= link_to 'Back', exercises_path
+.container
+  .row
+    .col-md-8
+      %h1.page-header.exercise_title Edit the exercise
+      .panel.panel-warning
+        = render 'form'
+        %center
+          = link_to 'Back', exercises_path, class: "btn btn-default"
+        %br
