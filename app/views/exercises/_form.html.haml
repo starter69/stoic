@@ -30,7 +30,9 @@
       #e_questions
         = f.fields_for :e_questions do |e_builder|
           = render "e_question_fields", :f => e_builder
-        .links
+      .clearfix
+      .links
+        .clearfix
         %br
         = link_to_add_association 'Add New Question', f, :e_questions, class: "btn btn-default"
     %br
