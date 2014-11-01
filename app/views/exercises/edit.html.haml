@@ -1,9 +1,12 @@
 .container
   .row
     .col-md-8
-      %h1.page-header.exercise_title Edit the exercise
       .panel.panel-warning
-        = render 'form'
-        %center
-          = link_to 'Back', exercises_path, class: "btn btn-default"
-        %br
+        .panel-heading
+          %h1.page-header.exercise_title Edit the exercise
+        .panel-body
+          = render 'form'
+        .panel-body
+          = link_to 'Back to List of Exercises', exercises_path, class: "btn btn-default btn-lg"
+          %br
+

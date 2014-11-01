@@ -1,16 +1,24 @@
 = form_for @rehearsal do |f|
   = f.hidden_field :user_id
-  %p
-    %b Questions:
-    - @rehearsal.e_answers.each_with_index do |e_answer, index|
-      %tr
-        %td= e_answer.e_question.question
-      %p
-        = f.fields_for :e_answers, e_answer do |builder|
-          = builder.label :answer, "Answer"
-          = builder.text_area :answer
-          = hidden_field_tag "rehearsal[e_answers_attributes]#{index}[e_question_id]", e_answer.e_question.id
 
-  = hidden_field_tag 'rehearsal[exercise_id]', @rehearsal.exercise.id
-  .actions
-    = f.submit 'Save'
+  .form-group.col-md-8
+    %h3.page-header.exercise_title
+      = @exercise.title
+    %p.page_header
+      = @exercise.general_description
+      %br
+      %br
+      - @rehearsal.e_answers.each_with_index do |e_answer, index|
+        %tr
+          %td= e_answer.e_question.question
+        %p
+        .form
+          .form-group
+            #e_questions
+              = f.fields_for :e_answers, e_answer do |builder|
+                = builder.text_area :answer, class: "form-control", rows: 3
+                = hidden_field_tag "rehearsal[e_answers_attributes]#{index}[e_question_id]", e_answer.e_question.id
+
+    = hidden_field_tag 'rehearsal[exercise_id]', @rehearsal.exercise.id
+    .actions
+      = f.submit "Finish Rehearsing #{@exercise.title}", class: "btn btn-warning btn-lg"

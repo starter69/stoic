@@ -1,9 +1,21 @@
-%h1 Editing rehearsal
+.container
+  .row
+    .col-md-8
+      .panel.panel-warning
+        .panel-heading
+          %h3.page-header.exercise_title
+            Edit rehearsal of
+            = "#{@exercise.title}"
+            %br
+            on
+            = "#{@rehearsal.created_at.strftime("%B %d, %Y at %H:%M")}"
+          .panel-body
+            = render 'form'
+          .panel-body
+            %h4
+              Originally rehearsed in:
+              %p= Time.zone.name
+              %p= @rehearsal.created_at.strftime("%B %d, %Y at %H:%M")
 
-= render 'form'
-
-= link_to 'Show', @rehearsal
-\|
-= link_to 'Back', rehearsals_path
-\|
-= link_to 'Destroy', @rehearsal, :method => :delete, :data => { :confirm => 'Are you sure?' }
+            = link_to "Back to #{@exercise.title} exercise page", @rehearsal.exercise, class: "btn btn-default"
+            = link_to 'Delete This Rehearsal', @rehearsal, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default"

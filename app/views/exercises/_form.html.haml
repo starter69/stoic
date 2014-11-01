@@ -26,19 +26,21 @@
         = f.text_field :category, class: "form-control"
 
     %h3.page-header.exercise_title Exercise Questions
-  #e_questions.form-inline.form-group.col-md-8
-    = f.fields_for :e_questions do |e_builder|
-      = render "e_question_fields", :f => e_builder
-    %br
-    .links
-      = link_to_add_association 'Add New Question', f, :e_questions, class: "btn btn-default"
-  - if current_user.admin
     .input-group
-      .input-group-addon
-        = f.label "Publish this exercise globally to all Stoic Compass users"
-        = f.check_box :global, class: "checkbox"
-
+      #e_questions
+        = f.fields_for :e_questions do |e_builder|
+          = render "e_question_fields", :f => e_builder
+        .links
+        %br
+        = link_to_add_association 'Add New Question', f, :e_questions, class: "btn btn-default"
+    %br
+    - if current_user.admin
+      .input-group
+        .input-group-addon
+          = f.label "Publish this exercise globally to all Stoic Compass users"
+        .input-group-addon
+          = f.check_box :global, class: "checkbox"
+      %br
   %center
     .actions
-      = f.submit 'Save Exercise', class: "btn btn-warning"
-  %br
+      = f.submit 'Save Exercise', class: "btn btn-warning btn-lg"

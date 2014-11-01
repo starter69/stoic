@@ -1,5 +1,12 @@
-%h1 New rehearsal
-
-= render 'form'
-
-= link_to 'Back', rehearsals_path
+.container
+  .row
+    .col-md-8
+      .panel.panel-warning
+        .panel-heading
+          %h1.page-header.exercise_title
+            Rehearse
+            = @exercise.title
+        .panel-body
+          = render 'form'
+        .panel-body
+          = link_to "Back to #{@exercise.title} exercise page", @exercise, class: "btn btn-default"
