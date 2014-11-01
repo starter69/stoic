@@ -28,6 +28,7 @@ class RehearsalsController < ApplicationController
 
   # GET /rehearsals/1/edit
   def edit
+    @exercise = @rehearsal.exercise
   end
 
   # POST /rehearsals
