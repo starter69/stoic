@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-has_many :exercises
+  has_many :exercises
+
+  class MyMailer < Devise::Mailer
+    helper :application # gives access to all helpers defined within `application_helper`.
+    include Devise::Controllers::UrlHelpers # Optional. eg. `confirmation_url`
+  end
 
 end

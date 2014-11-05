@@ -28,6 +28,7 @@ class MyDevise::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_up_path_for(resource)
+    set_flash_message :notice, :signed_up
     new_user_session_path
   end
 end

@@ -28,10 +28,10 @@
       - nav_link(edit_user_registration_path) do
         = link_to "#{current_user.email}", edit_user_registration_path
       - nav_link(destroy_user_session_path) do
-        = link_to 'Sign Out', destroy_user_session_path, method: :delete
+        = link_to "Sign Out&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, destroy_user_session_path, method: :delete
     - else
       - nav_link(new_user_registration_path) do
         = link_to "Sign Up", new_user_registration_path
       - nav_link(new_user_session_path) do
-        = link_to "Sign In", new_user_session_path
+        = link_to "Sign In&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, new_user_session_path
 
