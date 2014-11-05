@@ -22,7 +22,7 @@
     .col-md-4
       - if can? :update, @exercise
         = link_to 'Edit Exercise', edit_exercise_path(@exercise), class: "btn btn-default"
-        = link_to 'Delete Exercise', @exercise, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default"
+        = link_to 'Delete Exercise', @exercise, :method => :delete, :data => { :confirm => "Are you certain that you'd like to delete this philosophical exercise?" }, class: "btn btn-default"
   %h3.page-header.exercise_title
     Past Rehearsals
   %table.table.table-striped.table-condensed.table-responsive

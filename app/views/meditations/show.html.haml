@@ -1,12 +1,22 @@
-%p#notice= notice
+.container
+  .row
+    .col-md-8
+      %h3.page-header.meditation_title
+        An original meditation from Marcus Aurelius
+      .panel.panel-primary
+        %p#notice= notice
 
-%p
-  %b Title:
-  = @meditation.title
-%p
-  %b Passage:
-  = @meditation.passage
+        %h4.panel-heading
+          = @meditation.title
+        %h2.panel-body
+          .page-header.second_row_title
+            .small
+              = @meditation.passage
 
-= link_to 'Edit', edit_meditation_path(@meditation)
-\|
-= link_to 'Back', meditations_path
+        = link_to 'Back to List of Meditations', meditations_path, class: "btn btn-default"
+        %br
+        %br
+        - if can? :update, @meditations
+          = link_to 'Edit Meditation', edit_meditation_path(@meditation)
+
+

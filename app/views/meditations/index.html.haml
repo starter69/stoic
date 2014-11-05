@@ -1,28 +1,29 @@
+.container
+  .row
+
+    %h2.page-header.meditation_title The Meditations of Marcus Aurelius
+    %h3.page-header.meditation_title.second_row_title
+      .small
+        Use these meditations from the Roman Emperor and Stoic philosopher Marcus Aurelius (CE 121-180) to inspire your own daily thoughts and Stoic practice.
+
+.container
+  .row
+    .panel.panel-primary
+      %table.table.table-striped.table-responsive
+        %tr
+          %th Meditation from Marcus Aurelius
 
 
-%h1 The Meditations of Marcus Aurelius
+        - @meditations.each do |meditation|
+          %tr
+            %td= link_to meditation.title, meditation, class: "btn btn-primary"
+            - if can? :update, meditation
+              %td= meditation.created_at.strftime("%d %b. %Y")
+              %td= link_to 'Edit', edit_meditation_path(meditation)
+              %td= link_to 'Destroy', meditation, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%h4
-  Use these meditations from the Roman Emperor and Stoic philosopher Marcus Aurelius (CE 121-180) to inspire your own daily thoughts and Stoic practice.
 
-%table
-  %tr
-    %th Title
-    %th Passage
-    %th
-    %th
-    %th
 
-  - @meditations.each do |meditation|
-    %tr
-      %td= meditation.title
-      %td= meditation.passage
-      %td= meditation.created_at.strftime("%d %b. %Y")
-      %td= link_to 'Show', meditation
-      - if can? :update, meditation
-        %td= link_to 'Edit', edit_meditation_path(meditation)
-        %td= link_to 'Destroy', meditation, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-- if can? :update, @meditations
-  = link_to 'New Meditation', new_meditation_path
+      %br
+      - if can? :update, @meditations
+        = link_to 'New Meditation', new_meditation_path
