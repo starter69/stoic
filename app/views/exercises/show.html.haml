@@ -23,6 +23,13 @@
       - if can? :update, @exercise
         = link_to 'Edit Exercise', edit_exercise_path(@exercise), class: "btn btn-default"
         = link_to 'Delete Exercise', @exercise, :method => :delete, :data => { :confirm => "Are you certain that you'd like to delete this philosophical exercise?" }, class: "btn btn-default"
+      - if @exercise.global
+        .label.label-info Global Exercise
+      - else
+        %br
+        %br
+        .label.label-success Custom Exercise
+
   %h3.page-header.exercise_title
     Past Rehearsals
   %table.table.table-striped.table-condensed.table-responsive
@@ -39,12 +46,19 @@
         %td= link_to 'Edit', edit_rehearsal_path(rehearsal)
         - rehearsal.e_answers.each do |e_answer|
           %td= e_answer.answer
+
   - if @exercise.global
     %br
-    .panel.panel-warning
+    .panel.panel-info
       .panel-heading
         %b Stoic Compass Expert Exercise
         This exercise is published globally across all of Stoic Compass and its users.
+  - else
+    %br
+    .panel.panel-success
+      .panel-heading
+        %b Custom Exercise
+        This is a  custom exercise created and owned only by you.
 .container
   .row
     .col-md-8
