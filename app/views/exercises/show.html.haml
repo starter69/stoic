@@ -24,6 +24,8 @@
         = link_to 'Edit Exercise', edit_exercise_path(@exercise), class: "btn btn-default"
         = link_to 'Delete Exercise', @exercise, :method => :delete, :data => { :confirm => "Are you certain that you'd like to delete this philosophical exercise?" }, class: "btn btn-default"
       - if @exercise.global
+        %br
+        %br
         .label.label-info Global Exercise
       - else
         %br
