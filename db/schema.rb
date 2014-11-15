@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009070951) do
+ActiveRecord::Schema.define(version: 20141115180040) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -61,6 +61,16 @@ ActiveRecord::Schema.define(version: 20141009070951) do
     t.datetime "updated_at"
   end
 
+  create_table "exercise_taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "exercise_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "exercise_taggings", ["exercise_id"], name: "index_exercise_taggings_on_exercise_id"
+  add_index "exercise_taggings", ["tag_id"], name: "index_exercise_taggings_on_tag_id"
+
   create_table "exercises", force: true do |t|
     t.string   "title"
     t.string   "general_description"
@@ -70,6 +80,16 @@ ActiveRecord::Schema.define(version: 20141009070951) do
     t.integer  "user_id"
     t.boolean  "global"
   end
+
+  create_table "meditation_taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "meditation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "meditation_taggings", ["meditation_id"], name: "index_meditation_taggings_on_meditation_id"
+  add_index "meditation_taggings", ["tag_id"], name: "index_meditation_taggings_on_tag_id"
 
   create_table "meditations", force: true do |t|
     t.string   "title"
@@ -85,6 +105,12 @@ ActiveRecord::Schema.define(version: 20141009070951) do
     t.datetime "updated_at"
     t.integer  "exercise_id"
     t.integer  "user_id"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

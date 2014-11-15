@@ -12,5 +12,12 @@
   .field
     = f.label :passage
     = f.text_area :passage
+  .field
+    = f.label :tag_list, "Category Tags"
+    %br
+    = f.label :tag_list, "(Separated by commas,"
+    %br
+    = f.label :tag_list, "e.g. Assent, Sex, Freedom)"
+    = f.text_area :tag_list, class: "form-control", rows: "4"
   .actions
     = f.submit 'Save'

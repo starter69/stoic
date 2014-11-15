@@ -4,9 +4,8 @@ StoicCompass::Application.routes.draw do
   devise_for :users, controllers: {registrations: "my_devise/registrations"}
 
   resources :rehearsals
-
   resources :exercises
-
+  resources :meditations
 
   get "index" => "welcome#index"
   get "about" => "welcome#about"
@@ -19,8 +18,7 @@ StoicCompass::Application.routes.draw do
   get "doctrines_disciplines_intro" => "doctrines#disciplines_intro"
   get "doctrines_dogmas_intro" => "doctrines#dogmas_intro"
   get "users" => "users#index"
-  resources :meditations
-
+  get "tags/:tag", to: "tags#index", as: :tag
 
   root "welcome#index"
 

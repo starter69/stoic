@@ -1,0 +1,43 @@
+.container
+  .row
+    %h2.page-header
+      Stoic Exercises, Meditations and Doctrines
+      %br
+      Tagged in the Philosophical Category of
+      %u
+        = "#{params[:tag]}"
+    %h3.page-header.exercise_title
+      = "#{params[:tag]}"
+      Exercises
+    .panel.panel-warning
+      %table.table.table-striped.table-condensed.table-responsive
+        %tr
+          %th Exercise
+          %th
+          %th General description
+        / - @global_exercises.each do |global_exercise|
+        /   %tr{class: "exercise_#{global_exercise.id}"}
+        /     %td= link_to global_exercise.title, global_exercise, class: "btn btn-default"
+        /     %td= link_to 'Rehearse', new_rehearsal_path(:exercise => global_exercise.id), class: "btn btn-warning"
+        /     %td= global_exercise.general_description
+        - @exercises.each do |exercise|
+          %tr{class: "exercise_#{exercise.id}"}
+            %td= link_to exercise.title, exercise, class: "btn btn-default"
+            %td= link_to 'Rehearse', new_rehearsal_path(:exercise => exercise.id), class: "btn btn-warning"
+            %td= exercise.general_description
+
+    %h3.page-header.meditation_title
+      = "#{params[:tag]}"
+      Meditations from Marcus Aurelius
+    .panel.panel-primary
+      %table.table.table-striped.table-responsive
+        %tr
+          %th Meditation from Marcus Aurelius
+        - @meditations.each do |meditation|
+          %tr
+            %td= link_to meditation.title, meditation, class: "btn btn-primary"
+
+
+    %h3.page-header.doctrine_title
+      = "#{params[:tag]}"
+      Stoic Doctrines
