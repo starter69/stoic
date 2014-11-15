@@ -15,16 +15,20 @@
           %th Exercise
           %th
           %th General description
-        / - @global_exercises.each do |global_exercise|
-        /   %tr{class: "exercise_#{global_exercise.id}"}
-        /     %td= link_to global_exercise.title, global_exercise, class: "btn btn-default"
-        /     %td= link_to 'Rehearse', new_rehearsal_path(:exercise => global_exercise.id), class: "btn btn-warning"
-        /     %td= global_exercise.general_description
+          %th
+        - @global_exercises.each do |global_exercise|
+          %tr{class: "exercise_#{global_exercise.id}"}
+            %td= link_to global_exercise.title, global_exercise, class: "btn btn-default"
+            %td= link_to 'Rehearse', new_rehearsal_path(:exercise => global_exercise.id), class: "btn btn-warning"
+            %td= global_exercise.general_description
+            %td{class: "label label-info"} Global Exercise
         - @exercises.each do |exercise|
           %tr{class: "exercise_#{exercise.id}"}
             %td= link_to exercise.title, exercise, class: "btn btn-default"
             %td= link_to 'Rehearse', new_rehearsal_path(:exercise => exercise.id), class: "btn btn-warning"
             %td= exercise.general_description
+            %td{class: "label label-info"} Custom Exercise
+
 
     %h3.page-header.meditation_title
       = "#{params[:tag]}"
