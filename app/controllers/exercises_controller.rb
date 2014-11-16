@@ -80,6 +80,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
-      params.require(:exercise).permit(:_destroy, :title, :general_description, :category, :global, e_questions_attributes: [:id, :question, :_destroy])
+      params.require(:exercise).permit(:_destroy, :title, :general_description, :category, :global, :tag_list, e_questions_attributes: [:id, :question, :_destroy])
     end
 end

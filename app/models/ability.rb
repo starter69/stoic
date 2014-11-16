@@ -13,6 +13,7 @@ class Ability
         can :read, Rehearsal, :user_id => user.id
         can :destroy, Rehearsal, :user_id => user.id
         can :create, Rehearsal
+        cannot :index, Rehearsal
         can :update, Rehearsal, :user_id => user.id
         can :update, Exercise, :user_id => user.id
         can :create, Exercise, :user_id => user.id

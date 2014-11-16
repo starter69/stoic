@@ -1,17 +1,20 @@
-= form_for @meditation do |f|
-  - if @meditation.errors.any?
+%h1 New Doctrine Tag
+
+
+= link_to 'Back', doctrines_index_path
+
+
+= form_for @doctrine do |f|
+  - if @doctrine.errors.any?
     #error_explanation
       %h2= "#{pluralize(@meditation.errors.count, "error")} prohibited this meditation from being saved:"
       %ul
-        - @meditation.errors.full_messages.each do |msg|
+        - @doctrine.errors.full_messages.each do |msg|
           %li= msg
 
   .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :passage
-    = f.text_area :passage
+    = f.label :doctrine_file_name
+    = f.text_field :file_name
   .field
     = f.label :tag_list, "Category Tags"
     %br

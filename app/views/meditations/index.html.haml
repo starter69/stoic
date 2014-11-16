@@ -1,6 +1,5 @@
 .container
   .row
-
     %h2.page-header.meditation_title The Meditations of Marcus Aurelius
     %h3.page-header.meditation_title.second_row_title
       .small
@@ -12,17 +11,15 @@
       %table.table.table-striped.table-responsive
         %tr
           %th Meditation from Marcus Aurelius
-
-
+          %th
         - @meditations.each do |meditation|
           %tr
             %td= link_to meditation.title, meditation, class: "btn btn-primary"
+            %td= raw meditation.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
             - if can? :update, meditation
               %td= meditation.created_at.strftime("%d %b. %Y")
               %td= link_to 'Edit', edit_meditation_path(meditation)
               %td= link_to 'Destroy', meditation, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-
 
       %br
       - if can? :update, @meditations

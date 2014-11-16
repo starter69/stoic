@@ -19,11 +19,14 @@
         = f.label :general_description
       = f.text_area :general_description, class: "form-control", rows: "4"
     %br
-    .form-inline.form-group
-      .input-group
-        .input-group-addon
-          = f.label :category
-        = f.text_field :category, class: "form-control"
+    .input-group
+      .input-group-addon
+        = f.label :tag_list, "Category Tags"
+        %br
+        = f.label :tag_list, "(Separated by commas,"
+        %br
+        = f.label :tag_list, "e.g. Assent, Sex, Freedom)"
+      = f.text_area :tag_list, class: "form-control", rows: "4"
 
     %h3.page-header.exercise_title Exercise Questions
     .input-group

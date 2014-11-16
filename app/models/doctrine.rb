@@ -1,9 +1,9 @@
-class Meditation < ActiveRecord::Base
-  has_many :meditation_taggings
-  has_many :tags, through: :meditation_taggings
+class Doctrine < ActiveRecord::Base
+  has_many :doctrine_taggings
+  has_many :tags, through: :doctrine_taggings
 
   def self.tagged_with(name)
-    Tag.find_by_name!(name).meditations
+    Tag.find_by_name!(name).doctrines
   end
 
   def tag_list

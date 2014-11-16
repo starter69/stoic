@@ -72,6 +72,6 @@ class MeditationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meditation_params
-      params.require(:meditation).permit(:title, :passage)
+      params.require(:meditation).permit(:title, :passage, :tag_list)
     end
 end

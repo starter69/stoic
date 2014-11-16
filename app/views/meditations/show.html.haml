@@ -12,7 +12,10 @@
           .page-header.second_row_title
             .small
               = @meditation.passage
-
+        %p
+          %b
+            Philosophical Category Tags:
+          = raw @meditation.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
         = link_to 'Back to List of Meditations', meditations_path, class: "btn btn-default"
         %br
         %br
