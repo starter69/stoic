@@ -19,6 +19,9 @@ class Ability
         can :create, Exercise, :user_id => user.id
         can :destroy, Exercise, :user_id => user.id
         cannot :update, Meditation
+        can :manage, Doctrine
+        cannot :create, Doctrine
+        cannot :update, Doctrine
       end
     #
     # The first argument to `can` is the action you are giving the user
