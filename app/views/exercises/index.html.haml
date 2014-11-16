@@ -8,7 +8,7 @@
           %th Exercise
           %th
           %th General description
-          %th Philosophical Categories
+          %th Philosophical Category Tags
         - @global_exercises.each do |global_exercise|
           %tr{class: "exercise_#{global_exercise.id}"}
             %td= link_to global_exercise.title, global_exercise, class: "btn btn-default"
@@ -28,7 +28,7 @@
           %th Exercise
           %th
           %th General description
-          %th Categories
+          %th Philosophical Category Tags
         - @exercises.each do |exercise|
           %tr{class: "exercise_#{exercise.id}"}
             %td= link_to exercise.title, exercise, class: "btn btn-default"

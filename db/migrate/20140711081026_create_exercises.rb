@@ -4,7 +4,6 @@ class CreateExercises < ActiveRecord::Migration
       t.string :title
       t.string :general_description
       t.text :text_question
-      t.string :category
 
       t.timestamps
     end

@@ -6,11 +6,13 @@ StoicCompass::Application.routes.draw do
   resources :rehearsals
   resources :exercises
   resources :meditations
+  resources :doctrines
 
   get "index" => "welcome#index"
   get "about" => "welcome#about"
   get "contact" => "welcome#contact"
   get "doctrines_index" => "doctrines#index"
+  get "doctrines_new" => "doctrines#new"
   get "doctrines_introduction" => "doctrines#introduction"
   get "doctrines_assent" => "doctrines#assent"
   get "doctrines_desire" => "doctrines#desire"
@@ -19,7 +21,6 @@ StoicCompass::Application.routes.draw do
   get "doctrines_dogmas_intro" => "doctrines#dogmas_intro"
   get "users" => "users#index"
   get "tags/:tag", to: "tags#index", as: :tag
-
   root "welcome#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

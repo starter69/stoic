@@ -1,0 +1,26 @@
+%h1 New Doctrine Tag
+
+
+= link_to 'Back', doctrines_index_path
+
+
+= form_for @doctrine do |f|
+  - if @doctrine.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@meditation.errors.count, "error")} prohibited this meditation from being saved:"
+      %ul
+        - @doctrine.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :doctrine_file_name
+    = f.text_field :file_name
+  .field
+    = f.label :tag_list, "Category Tags"
+    %br
+    = f.label :tag_list, "(Separated by commas,"
+    %br
+    = f.label :tag_list, "e.g. Assent, Sex, Freedom)"
+    = f.text_area :tag_list, class: "form-control", rows: "4"
+  .actions
+    = f.submit 'Save'

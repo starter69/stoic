@@ -1,9 +1,8 @@
+
 .container
   .row
-    %h2.page-header
-      Stoic Exercises, Meditations and Doctrines
-      %br
-      Tagged in the Philosophical Category of
+    %h3.page-header
+      Features tagged in the Philosophical Category of
       %u
         = "#{params[:tag]}"
     %h3.page-header.exercise_title
@@ -49,3 +48,6 @@
     %h3.page-header.doctrine_title
       = "#{params[:tag]}"
       Stoic Doctrines
+    = @doctrines.each do |doctrine|
+      = render file: "doctrines/#{doctrine.file_name}.html.haml"
+
