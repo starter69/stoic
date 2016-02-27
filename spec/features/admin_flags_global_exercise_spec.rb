@@ -21,6 +21,7 @@ RSpec.feature 'Admin Flags Global Exercise' do
   # tick global checkbox next to an exercise
   def check_if_exercise_now_tagged_as_global
     expect(@exercise.global?).to eq true
+    # expect(@exercise.title).to eq 1
   end
 
   # untick global checkbox next to an exercise

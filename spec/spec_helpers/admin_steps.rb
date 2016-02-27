@@ -21,7 +21,7 @@ end
 def flag_it_as_global
   visit edit_exercise_path(@exercise.id)
   check 'exercise[global]'
-  @exercise.global = true
+  fill_in 'exercise_title', with: @exercise.user_id
   click_button "Save Exercise"
   save_and_open_page
 end
@@ -29,7 +29,7 @@ end
 def unflag_it_ie_make_it_local
   visit edit_exercise_path(@exercise.id)
   check 'exercise[global]'
-  @exercise.global = false
   click_button "Save Exercise"
-  save_and_open_page
 end
+
+#The main issue is that I'm cheating. I've been setting @exercise.global = true rather than relying on the interface. I'm testing with fill_in to see what is working and what isn't about the check exexercise[global]. Why does it update in the browser the title, to 1, but in binding.pry it still says the title is the original test title? Is exercise[global] really the right tick box? In essence, we have the same problem. I just tried making the test test for title... and it also shows the title as "test title." So in both cases it appears, what is showing up on the browser is not what the tests are getting. And not just the tests... binding.pry also sees non-updated @exercise. It could be that... hmm... these dummy capybara view updates aren't updating to the actual @exericse... like you can click buttons and do stuff, but it doesn't actually change @exercise. Is that possible?
