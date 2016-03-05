@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20141116142205) do
   create_table "exercises", force: true do |t|
     t.string   "title"
     t.string   "general_description"
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
