@@ -1,11 +1,13 @@
 require 'rails_helper'
 require 'capybara/rails'
-require 'spec_helpers/admin_steps'
+require 'spec_helpers/create_exercise_steps'
+require 'spec_helpers/user_steps'
 
 RSpec.feature 'Admin Flags Global Exercise' do
   before :each do
     sign_in_as_admin
     create_exercise
+    set_exercise_owned_by_admin_user
   end
 
   scenario 'New Exercise created' do
@@ -17,7 +19,7 @@ RSpec.feature 'Admin Flags Global Exercise' do
     check_if_exercise_is_local
   end
 
-  scenario 'Exercise should be flaggable as global' do
+  scenario 'User CAN flag Exercise as Global' do
     visit_edit_exercise_page
     flag_it_as_global
     check_if_exercise_now_tagged_as_global
