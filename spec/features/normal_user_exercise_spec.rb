@@ -22,7 +22,6 @@ RSpec.feature 'Normal User Manages Exercise' do
   scenario 'User CANNOT flag Exercise as Global' do
     visit_exercise_page
     check_that_edit_exercise_link_is_removed
-    check_if_exercise_still_tagged_as_local
   end
  
   def check_if_exercise_created
