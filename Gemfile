@@ -19,6 +19,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'sandi_meter'
 end
 
 group :production do
