@@ -15,5 +15,4 @@ class Meditation < ActiveRecord::Base
       Tag.where(name: n.strip).first_or_create!
     end
   end
-
 end

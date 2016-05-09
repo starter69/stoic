@@ -29,7 +29,6 @@
 
   # GET /exercises/1/edit
   def edit
-
   end
 
   # POST /exercises
