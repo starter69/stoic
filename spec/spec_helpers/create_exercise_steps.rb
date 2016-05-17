@@ -5,6 +5,14 @@ def create_exercise
   @exercise.save!
 end
 
+def create_rehearsal
+  @rehearsal = Rehearsal.new
+  @rehearsal.tally = 2
+  @rehearsal.exercise_id = 1
+  @rehearsal.user_id = 1
+  @rehearsal.save!
+end
+
 def create_e_question
   @e_question = EQuestion.new
   @e_question.exercise_id = 1
@@ -16,6 +24,7 @@ def create_e_answer
   @e_answer = EAnswer.new
   @e_answer.e_question_id = 1
   @e_answer.answer = "Yes, I practice it every day."
+  @e_answer.rehearsal_id = 1
   @e_answer.save!
 end
 
