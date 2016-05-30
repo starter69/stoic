@@ -7,6 +7,7 @@ end
 
 def create_rehearsal
   @rehearsal = Rehearsal.new
+  @rehearsal.id = 1
   @rehearsal.tally = 2
   @rehearsal.exercise_id = 1
   @rehearsal.user_id = 1

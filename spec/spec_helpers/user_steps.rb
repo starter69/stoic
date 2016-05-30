@@ -1,5 +1,6 @@
-def create_normal_user
+def create_normal_user(id)
   @normal_user = User.new
+  @normal_user.id = id
   @normal_user.admin = false
   @normal_user.email = "henry_normal_user@gmail.com"
   @normal_user.password = "feastoftheepiphany"
@@ -7,7 +8,7 @@ def create_normal_user
 end
 
 def sign_in_as_normal_user
-  create_normal_user
+  create_normal_user(1)
   visit new_user_session_path
   fill_in "user_email", with: "henry_normal_user@gmail.com"
   fill_in "user_password", with: "feastoftheepiphany"
