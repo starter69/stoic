@@ -20,6 +20,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'sandi_meter'
+  gem 'factory_girl_rails'
 end
 
 group :production do
