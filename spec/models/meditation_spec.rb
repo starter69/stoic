@@ -14,7 +14,7 @@ describe Meditation do
 
     let(:meditation) { create(:meditation) }
     let(:first_tag)  { create(:tag, meditation: meditation, name: 'Seneca') }
-    let(:second_tag) { create(:tag, meditation: meditation, name: 'Matthias') }
+    let(:second_tag) { create(:tag, meditation: meditation, name: 'Epictetus') }
 
     it 'returns a comma separated string of tag names' do
       expect(subject).to eq 'Seneca, Matthias'
