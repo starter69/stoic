@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :meditation do
-    title    'Was Ich von Meiner Familie Gelernt Habe'
+    title    'Dankenliste'
     passage  'Von ruhmvollen Andenken meines Vaters erhielt ich den Antrieb zu einem bescheidenen und zugleich männlichen Wesen.'
     category 'Dankeliste'
   end

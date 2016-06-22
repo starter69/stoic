@@ -8,13 +8,38 @@ require 'rails_helper'
 #    it "is taggable via meditation_taggings and tags"
 #end
 
-describe Meditation do
-  describe '#tag_list' do
-    subject { meditation.tag_list }
+#Matthias: FactoryGirl, 3 core methods for building: create, build, and build_stubb. First use create to have most confidence. Build_stubb is less expensive as it does not save to the database. It creates a 'fake' id for the Model to talk to for associations etc.
 
-    let(:meditation) { create(:meditation) }
-    let(:first_tag)  { create(:tag, meditation: meditation, name: 'Seneca') }
-    let(:second_tag) { create(:tag, meditation: meditation, name: 'Epictetus') }
+#Next Step as of June 22 2016: 
+# For some reason my calling even a simple "title" on the FactoryGirl "meditation" is failing. Get that working. One thing that I learned is that, and maybe confirm this with Matthias, but it appears from Everyday Rails page 57 that I DO need to actually CALL FactoryGirl in each Spec and CREATE, BUILD, or BUILD_STUBB in order to actually make USE of the configuration in my spec/factory/meditation Factory. I am making that call here, below. As Matthias pointed out I can use Let to MERGE or ADD to or OVERRIDE a Factory if I would like to. This is on occasion of use for example if I want to test a specific Model saving.
+
+describe Meditation do
+
+  describe '#title' do
+    FactoryGirl.create(:meditation)
+    subject { meditation.title }
+
+    it 'has a valid factory' do
+      expect(FactoryGirl.build(:meditation)).to be_valid
+    end
+                                                                                           
+    it 'returns a Meditation title' do
+      expect(subject).to eq 'Dankenliste'
+    end
+  end
+
+  describe '#tag_list' do
+    FactoryGirl.create(:meditation)
+    subject { meditation.tag_list }
+#    let(:meditation) do
+#      create(:meditation, title: "MA", passage: "blah", category: "Discipline of Assent")
+#    end
+
+#    let(:first_tag)  { create(:tag, meditation: meditation, name: 'Seneca') }
+#    let(:second_tag) { create(:tag, meditation: meditation, name: 'Epictetus') }
+    it 'has a valid factory' do
+      expect(FactoryGirl.build(:meditation)).to be_valid
+    end
 
     it 'returns a comma separated string of tag names' do
       expect(subject).to eq 'Seneca, Matthias'
