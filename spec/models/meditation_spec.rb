@@ -16,65 +16,59 @@ require 'rails_helper'
 describe Meditation do
 
   describe '#title' do
-    FactoryGirl.create(:meditation)
+    meditation = FactoryGirl.create(:meditation)
     subject { meditation.title }
-
     it 'has a valid factory' do
       expect(FactoryGirl.build(:meditation)).to be_valid
     end
-                                                                                           
+
     it 'returns a Meditation title' do
       expect(subject).to eq 'Dankenliste'
     end
   end
 
   describe '#tag_list' do
-    FactoryGirl.create(:meditation)
-    subject { meditation.tag_list }
-#    let(:meditation) do
-#      create(:meditation, title: "MA", passage: "blah", category: "Discipline of Assent")
-#    end
+    meditation = FactoryGirl.create(:meditation)
+    subject { meditation.tags }
 
-#    let(:first_tag)  { create(:tag, meditation: meditation, name: 'Seneca') }
-#    let(:second_tag) { create(:tag, meditation: meditation, name: 'Epictetus') }
     it 'has a valid factory' do
-      expect(FactoryGirl.build(:meditation)).to be_valid
+      expect(FactoryGirl.create(:meditation).tags).to be_valid
     end
 
     it 'returns a comma separated string of tag names' do
       expect(subject).to eq 'Seneca, Matthias'
     end
   end
-
-  describe '#allows?' do
-    subject { bouncer.allows?(person) }
-
-    let(:bouncer) { create(:bouncer) }
-    let(:person) { create(:person, :perfect, age: age)}
-
-    it { is_expected.to be_truthy }
-
-    context 'when person famous' do
-      let(:bouncer) { create(:bouncer) }
-      it 'returns true' do
-        person = create(:person, :famous)
-        expect(bouncer.allows?(person)).to eq true
-      end
-    end
-
-    context 'when too short' do
-      let(:person) { create(:person, :too_short) }
-      it { is_expected.to be_falsey }
-    end
-
-    context 'when too ugly' do
-      let(:person) { create(:person, :too_ugly) }
-      it { is_expected.to be_falsey }
-    end
-
-    context 'when person too young' do
-      let(:person) { create(:person, :too_young) }
-      it { is_expected.to be_falsey }
-    end
-  end
+#
+#  describe '#allows?' do
+#    subject { bouncer.allows?(person) }
+#
+#    let(:bouncer) { create(:bouncer) }
+#    let(:person) { create(:person, :perfect, age: age)}
+#
+#    it { is_expected.to be_truthy }
+#
+#    context 'when person famous' do
+#      let(:bouncer) { create(:bouncer) }
+#      it 'returns true' do
+#        person = create(:person, :famous)
+#        expect(bouncer.allows?(person)).to eq true
+#      end
+#    end
+#
+#    context 'when too short' do
+#      let(:person) { create(:person, :too_short) }
+#      it { is_expected.to be_falsey }
+#    end
+#
+#    context 'when too ugly' do
+#      let(:person) { create(:person, :too_ugly) }
+#      it { is_expected.to be_falsey }
+#    end
+#
+#    context 'when person too young' do
+#      let(:person) { create(:person, :too_young) }
+#      it { is_expected.to be_falsey }
+#    end
+#  end
 end

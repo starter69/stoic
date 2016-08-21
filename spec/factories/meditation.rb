@@ -4,12 +4,12 @@ FactoryGirl.define do
     passage  'Von ruhmvollen Andenken meines Vaters erhielt ich den Antrieb zu einem bescheidenen und zugleich männlichen Wesen.'
     category 'Dankeliste'
   end
-end
 
-FactoryGirl.define do
-  factory :tags do
-  name 'Seneca'
-  name 'Epictetus'
-  association :meditation, through: :meditation_taggings
+  factory :tag do
+    association :meditation
+  end
+
+  after(:create) do |meditation|
+      meditation.tags << FactoryGirl.create(:tag, name: "Seneca", name: "Epictetus")
   end
 end
