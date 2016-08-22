@@ -28,15 +28,16 @@ describe Meditation do
   end
 
   describe '#tag_list' do
-    meditation = FactoryGirl.create(:meditation)
-    subject { meditation.tags }
-
+    meditation = FactoryGirl.create(:meditation, :with_tag)
+    tags = meditation.tags
     it 'has a valid factory' do
       expect(FactoryGirl.create(:meditation).tags).to be_valid
     end
 
     it 'returns a comma separated string of tag names' do
-      expect(subject).to eq 'Seneca, Matthias'
+      binding.pry
+      expect(tags.name).to eq 'Z'
+      #How can I get the RSPEC tags object... to give up the "name" attribute? Google different ways to access Ruby object attributes... & maybe RSPEC objects...
     end
   end
 #

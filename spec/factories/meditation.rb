@@ -6,11 +6,13 @@ FactoryGirl.define do
   end
 
   factory :tag do
-    association :meditation
+    name 'Love and Roses 2'
   end
 
-  after(:create) do |meditation|
-      meditation.tags << FactoryGirl.create(:tag, name: "Seneca", name: "Epictetus")
+  trait :with_tag do
+    after(:create) do |meditation|
+        meditation.tags << create(:tag, name: "Z")
+    end
   end
 end
 
