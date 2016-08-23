@@ -33,6 +33,7 @@ describe Meditation do
     binding.pry
     it 'has a valid factory' do
       expect(tags).to be_valid
+      #returning an Active Record Associations Object... should it be an RSPEC Factory object?
     end
 
     it 'returns a list of tag names' do
