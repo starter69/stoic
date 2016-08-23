@@ -11,7 +11,8 @@ FactoryGirl.define do
 
   trait :with_tag do
     after(:create) do |meditation|
-        meditation.tags << create(:tag, name: "Napoleon3", created_at: '2016-08-22 21:02:56')
+      #meditation.tags << create(:tag, name: "Germany")
+      meditation.tags << create(:tag, name: "Franc")
     end
   end
 end

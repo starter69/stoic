@@ -30,13 +30,14 @@ describe Meditation do
   describe '#tag_list' do
     meditation = FactoryGirl.create(:meditation, :with_tag)
     tags = meditation.tags
+    binding.pry
     it 'has a valid factory' do
-      expect(FactoryGirl.create(:meditation).tags).to be_valid
+      expect(tags).to be_valid
     end
 
-    it 'returns a comma separated string of tag names' do
-      binding.pry
-      expect(tags.each { |tag| puts tag.name }).to eq 'Napoleon'
+    it 'returns a list of tag names' do
+      expect(tags.each { |tag| tag.name }).to eq 'H Kaiser W'
+        #In our normal application... I mean, from the Model perspective... how can I get an object to return me a quote unqoute comma-separated string of tag names? I mean... what about, I can just get a list of its tags named? well.. a .each do list. And I just tested that in the Controller. And now the only question is, how do you use RSPEC to test for a list? The other question is... how do we get out of this, it's returning a whole object instead of JUST the name...  RSPEC and loops... PLUS lastly the validation problem, how can I refresh the RSPEC test data each time, or have it not save permanently to the database?
     end
   end
 #
