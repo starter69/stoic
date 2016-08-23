@@ -36,8 +36,7 @@ describe Meditation do
 
     it 'returns a comma separated string of tag names' do
       binding.pry
-      expect(tags.name).to eq 'Z'
-      #How can I get the RSPEC tags object... to give up the "name" attribute? Google different ways to access Ruby object attributes... & maybe RSPEC objects...
+      expect(tags.each { |tag| puts tag.name }).to eq 'Napoleon'
     end
   end
 #
