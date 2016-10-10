@@ -155,6 +155,7 @@ GEM
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.1)
+    rb-readline (0.5.3)
     rdoc (4.1.1)
       json (~> 1.4)
     responders (1.0.0)
@@ -235,6 +236,7 @@ DEPENDENCIES
   pry
   rails (= 4.0.4)
   rails_12factor
+  rb-readline
   rspec-rails
   sandi_meter
   sass-rails (~> 4.0.0)

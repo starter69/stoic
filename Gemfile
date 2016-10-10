@@ -21,6 +21,8 @@ group :development, :test do
   gem 'launchy'
   gem 'sandi_meter'
   gem 'factory_girl_rails'
+  #Needed in new OS X Sierra for this version of Ruby with Pry
+  gem 'rb-readline'
 end
 
 group :production do

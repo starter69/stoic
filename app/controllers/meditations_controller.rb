@@ -8,7 +8,6 @@ class MeditationsController < ApplicationController
   # GET /meditations.json
   def index
     @meditations = Meditation.all
-    binding.pry
   end
 
   # GET /meditations/1
