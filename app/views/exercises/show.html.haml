@@ -50,7 +50,7 @@
         %td= Time.zone.name
         %td= link_to 'Edit', edit_rehearsal_path(rehearsal)
         - rehearsal.e_answers.each do |e_answer|
-          %td= e_answer.answer
+          %td= truncate(e_answer.answer, length: 50)
 
   - if @exercise.global
     %br
