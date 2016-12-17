@@ -79,6 +79,6 @@ class RehearsalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rehearsal_params
-      params.require(:rehearsal).permit(:tally, :exercise_id, e_answers_attributes: [:answer, :e_question_id])
+      params.require(:rehearsal).permit(:tally, :exercise_id, e_answers_attributes: [:id, :answer, :e_question_id, :_destroy])
     end
 end
