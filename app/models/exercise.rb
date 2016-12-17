@@ -26,7 +26,6 @@ class Exercise < ActiveRecord::Base
   end
 
   def maximum_number_of_e_questions
-    binding.pry
     errors.add(:base, "You may only add a maximum of 7 questions to an exercise at this time. Otherwise, the exercise becomes too long and wide for the webpage.") unless e_questions.count > 7
   end
 end
