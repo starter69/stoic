@@ -49,6 +49,7 @@
         %td= rehearsal.created_at.strftime("%B %d, %Y at %H:%M")
         %td= Time.zone.name
         %td= link_to 'Edit', edit_rehearsal_path(rehearsal)
+        %td= link_to 'Show', rehearsal_path(rehearsal)
         - rehearsal.e_answers.each do |e_answer|
           %td= truncate(e_answer.answer, length: 100)
 
