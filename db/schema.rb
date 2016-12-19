@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,58 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116142205) do
+ActiveRecord::Schema.define(version: 20161219231348) do
 
-  create_table "active_admin_comments", force: true do |t|
-    t.string   "namespace"
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string   "namespace",     limit: 255
     t.text     "body"
-    t.string   "resource_id",   null: false
-    t.string   "resource_type", null: false
+    t.string   "resource_id",   limit: 255, null: false
+    t.string   "resource_type", limit: 255, null: false
     t.integer  "author_id"
-    t.string   "author_type"
+    t.string   "author_type",   limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
-
-  create_table "admin_users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "admin_users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
-  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
-
-  create_table "doctrine_taggings", force: true do |t|
+  create_table "doctrine_taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "doctrine_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["doctrine_id"], name: "index_doctrine_taggings_on_doctrine_id"
+    t.index ["tag_id"], name: "index_doctrine_taggings_on_tag_id"
   end
 
-  add_index "doctrine_taggings", ["doctrine_id"], name: "index_doctrine_taggings_on_doctrine_id"
-  add_index "doctrine_taggings", ["tag_id"], name: "index_doctrine_taggings_on_tag_id"
-
-  create_table "doctrines", force: true do |t|
-    t.string   "file_name"
+  create_table "doctrines", force: :cascade do |t|
+    t.string   "file_name",  limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "e_answers", force: true do |t|
+  create_table "e_answers", force: :cascade do |t|
     t.integer  "e_question_id"
     t.text     "answer"
     t.datetime "created_at"
@@ -70,82 +66,80 @@ ActiveRecord::Schema.define(version: 20141116142205) do
     t.integer  "rehearsal_id"
   end
 
-  create_table "e_questions", force: true do |t|
+  create_table "e_questions", force: :cascade do |t|
     t.integer  "exercise_id"
     t.text     "question"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "exercise_taggings", force: true do |t|
+  create_table "exercise_taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "exercise_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["exercise_id"], name: "index_exercise_taggings_on_exercise_id"
+    t.index ["tag_id"], name: "index_exercise_taggings_on_tag_id"
   end
 
-  add_index "exercise_taggings", ["exercise_id"], name: "index_exercise_taggings_on_exercise_id"
-  add_index "exercise_taggings", ["tag_id"], name: "index_exercise_taggings_on_tag_id"
-
-  create_table "exercises", force: true do |t|
-    t.string   "title"
-    t.string   "general_description"
-    t.string   "category"
+  create_table "exercises", force: :cascade do |t|
+    t.string   "title",               limit: 255
+    t.string   "general_description", limit: 255
+    t.string   "category",            limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.boolean  "global"
   end
 
-  create_table "meditation_taggings", force: true do |t|
+  create_table "meditation_taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "meditation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["meditation_id"], name: "index_meditation_taggings_on_meditation_id"
+    t.index ["tag_id"], name: "index_meditation_taggings_on_tag_id"
   end
 
-  add_index "meditation_taggings", ["meditation_id"], name: "index_meditation_taggings_on_meditation_id"
-  add_index "meditation_taggings", ["tag_id"], name: "index_meditation_taggings_on_tag_id"
-
-  create_table "meditations", force: true do |t|
-    t.string   "title"
+  create_table "meditations", force: :cascade do |t|
+    t.string   "title",      limit: 255
     t.text     "passage"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "category"
+    t.string   "category",   limit: 255
   end
 
-  create_table "rehearsals", force: true do |t|
+  create_table "rehearsals", force: :cascade do |t|
     t.integer  "tally"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "exercise_id"
     t.integer  "user_id"
+    t.string   "city"
   end
 
-  create_table "tags", force: true do |t|
-    t.string   "name"
+  create_table "tags", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
