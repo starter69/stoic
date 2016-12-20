@@ -24,7 +24,7 @@ class RehearsalsController < ApplicationController
     e_questions.each do |e_question|
       @rehearsal.e_answers.build(:e_question_id => e_question.id )
     end
-    @rehearsal_location = request.remote_ip
+    @rehearsal_location = request.location.city
   end
 
   # GET /rehearsals/1/edit
