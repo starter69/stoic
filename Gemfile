@@ -7,6 +7,7 @@ gem 'haml'
 gem 'cocoon', '1.2.6'
 gem 'devise'
 gem 'cancancan', '~> 1.9'
+gem 'geocoder'
 
 #Below needed for ActiveAdmin
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
