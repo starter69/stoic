@@ -41,15 +41,9 @@
       %th Table heading
       %th Table heading
       %th Table heading
-      %th Table heading
-      %th Table heading
-      %th Table heading
   %tbody
     %tr
       %th{:scope => "row"} 1
-      %td Table cell
-      %td Table cell
-      %td Table cell
       %td Table cell
       %td Table cell
       %td Table cell
@@ -58,28 +52,33 @@
       %td Table cell
       %td Table cell
       %td Table cell
-      %td Table cell
-      %td Table cell
-      %td Table cell
     %tr
       %th{:scope => "row"} 3
       %td Table cell
       %td Table cell
       %td Table cell
-      %td Table cell
-      %td Table cell
-      %td Table cell
 
-.col-xs-6
-  %table.table.table-striped.table-condensed.table-responsive
-    %th{style: "width: 25%"} #
-  - @rehearsal.exercise.e_questions.each do |e_question|
-    %tr 
-    %th{:style => "width:25%"}= e_question.question
-    %th{style: "width: 25%"} 1
-  - @rehearsal.e_answers.each do |my_e_answer|
-    %tr
-    %td{:style => "width:10%"}= my_e_answer.answer
+.table-responsive
+  %table.table.table-reflow
+    %thead
+      %tr
+      - @rehearsal.exercise.e_questions.each do |my_e_question|
+        %th= my_e_question.question
+    %tbody
+      %tr
+      - @rehearsal.e_answers.each do |my_e_answer|
+        %td= my_e_answer.answer
+
+/.col-xs-6
+/  %table.table.table-striped.table-condensed.table-responsive
+/    %th{style: "width: 25%"} #
+/  - @rehearsal.exercise.e_questions.each do |e_question|
+/    %tr 
+/    %th{:style => "width:25%"}= e_question.question
+/    %th{style: "width: 25%"} 1
+/  - @rehearsal.e_answers.each do |my_e_answer|
+/    %tr
+/    %td{:style => "width:10%"}= my_e_answer.answer
 
 \|
 = link_to 'Edit', edit_rehearsal_path(@rehearsal)
