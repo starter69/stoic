@@ -37,8 +37,8 @@
       .links
         .clearfix
         %br
-        %h5 There is a limit of 7 questions per exercise. Otherwise the exercise rehearsal page gets too wide.
         = link_to_add_association 'Add New Question', f, :e_questions, class: "btn btn-default"
+        %h5 There is a limit of 7 questions per exercise. Otherwise the exercise rehearsal page gets too wide.
     %br
     - if current_user.admin
       .input-group
@@ -47,6 +47,6 @@
         .input-group-addon
           = f.check_box :global, class: "checkbox"
       %br
-  %center
     .actions
-      = f.submit 'Save Exercise', class: "btn btn-warning btn-lg"
+      %center
+        = f.submit 'Save Exercise', class: "btn btn-warning btn-lg"
