@@ -1,0 +1,29 @@
+%p#notice= notice
+
+%h3
+  %b Answers
+  %b Day
+  %h6= @rehearsal.created_at.strftime("%B %d, %Y, at %H:%M")
+  %h6= link_to 'Edit', edit_rehearsal_path(@rehearsal)
+  %td= Time.zone.name
+  %b Place
+  %h6= @rehearsal.exercise.title
+  %h6= @rehearsal.exercise.general_description
+
+.container
+  .row
+    .col-md-8
+      .panel.panel-warning
+        .panel-heading
+          %h3.page-header.exercise_title
+            .form-group.col-md-8
+              %h3.page-header.exercise_title.second_row_title
+                .panel-body
+                  - @rehearsal.e_answers.each do |e_e_answer|
+                    %tr
+                      %td= e_e_answer.e_question.question
+
+\|
+= link_to 'Edit', edit_rehearsal_path(@rehearsal)
+\|
+= link_to 'Back', rehearsals_path

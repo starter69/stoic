@@ -1,87 +1,30 @@
-%p#notice= notice
-
-%h3
-  %b Answers
-  %b Day
-  %h6= @rehearsal.created_at.strftime("%B %d, %Y, at %H:%M")
-  %h6= link_to 'Edit', edit_rehearsal_path(@rehearsal)
-  %td= Time.zone.name
-  %b Place
-
-.col-xs-6
-  %h2.sub-header Subtitle
-  .table-responsive
-    %table.table.table-striped
-      %thead
-        %tr
-          %th.col-md-1 #
-          %th.col-md-2 Header
-          %th.col-md-3 Header
-      %tbody
-        %tr
-          %td.col-md-1 1,001
-
-.col-xs-6
-  %h2.sub-header Latest Incidents
-  .table-responsive
-    %table.table.table-striped
-      %thead
-        %tr
-          %th.col-md-1 #
-          %th.col-md-2 Header
-          %th.col-md-3 Header
-      %tbody
-        %tr
-          %td.col-md-1 1,001
-
-%table.table.table-reflow
-  %thead
-    %tr
-      %th #
-      %th Table heading
-      %th Table heading
-      %th Table heading
-  %tbody
-    %tr
-      %th{:scope => "row"} 1
-      %td Table cell
-      %td Table cell
-      %td Table cell
-    %tr
-      %th{:scope => "row"} 2
-      %td Table cell
-      %td Table cell
-      %td Table cell
-    %tr
-      %th{:scope => "row"} 3
-      %td Table cell
-      %td Table cell
-      %td Table cell
-
-.table-responsive
-  %table.table.table-reflow
-    %thead
-      %tr
-      - @rehearsal.exercise.e_questions.each do |my_e_question|
-        %th= my_e_question.question
-    %tbody
-      %tr
-      - @rehearsal.e_answers.each do |my_e_answer|
-        %td= my_e_answer.answer
-
-/.col-xs-6
-/  %table.table.table-striped.table-condensed.table-responsive
-/    %th{style: "width: 25%"} #
-/  - @rehearsal.exercise.e_questions.each do |e_question|
-/    %tr 
-/    %th{:style => "width:25%"}= e_question.question
-/    %th{style: "width: 25%"} 1
-/  - @rehearsal.e_answers.each do |my_e_answer|
-/    %tr
-/    %td{:style => "width:10%"}= my_e_answer.answer
-
-\|
-= link_to 'Edit', edit_rehearsal_path(@rehearsal)
-\|
-= link_to 'Back', rehearsals_path
-
+.container
+  .row
+    .col-md-9
+      .panel.panel-warning
+        .panel-heading
+          %h3.page-header.exercise_title
+            Rehearsal of
+            = "#{@exercise.title}"
+            %h4
+              Originally rehearsed in
+              %b 
+                = Time.zone.name
+              on
+              %b
+                = "#{@rehearsal.created_at.strftime("%B %d, %Y at %H:%M")}"
+          .panel-body
+            .form-group.col-md-12
+              %h5.page-header.exercise_title.second_row_title
+                = @exercise.general_description
+                - @rehearsal.e_answers.each_with_index do |e_answer, index|
+                  %tr
+                    %h5.exercise_title
+                      %th= e_answer.e_question.question
+                  %p
+                  %tr
+                    %p
+                      %td= e_answer.answer
+            
+            = link_to "Back to all my rehearsals of #{@exercise.title}", @rehearsal.exercise, class: "btn btn-default"
+            = link_to 'Edit this rehearsal', edit_rehearsal_path(@rehearsal), class: "btn btn-default"

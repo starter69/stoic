@@ -14,6 +14,7 @@ class RehearsalsController < ApplicationController
   # GET /rehearsals/1
   # GET /rehearsals/1.json
   def show
+    @exercise = @rehearsal.exercise
   end
 
   # GET /rehearsals/new
