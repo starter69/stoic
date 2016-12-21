@@ -39,17 +39,16 @@
     Past Rehearsals
   %table.table.table-striped.table-condensed.table-responsive
     %tbody
-    %th Day
-    %th Place
     %th
+    %th Place
+    %th Day
     - @exercise.e_questions.each do |e_question|
-      %th= e_question.question
+      %th= truncate(e_question.question, length: 85)
     - @rehearsals.each do |rehearsal|
       %tr
-        %td= rehearsal.created_at.strftime("%B %d, %Y at %H:%M")
+        %td= link_to 'Read', rehearsal_path(rehearsal), class: "btn btn-warning btn-lg"
         %td= Time.zone.name
-        %td= link_to 'Edit', edit_rehearsal_path(rehearsal)
-        %td= link_to 'Show', rehearsal_path(rehearsal)
+        %td= rehearsal.created_at.strftime("%d.%m.%Y")
         - rehearsal.e_answers.each do |e_answer|
           %td= truncate(e_answer.answer, length: 100)
 
