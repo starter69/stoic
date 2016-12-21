@@ -20,7 +20,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-module StoicCompass
+module StoicPenknife
   class Application < Rails::Application
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
     config.time_zone = "Berlin"
