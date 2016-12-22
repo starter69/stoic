@@ -23,7 +23,7 @@ Bundler.require(:default, Rails.env)
 module StoicPenknife
   class Application < Rails::Application
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
-    config.time_zone = "Berlin"
+    config.time_zone = Time.now.zone
 
     config.generators do |g|
       g.test_framework :rspec,

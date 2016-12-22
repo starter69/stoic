@@ -47,8 +47,9 @@
     - @rehearsals.each do |rehearsal|
       %tr
         %td= link_to 'Read', rehearsal_path(rehearsal), class: "btn btn-warning btn-lg"
-        %td= Time.zone.name
+        %td= rehearsal.city
         %td= rehearsal.created_at.strftime("%d.%m.%Y")
+
         - rehearsal.e_answers.each do |e_answer|
           %td= truncate(e_answer.answer, length: 100)
 

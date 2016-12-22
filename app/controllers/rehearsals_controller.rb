@@ -25,6 +25,7 @@ class RehearsalsController < ApplicationController
     e_questions.each do |e_question|
       @rehearsal.e_answers.build(:e_question_id => e_question.id )
     end
+    @rehearsal_location = request.location.city
   end
 
   # GET /rehearsals/1/edit
@@ -80,6 +81,6 @@ class RehearsalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rehearsal_params
-      params.require(:rehearsal).permit(:tally, :exercise_id, e_answers_attributes: [:id, :answer, :e_question_id, :_destroy])
+      params.require(:rehearsal).permit(:tally, :exercise_id, :city, e_answers_attributes: [:id, :answer, :e_question_id, :_destroy])
     end
 end
