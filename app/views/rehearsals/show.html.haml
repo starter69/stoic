@@ -1,22 +1,30 @@
-%p#notice= notice
-
-
-%h3
-  %b Answers
-%table
-  - @rehearsal.exercise.e_questions.each do |e_question|
-    %tr
-      %td Question:&nbsp;
-      %td= e_question.question
-    - e_question.e_answers.each do |e_answer|
-      %tr
-        %td Answer:&nbsp;
-        %td= e_answer.answer
-        %td= e_answer.created_at.strftime("%B %d, %Y, at %H:%M")
-
-%h3= link_to 'View my rehearsals of my exercises', rehearsals_path
-\|
-= link_to 'Edit', edit_rehearsal_path(@rehearsal)
-\|
-= link_to 'Back', rehearsals_path
-
+.container
+  .row
+    .col-md-9
+      .panel.panel-warning
+        .panel-heading
+          %h3.page-header.exercise_title
+            Rehearsal of
+            = "#{@exercise.title}"
+            %h4
+              Originally rehearsed in
+              %b 
+                = Time.zone.name
+              on
+              %b
+                = "#{@rehearsal.created_at.strftime("%B %d, %Y at %H:%M")}"
+          .panel-body
+            .form-group.col-md-12
+              %h5.page-header.exercise_title.second_row_title
+                = @exercise.general_description
+                - @rehearsal.e_answers.each_with_index do |e_answer, index|
+                  %tr
+                    %h5.exercise_title
+                      %th= e_answer.e_question.question
+                  %p
+                  %tr
+                    %p
+                      %td= e_answer.answer
+            
+            = link_to "Back To All My Rehearsals of #{@exercise.title}", @rehearsal.exercise, class: "btn btn-default"
+            = link_to 'Edit This Rehearsal', edit_rehearsal_path(@rehearsal), class: "btn btn-default"

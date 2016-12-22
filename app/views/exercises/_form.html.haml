@@ -38,14 +38,15 @@
         .clearfix
         %br
         = link_to_add_association 'Add New Question', f, :e_questions, class: "btn btn-default"
+        %h5 There is a limit of 7 questions per exercise.
     %br
     - if current_user.admin
       .input-group
         .input-group-addon
-          = f.label "Publish this exercise globally to all Stoic Compass users"
+          = f.label "Publish this exercise globally to all users of Stoic Penknife"
         .input-group-addon
           = f.check_box :global, class: "checkbox"
       %br
-  %center
     .actions
-      = f.submit 'Save Exercise', class: "btn btn-warning btn-lg"
+      %center
+        = f.submit 'Save Exercise', class: "btn btn-warning btn-lg"

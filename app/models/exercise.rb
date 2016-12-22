@@ -9,6 +9,7 @@ class Exercise < ActiveRecord::Base
   accepts_nested_attributes_for :e_questions, :reject_if => lambda { |a| a[:question].blank? }, allow_destroy: true
   validates :title, presence: true
   validates :general_description, presence: true
+  validate :maximum_number_of_e_questions
 
   def self.tagged_with(name)
     Tag.find_by_name!(name).exercises
@@ -22,5 +23,10 @@ class Exercise < ActiveRecord::Base
     self.tags = names.split(",").map do |n|
       Tag.where(name: n.strip).first_or_create!
     end
+  end
+
+  def maximum_number_of_e_questions
+    binding.pry
+    errors.add(:base, "You may only add a maximum of 7 questions to an exercise at this time. In the future, we may add a feature to have additional questions. Contact us if this is an important feature to you.") unless e_questions.length <= 7
   end
 end

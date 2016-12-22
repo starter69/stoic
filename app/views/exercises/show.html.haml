@@ -39,31 +39,32 @@
     Past Rehearsals
   %table.table.table-striped.table-condensed.table-responsive
     %tbody
-    %th Date Rehearsed
-    %th Location
     %th
+    %th Place
+    %th Day
     - @exercise.e_questions.each do |e_question|
-      %th= e_question.question
+      %th= truncate(e_question.question, length: 85)
     - @rehearsals.each do |rehearsal|
       %tr
-        %td= rehearsal.created_at.strftime("%B %d, %Y at %H:%M")
+        %td= link_to 'Read', rehearsal_path(rehearsal), class: "btn btn-warning btn-lg"
         %td= rehearsal.city
-        %td= link_to 'Edit', edit_rehearsal_path(rehearsal)
+        %td= rehearsal.created_at.strftime("%d.%m.%Y")
+
         - rehearsal.e_answers.each do |e_answer|
-          %td= e_answer.answer
+          %td= truncate(e_answer.answer, length: 100)
 
   - if @exercise.global
     %br
     .panel.panel-info
       .panel-heading
-        %b Stoic Compass Expert Exercise
-        This exercise is published globally across all of Stoic Compass and its users.
+        %b Stoic Penknife Global Exercise
+        This exercise is published globally across all of Stoic Penknife and its users.
   - else
     %br
     .panel.panel-success
       .panel-heading
         %b Custom Exercise
-        This is a  custom exercise created and owned only by you.
+        This is a custom exercise created and owned only by you.
 .container
   .row
     .col-md-8

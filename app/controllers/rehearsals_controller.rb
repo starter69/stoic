@@ -14,6 +14,7 @@ class RehearsalsController < ApplicationController
   # GET /rehearsals/1
   # GET /rehearsals/1.json
   def show
+    @exercise = @rehearsal.exercise
   end
 
   # GET /rehearsals/new
@@ -80,6 +81,6 @@ class RehearsalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rehearsal_params
-      params.require(:rehearsal).permit(:tally, :exercise_id, :city, e_answers_attributes: [:answer, :e_question_id])
+      params.require(:rehearsal).permit(:tally, :exercise_id, :city, e_answers_attributes: [:id, :answer, :e_question_id, :_destroy])
     end
 end
