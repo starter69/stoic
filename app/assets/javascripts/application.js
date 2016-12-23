@@ -16,3 +16,10 @@
 //= require_tree .
 //= requres bootstrap
 //= require cocoon
+//
+// The below little script from QuickLeft's blog pings the application to keep it awake. Added 2016.
+
+var http = require("http");
+setInterval(function() {
+      http.get("http://stoicpenknife.herokuapp.com");
+}, 300000); // every 5 minutes (300000)
