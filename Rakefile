@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-StoicCompass::Application.load_tasks
+StoicPenknife::Application.load_tasks
