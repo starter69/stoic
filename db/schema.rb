@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219231348) do
+ActiveRecord::Schema.define(version: 20161224163915) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20161219231348) do
 
   create_table "exercises", force: :cascade do |t|
     t.string   "title",               limit: 255
-    t.string   "general_description", limit: 255
+    t.text     "general_description"
     t.string   "category",            limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
