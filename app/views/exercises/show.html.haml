@@ -43,7 +43,7 @@
     %th Place
     %th Day
     - @exercise.e_questions.each do |e_question|
-      %th= truncate(e_question.question, length: 85)
+      %th= truncate(e_question.question, length: 100)
     - @rehearsals.each do |rehearsal|
       %tr
         %td= link_to 'Read', rehearsal_path(rehearsal), class: "btn btn-warning btn-lg"
