@@ -6,7 +6,9 @@
       %u
         = "#{params[:tag]}"
     %h3.page-header.exercise_title
-      = "#{params[:tag]}"
+      %u
+        %i
+          = "#{params[:tag]}"
       Exercises
     .panel.panel-warning
       %table.table.table-striped.table-condensed.table-responsive
@@ -32,21 +34,24 @@
               .label.label-success
                 Custom Exercise
 
-
     %h3.page-header.meditation_title
-      = "#{params[:tag]}"
-      Meditations from Marcus Aurelius
+      %i
+        %u
+          = "#{params[:tag]}"
+      Quotations from Stoic Philosophers
     .panel.panel-primary
       %table.table.table-striped.table-responsive
         %tr
-          %th Meditation from Marcus Aurelius
+          %th Quotations from Stoic Philosophers like Marcus Aurelius, Seneca, Epictetus
         - @meditations.each do |meditation|
           %tr
             %td= link_to meditation.title, meditation, class: "btn btn-primary"
 
 
     %h3.page-header.doctrine_title
-      = "#{params[:tag]}"
+      %i
+        %u
+          = "#{params[:tag]}"
       Stoic Doctrines
     = @doctrines.each do |doctrine|
       = render file: "doctrines/#{doctrine.file_name}.html.haml"
