@@ -1,6 +1,6 @@
 .container
   .row
-    %h2.page-header.exercise_title Sign Up to Use Stoic Penknife
+    %h2.page-header.exercise_title Sign Up To Use Stoic Penknife
     .panel.panel-warning
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
@@ -24,4 +24,4 @@
         %div= f.submit "Sign up to activate Stoic Penknife", class: "btn btn-warning"
         %br/
         %h4 Why sign up? Why do we ask for your email address?
-        %h5 You can use all the elements of Stoic Penknife without signing up -- except for the Exercises. You need to have your own separate account so that when you rehearse an Exercise, your words, your reflections, remain private. We ask for your email address in order to be able to contact you and verify your account and send you an occasional update on the project (from which you can easily unsubscribe). Having your own account also enables you to create your own custom (private) Exercises.
+        %h5 You can use all the elements of Stoic Penknife without signing up -- except for the Exercises. You need to have your own separate account so that when you rehearse an Exercise, your words, your reflections, remain private. We ask for your email address in order to be able to contact you and verify your account and send you an occasional update on the project (from which you can easily unsubscribe. You can also cancel your account at any time). Having your own account also enables you to create your own custom (private) Exercises. Right now all features on Stoic Penknife are free.

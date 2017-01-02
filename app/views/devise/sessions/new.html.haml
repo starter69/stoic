@@ -1,16 +1,23 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    %div
-      = f.check_box :remember_me
-      = f.label :remember_me
-  %div= f.submit "Log in"
-= render "devise/shared/links"
+.container
+  .row
+    %h2.page-header.exercise_title Sign In To Stoic Penknife
+    .panel.panel-warning
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        %div
+          = f.label :email_address_linked_to_your_account
+          %br/
+          = f.email_field :email, autofocus: true
+        %br/
+        %div
+          = f.label :password
+          %br/
+          = f.password_field :password, autocomplete: "off"
+        %br/
+        - if devise_mapping.rememberable?
+          %div
+            = f.check_box :remember_me
+            = f.label :remember_me
+        %br/
+        %div= f.submit "Log in", class: "btn btn-warning"
+      %br/
+      = render "devise/shared/links"
