@@ -5,7 +5,7 @@ StoicPenknife::Application.routes.draw do
 
   resources :rehearsals
   resources :exercises
-  resources :meditations
+  resources :quotations
   resources :doctrines
 
   get "index" => "welcome#index"

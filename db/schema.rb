@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161224163915) do
+ActiveRecord::Schema.define(version: 20170117152002) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20161224163915) do
 
   create_table "exercises", force: :cascade do |t|
     t.string   "title",               limit: 255
-    t.text     "general_description"
+    t.text     "general_description", limit: 255
     t.string   "category",            limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -92,16 +92,16 @@ ActiveRecord::Schema.define(version: 20161224163915) do
     t.boolean  "global"
   end
 
-  create_table "meditation_taggings", force: :cascade do |t|
+  create_table "quotation_taggings", force: :cascade do |t|
     t.integer  "tag_id"
-    t.integer  "meditation_id"
+    t.integer  "quotation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["meditation_id"], name: "index_meditation_taggings_on_meditation_id"
-    t.index ["tag_id"], name: "index_meditation_taggings_on_tag_id"
+    t.index ["quotation_id"], name: "index_quotation_taggings_on_quotation_id"
+    t.index ["tag_id"], name: "index_quotation_taggings_on_tag_id"
   end
 
-  create_table "meditations", force: :cascade do |t|
+  create_table "quotations", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.text     "passage"
     t.datetime "created_at"

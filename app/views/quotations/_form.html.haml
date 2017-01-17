@@ -1,9 +1,9 @@
-= form_for @meditation do |f|
-  - if @meditation.errors.any?
+= form_for @quotation do |f|
+  - if @quotation.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@meditation.errors.count, "error")} prohibited this quotation from being saved:"
+      %h2= "#{pluralize(@quotation.errors.count, "error")} prohibited this quotation from being saved:"
       %ul
-        - @meditation.errors.full_messages.each do |msg|
+        - @quotation.errors.full_messages.each do |msg|
           %li= msg
 
   .field

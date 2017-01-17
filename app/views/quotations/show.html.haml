@@ -1,0 +1,25 @@
+.container
+  .row
+    .col-md-8
+      %h3.page-header.quotation_title
+        An original quotation from Marcus Aurelius
+      .panel.panel-primary
+        %p#notice= notice
+
+        %h4.panel-heading
+          = @quotation.title
+        %h2.panel-body
+          .page-header.second_row_title
+            .small
+              = @quotation.passage
+        %p
+          %b
+            Philosophical Category Tags:
+          = raw @quotation.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
+        = link_to 'Back to List of Quotations', quotations_path, class: "btn btn-default"
+        %br
+        %br
+        - if can? :update, @quotations
+          = link_to 'Edit Quotation', edit_quotation_path(@quotation)
+
+

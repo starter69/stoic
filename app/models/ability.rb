@@ -18,7 +18,7 @@ class Ability
         can :update, Exercise, :user_id => user.id
         can :create, Exercise, :user_id => user.id
         can :destroy, Exercise, :user_id => user.id
-        cannot :update, Meditation
+        cannot :update, Quotation
         can :manage, Doctrine
         cannot :create, Doctrine
         cannot :update, Doctrine

@@ -34,7 +34,7 @@
               .label.label-success
                 Custom Exercise
 
-    %h3.page-header.meditation_title
+    %h3.page-header.quotation_title
       %i
         %u
           = "#{params[:tag]}"
@@ -43,9 +43,9 @@
       %table.table.table-striped.table-responsive
         %tr
           %th Quotations from Stoic Philosophers like Marcus Aurelius, Seneca, Epictetus
-        - @meditations.each do |meditation|
+        - @quotations.each do |quotation|
           %tr
-            %td= link_to meditation.title, meditation, class: "btn btn-primary"
+            %td= link_to quotation.title, quotation, class: "btn btn-primary"
 
 
     %h3.page-header.doctrine_title
