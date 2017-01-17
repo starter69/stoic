@@ -3,18 +3,19 @@
     %h2.page-header.exercise_title Stoic Philosophical Exercises
     .panel.panel-warning
       %h4.panel-heading.exercise_title These shared exercises are available for all users to do!
-      %table.table.table-striped.table-condensed.table-responsive
-        %tr
-          %th Exercise
-          %th
-          %th Description
-          %th Philosophical Category Tags
-        - @global_exercises.each do |global_exercise|
-          %tr{class: "exercise_#{global_exercise.id}"}
-            %td= link_to global_exercise.title, global_exercise, class: "btn btn-default"
-            %td= link_to 'Rehearse', new_rehearsal_path(:exercise => global_exercise.id), class: "btn btn-warning"
-            %td= global_exercise.general_description
-            %td= raw global_exercise.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
+      .table-responsive
+        %table.table.table-striped.table-condensed
+          %tr
+            %th Exercise
+            %th
+            %th Description
+            %th Philosophical Category Tags
+          - @global_exercises.each do |global_exercise|
+            %tr{class: "exercise_#{global_exercise.id}"}
+              %td= link_to global_exercise.title, global_exercise, class: "btn btn-default"
+              %td= link_to 'Rehearse', new_rehearsal_path(:exercise => global_exercise.id), class: "btn btn-warning"
+              %td= truncate(global_exercise.general_description, length: 250)
+              %td= raw global_exercise.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
 .container
   .row
     .panel.panel-warning
@@ -23,16 +24,17 @@
 
       %br
       %br
-      %table.table.table-striped.table-condensed.table-responsive
-        %tr
-          %th Exercise
-          %th
-          %th General description
-          %th Philosophical Category Tags
-        - @exercises.each do |exercise|
-          %tr{class: "exercise_#{exercise.id}"}
-            %td= link_to exercise.title, exercise, class: "btn btn-default"
-            %td= link_to 'Rehearse', new_rehearsal_path(:exercise => exercise.id), class: "btn btn-warning"
-            %td= exercise.general_description
-            %td= raw exercise.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
+      .table-responsive 
+        %table.table.table-striped.table-condensed
+          %tr
+            %th Exercise
+            %th
+            %th General description
+            %th Philosophical Category Tags
+          - @exercises.each do |exercise|
+            %tr{class: "exercise_#{exercise.id}"}
+              %td= link_to exercise.title, exercise, class: "btn btn-default"
+              %td= link_to 'Rehearse', new_rehearsal_path(:exercise => exercise.id), class: "btn btn-warning"
+              %td= truncate(exercise.general_description, length: 250)
+              %td= raw exercise.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
 

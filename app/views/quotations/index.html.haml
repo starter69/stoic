@@ -14,14 +14,14 @@
             %h4
               Important Quotations from Stoic Philosophers
           %th
-        - @quotations.each do |quotation|
-          %tr
-            %td= link_to truncate(quotation.title, length: 45), quotation, class: "btn btn-primary"
-            %td= raw quotation.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
-            - if can? :update, quotation
-              %td= quotation.created_at.strftime("%d %b. %Y")
-              %td= link_to 'Edit', edit_quotation_path(quotation)
-              %td= link_to 'Destroy', quotation, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          - @quotations.each do |quotation|
+            %tr
+              %td= link_to truncate(quotation.title, length: 45), quotation, class: "btn btn-primary"
+              %td= raw quotation.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
+              - if can? :update, quotation
+                %td= quotation.created_at.strftime("%d %b. %Y")
+                %td= link_to 'Edit', edit_quotation_path(quotation)
+                %td= link_to 'Destroy', quotation, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
       %br
       - if can? :update, @quotations

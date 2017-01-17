@@ -1,17 +1,14 @@
-%nav.navbar.navbar-default
-  .navbar-header
-    =link_to "Stoic Penknife", root_url, {class: "navbar-brand"}
+.container
+  %nav.navbar.navbar-default
+    .navbar-header
+      =link_to "Stoic Penknife", root_url, {class: "navbar-brand"}
 
-    %ul.nav.navbar-nav
+      %ul.nav.navbar-nav
 
-      - nav_link(about_path) do
-        = link_to "What Is Stoic Penknife?", about_path
-      - nav_link(contact_path) do
-        = link_to "Contact", contact_path
-      - nav_link(doctrines_introduction_path) do
-        = link_to "Introduction to Stoicism", doctrines_introduction_path
-
-      - if (controller_name != "welcome")
+        - nav_link(about_path) do
+          = link_to "What Is Stoic Penknife?", about_path
+        - nav_link(contact_path) do
+          = link_to "Contact", contact_path
 
         - nav_link(doctrines_index_path) do
           = link_to "Doctrine", doctrines_index_path
@@ -22,16 +19,16 @@
         - nav_link(quotations_path) do
           = link_to "Quotations", quotations_path
 
-  %ul.nav.navbar-nav.navbar-right
+    %ul.nav.navbar-nav.navbar-right
 
-    - if user_signed_in?
-      - nav_link(edit_user_registration_path) do
-        = link_to "#{current_user.email}", edit_user_registration_path
-      - nav_link(destroy_user_session_path) do
-        = link_to "Sign Out&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, destroy_user_session_path, method: :delete
-    - else
-      - nav_link(new_user_registration_path) do
-        = link_to "Sign Up", new_user_registration_path
-      - nav_link(new_user_session_path) do
-        = link_to "Sign In&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, new_user_session_path
+      - if user_signed_in?
+        - nav_link(edit_user_registration_path) do
+          = link_to "#{current_user.email}", edit_user_registration_path
+        - nav_link(destroy_user_session_path) do
+          = link_to "Sign Out&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, destroy_user_session_path, method: :delete
+      - else
+        - nav_link(new_user_registration_path) do
+          = link_to "Sign Up", new_user_registration_path
+        - nav_link(new_user_session_path) do
+          = link_to "Sign In&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, new_user_session_path
 

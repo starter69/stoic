@@ -1,4 +1,4 @@
-.container
+.container-fluid
   .row
     .col-md-8
       .panel.panel-warning
@@ -35,23 +35,25 @@
         %br
         .label.label-success Custom Exercise
 
-  %h3.page-header.exercise_title
-    Past Rehearsals
-  %table.table.table-striped.table-condensed.table-responsive
-    %tbody
-    %th
-    %th Place
-    %th Day
-    - @exercise.e_questions.each do |e_question|
-      %th= truncate(e_question.question, length: 100)
-    - @rehearsals.each do |rehearsal|
-      %tr
-        %td= link_to 'Read', rehearsal_path(rehearsal), class: "btn btn-warning btn-lg"
-        %td= rehearsal.city
-        %td= rehearsal.created_at.strftime("%d.%m.%Y")
+  .row
+    %h3.page-header.exercise_title
+      Past Rehearsals
+    .table-responsive
+      %table.table.table-striped.table-condensed
+        %tbody
+        %th
+        %th Place
+        %th Day
+        - @exercise.e_questions.each do |e_question|
+          %th= truncate(e_question.question, length: 100)
+        - @rehearsals.each do |rehearsal|
+          %tr
+            %td= link_to 'Read', rehearsal_path(rehearsal), class: "btn btn-warning btn-lg"
+            %td= rehearsal.city
+            %td= rehearsal.created_at.strftime("%d.%m.%Y")
 
-        - rehearsal.e_answers.each do |e_answer|
-          %td= truncate(e_answer.answer, length: 100)
+            - rehearsal.e_answers.each do |e_answer|
+              %td= truncate(e_answer.answer, length: 100)
 
   - if @exercise.global
     %br
