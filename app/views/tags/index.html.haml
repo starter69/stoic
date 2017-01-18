@@ -25,14 +25,15 @@
             %td
               .label.label-info
                 Global Exercise
-        - @exercises.each do |exercise|
-          %tr{class: "exercise_#{exercise.id}"}
-            %td= link_to exercise.title, exercise, class: "btn btn-default"
-            %td= link_to 'Rehearse', new_rehearsal_path(:exercise => exercise.id), class: "btn btn-warning"
-            %td= exercise.general_description
-            %td
-              .label.label-success
-                Custom Exercise
+        - if user_signed_in?
+          - @exercises.each do |exercise|
+            %tr{class: "exercise_#{exercise.id}"}
+              %td= link_to exercise.title, exercise, class: "btn btn-default"
+              %td= link_to 'Rehearse', new_rehearsal_path(:exercise => exercise.id), class: "btn btn-warning"
+              %td= exercise.general_description
+              %td
+                .label.label-success
+                  Custom Exercise
 
     %h3.page-header.quotation_title
       %i
