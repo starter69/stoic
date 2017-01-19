@@ -16,5 +16,12 @@
 //= require_tree .
 //= requres bootstrap
 //= require cocoon
-//
-// The below little script from QuickLeft's blog pings the application to keep it awake. Added 2016.
+
+function revealMobileNav() {
+    var x = document.getElementById("top-nav");
+    if (x.className === "nav navbar-nav hide-on-medium-screen") {
+        x.className += " open-mobile-navbar";
+    } else {
+        x.className = "nav navbar-nav hide-on-medium-screen";
+    }
+}
