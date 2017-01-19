@@ -6,29 +6,29 @@
       %ul.nav.navbar-nav
 
         - nav_link(about_path) do
-          = link_to "What Is Stoic Penknife?", about_path
+          = link_to "What Is Stoic Penknife?", about_path, {id: "hide-on-small-screen"}
         - nav_link(contact_path) do
-          = link_to "Contact", contact_path
+          = link_to "Contact", contact_path, {id: "hide-on-medium-screen"}  
 
         - nav_link(doctrines_index_path) do
-          = link_to "Doctrine", doctrines_index_path
+          = link_to "Doctrines", doctrines_index_path, {id: "hide-on-medium-screen"} 
 
         - nav_link(exercises_path) do
-          = link_to "Exercises", exercises_path
+          = link_to "Exercises", exercises_path, {id: "hide-on-medium-screen"} 
 
         - nav_link(quotations_path) do
-          = link_to "Quotations", quotations_path
+          = link_to "Quotations", quotations_path, {id: "hide-on-medium-screen"} 
 
     %ul.nav.navbar-nav.navbar-right
 
       - if user_signed_in?
         - nav_link(edit_user_registration_path) do
-          = link_to "#{current_user.email}", edit_user_registration_path
+          = link_to "#{current_user.email}", edit_user_registration_path, {id: "hide-on-small-screen"} 
         - nav_link(destroy_user_session_path) do
-          = link_to "Sign Out&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, destroy_user_session_path, method: :delete
+          = link_to "Sign Out&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, destroy_user_session_path
       - else
         - nav_link(new_user_registration_path) do
-          = link_to "Sign Up", new_user_registration_path
+          = link_to "Sign Up", new_user_registration_path, {id: "hide-on-small-screen"} 
         - nav_link(new_user_session_path) do
-          = link_to "Sign In&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, new_user_session_path
+          = link_to "Sign In&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, new_user_session_path, {id: "hide-on-small-screen"} 
 
