@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= requres bootstrap
+//= require bootstrap
 //= require cocoon
 
 function revealMobileNav() {
@@ -36,4 +36,3 @@ function revealMobileNav() {
         { z.className = "navbar-header-right"; }
 
 }
-
