@@ -19,9 +19,21 @@
 
 function revealMobileNav() {
     var x = document.getElementById("top-nav");
+    var y = document.getElementById("sign-in-nav");
+    var z = document.getElementById("sign-in");
+
     if (x.className === "nav navbar-nav hide-on-medium-screen") {
-        x.className += " open-mobile-navbar";
-    } else {
-        x.className = "nav navbar-nav hide-on-medium-screen";
-    }
+        x.className += " open-mobile-navbar"; }
+    else
+        { x.className = "nav navbar-nav hide-on-medium-screen"; }
+    if (y.className === "nav navbar-nav hide-on-small-screen") {
+        y.className += " open-mobile-navbar"; }
+    else
+        { y.className = "nav navbar-nav hide-on-small-screen"; }
+    if (z.className === "navbar-header-right") {
+        z.className = "navbar-shifted-left"; }
+    else
+        { z.className = "navbar-header-right"; }
+
 }
+
