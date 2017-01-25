@@ -10,6 +10,7 @@ StoicPenknife::Application.routes.draw do
 
   get "index" => "welcome#index"
   get "about" => "welcome#about"
+  get "how_it_works" => "welcome#how_it_works"
   get "contact" => "welcome#contact"
   get "doctrines_index" => "doctrines#index"
   get "doctrines_new" => "doctrines#new"

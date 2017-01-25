@@ -13,9 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require bootstrap-sprockets
 //= require bootstrap
 //= require cocoon
+//= require_tree .
 
 function revealMobileNav() {
     var x = document.getElementById("top-nav");

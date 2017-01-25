@@ -1,30 +1,45 @@
-.container
+.container-fluid
   %nav.navbar.navbar-default
-    .navbar-header.remove-table
-      =link_to "Stoic Penknife", root_url, {class: "navbar-brand"}
-
-      %ul#top-nav.nav.navbar-nav.hide-on-medium-screen
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => root_url} Stoic Penknife
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{:href => about_path}
+            What is Stoic Penknife?
+            %span.sr-only (current)
         %li
-          - nav_link(about_path) do
-            = link_to "What Is Stoic Penknife?", about_path
-          - nav_link(contact_path) do
-            = link_to "Contact", contact_path
-          - nav_link(doctrines_index_path) do
-            = link_to "Doctrines", doctrines_index_path
-          - nav_link(exercises_path) do
-            = link_to "Exercises", exercises_path
-          - nav_link(quotations_path) do
-            = link_to "Quotations", quotations_path
-          - nav_link(quotations_path) do 
-            = link_to "☰", "javascript:void(0);", {onclick: "revealMobileNav()", id: "mobile-nav-icon"}
-          - if user_signed_in?
-            - nav_link(edit_user_registration_path) do
-              = link_to "#{current_user.email}", edit_user_registration_path
-            - nav_link(destroy_user_session_path) do
-              = link_to "Sign Out&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, destroy_user_session_path
-          - else
-            - nav_link(new_user_registration_path) do
-              = link_to "Sign Up", new_user_registration_path
-            - nav_link(new_user_session_path) do
-              = link_to "Sign In&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, new_user_session_path
-
+          %a{:href => how_it_works_path} How Does it Work?
+        %li
+          %a{:href => contact_path} Contact
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Topics
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              %a{:href => doctrines_path} Stoic Doctrines
+            %li.divider{:role => "separator"}
+            %li
+              %a{:href => exercises_path} Stoic Exercises
+            %li.divider{:role => "separator"}
+            %li
+              %a{:href => quotations_path} Stoic Quotations
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li
+            %a{:href => edit_user_registration_path} #{current_user.email}
+          %li
+            %a{:href => destroy_user_session_path} Sign Out
+        - else
+          %li
+            %a{:href => new_user_registration_path} Sign Up
+          %li
+            %a{:href => new_user_session_path} Sign In
