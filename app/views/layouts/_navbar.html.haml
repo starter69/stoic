@@ -11,27 +11,31 @@
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.active
-          %a{:href => about_path}
-            What is Stoic Penknife?
-            %span.sr-only (current)
         %li
-          %a{:href => how_it_works_path} How Does it Work?
+          - nav_link(about_path) do
+            = link_to "What Is Stoic Penknife?", about_path
         %li
-          %a{:href => contact_path} Contact
+          - nav_link(how_it_works_path) do
+            = link_to "How Does It Work?", how_it_works_path
+        %li
+          - nav_link(contact_path) do
+            = link_to "Contact", contact_path
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             Topics
             %span.caret
           %ul.dropdown-menu
             %li
-              %a{:href => doctrines_path} Stoic Doctrines
+              - nav_link(doctrines_path) do
+                = link_to "Stoic Doctrines", doctrines_path
             %li.divider{:role => "separator"}
             %li
-              %a{:href => exercises_path} Stoic Exercises
+              - nav_link(exercises_path) do
+                = link_to "Stoic Exercises", exercises_path
             %li.divider{:role => "separator"}
             %li
-              %a{:href => quotations_path} Stoic Quotations
+              - nav_link(quotations_path) do
+                = link_to "Stoic Quotations", quotations_path
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li
