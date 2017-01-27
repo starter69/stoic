@@ -69,7 +69,7 @@
         This is a custom exercise created and owned only by you.
 .container
   .row
-    .col-md-8
+    .col-md-4
       .panel.panel-warning
         %b Steps in the Exercise
         %table.table.table-bordered.table-responsive
@@ -77,3 +77,8 @@
           - @exercise.e_questions.each do |e_question|
             %tr
               %td= e_question.question
+    .col-md-8
+      .panel.panel-warning
+        %b Doctrines Pertaining to This Exercise
+        - unless @doctrines.nil?
+          = render file: "doctrines/#{@doctrines.first.file_name}.html.haml"

@@ -1,12 +1,18 @@
 .container
   .row
-    .col-md-8
+    .col-md-10
       .panel.panel-warning
         .panel-heading
-          %h1.page-header.exercise_title
+          %h2.page-header.exercise_title
             Rehearse
             = @exercise.title
         .panel-body
           = render 'form'
+          - unless @quotation.nil?
+            .panel.panel-primary
+              .panel-body
+                %h4 Ancient Stoics Who Practiced This Exercise
+                = @quotation.passage
+                = raw @quotation.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
         .panel-body
           = link_to "Back to #{@exercise.title} exercise page", @exercise, class: "btn btn-default"

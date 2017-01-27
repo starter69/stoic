@@ -26,6 +26,11 @@ class RehearsalsController < ApplicationController
       @rehearsal.e_answers.build(:e_question_id => e_question.id )
     end
     @rehearsal_location = request.location.city
+    unless @exercise.tags.first.nil?
+      @quotation = Quotation.all.tagged_with(@exercise.tags.first.name).first
+    else
+      @quotation = nil
+
   end
 
   # GET /rehearsals/1/edit

@@ -16,6 +16,12 @@
   # GET /exercises/1.json
   def show
     @rehearsals = @exercise.rehearsals.where(user_id:current_user.id)
+    @tags = @exercise.tags
+    unless @tags.first.nil?
+      @doctrines = Doctrine.all.tagged_with(@tags.first.name)
+    else
+      @doctrines = nil
+    end
   end
 
   # GET /exercises/new
