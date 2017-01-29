@@ -30,7 +30,7 @@ class RehearsalsController < ApplicationController
       @quotation = Quotation.all.tagged_with(@exercise.tags.first.name).first
     else
       @quotation = nil
-
+    end
   end
 
   # GET /rehearsals/1/edit
