@@ -2,17 +2,61 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-big-label {
-  display: inline;
-  padding: .2em .6em .3em;
-  font-size: 100%;
-  font-weight: bold;
-  line-height: 1;
+.big-label { display: inline; padding: .2em .6em .3em; font-size: 100%; font-weight: bold; line-height: 1;
   color: #fff;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: .25em;
+}
+
+#quotation-label {
+  padding: .9em .9em .9em;
+  font-size: 115%;
+  color: #333;
+  vertical-align: baseline;
+  border-radius: .25em;
+  background-image: -webkit-linear-gradient(top, #fff 0%, #428bca 100%);
+  background-image:      -o-linear-gradient(top, #fff 0%, #428bca 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#428bca));
+  background-image:         linear-gradient(to bottom, #c1e0f5 0%, #c1e0f5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#c1e0f5', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #c1e0f5;
+  line-height: 1.3;
+}
+
+a#quotation-label:hover,
+a#quotation-label:focus {
+  color: #428bca;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #c1e0f5;
+}
+
+a#quotation-label:active,
+a#quotation-label.active {
+  color: #777;
+  background-color: #fff;
+  border-color: #fff;
+  background-position: 0;
+}
+
+#quotation-text {
+  line-height: 1.3;
+}
+
+#quotation-blue {
+  color: #2d6ca2;
+}
+
+#doctrine-red {
+  color: #a94442;
+}
+
+#exercise-yellow {
+  color: #8a6d3b;
 }
 
 #big {

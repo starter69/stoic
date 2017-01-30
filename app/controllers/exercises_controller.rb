@@ -17,8 +17,9 @@
   def show
     @rehearsals = @exercise.rehearsals.where(user_id:current_user.id)
     @tags = @exercise.tags
-    unless @tags.first.nil?
-      @doctrines = Doctrine.all.tagged_with(@tags.first.name)
+    preload_doctrines = Doctrine.all.tagged_with(@tags.first.name)
+    unless @tags.first.nil? || preload_doctrines.empty?
+      @doctrines = preload_doctrines
     else
       @doctrines = nil
     end
