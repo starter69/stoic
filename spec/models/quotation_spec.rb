@@ -30,7 +30,6 @@ describe Meditation do
   describe '#tag_list' do
     meditation = FactoryGirl.create(:meditation, :with_tag)
     tags = meditation.tags
-    binding.pry
     it 'has a valid factory' do
       expect(tags).to be_valid
       #returning an Active Record Associations Object... should it be an RSPEC Factory object?

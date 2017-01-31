@@ -20,7 +20,7 @@
       @doctrines = nil
     else 
       @tags = @exercise.tags
-      if Doctrine.all.tagged_with(@tags.first.name).empty? 
+      if Doctrine.all.tagged_with(@tags.first.name).empty?
         @doctrines = nil
       else
         @doctrines = Doctrine.all.tagged_with(@tags.first.name)

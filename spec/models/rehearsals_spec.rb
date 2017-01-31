@@ -17,7 +17,6 @@ describe Rehearsal do
 #  it "cannot be read by a user to whom this rehearsal does not belong" do
 #    create_normal_user(2)
 #    create_rehearsal
-#    binding.pry
 #    expect(Rehearsal.where(user_id=@normal_user.id).first.user_id).not_to exist
 #  end
 end

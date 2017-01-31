@@ -11,10 +11,14 @@
           - unless @quotation.nil?
             .panel.panel-primary
               .panel-body
-                %h4#quotation-blue Ancient Stoics Who Practiced This Exercise
-                " 
+                %h4#quotation-blue Ancient Philosopher Who Practiced This Exercise
+                "
                 = @quotation.passage
                 "
-                = raw @quotation.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
+                %br
+                - unless @exercise.tags.empty?
+                  %br
+                  %b Source:
+                  = link_to @exercise.tags.first.name, tag_path(@exercise.tags.first.name), class: "btn btn-default"
         .panel-body
           = link_to "Back to #{@exercise.title} exercise page", @exercise, class: "btn btn-default"
