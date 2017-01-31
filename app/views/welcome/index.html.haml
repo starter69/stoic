@@ -7,7 +7,7 @@
 %center
   .container
     .row
-      .col-sm-4
+      .col-sm-3
         .panel.panel-default
           .panel-body
             = image_tag "doctrine.png", class: "img-responsive img-rounded" 
@@ -15,19 +15,19 @@
               %h5 Stoic Philosophy Explained
               %p How did the ancient world understand Stoicism? Learn about the philosophy behind Stoicism and its exercises.
             = button_to "The Stoic Doctrines", doctrines_index_path, method: :get, class: "btn btn-danger btn-large"
-      .col-sm-4.col
+      .col-sm-6.col
         .panel.panel-default
           .panel-body
             = image_tag "exercise.png", class: "img-rounded img-responsive"
             .caption
-              %h5 Practice Stoic Exercises
-              %p How can you practice Stoic philosophy? Do written exercises from Seneca, Epictetus and Marcus Aurelius - and create your own.
+              %h5 Practice Ancient Stoic Exercises
+              %p How can you live Stoic philosophy? Practice written exercises from Seneca, Epictetus and Marcus Aurelius - and create your own.
             = button_to "My Stoic Exercises", exercises_path, method: :get, class: "btn btn-warning btn-large"
-      .col-sm-4.col
+      .col-sm-3.col
         .panel.panel-default
           .panel-body
             = image_tag "quotation.png", class: "img-rounded img-responsive"
             .caption
               %h5 Read Stoic Passages
-              %p Read passages from Seneca, Epictetus, and Marcus Aurelius that are templates for Stoic exercises.
+              %p Read passages from Stoics like  Marcus Aurelius that are often templates for their own philosophical exercises.
             = button_to "Stoic Quotations", quotations_path, method: :get, class: "btn btn-primary btn-large"
