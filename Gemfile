@@ -24,6 +24,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'pry'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   gem 'capybara'
   gem 'launchy'
   gem 'sandi_meter'
