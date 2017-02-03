@@ -15,5 +15,9 @@ RSpec.describe ExercisesController, type: :controller do
       exercise_ivar = assigns(:exercise)
       expect(exercise_ivar).to eq(exercise)
     end
+
+    it 'raises an active record error if the exercise does not exist' do
+      expect {get :show, id: "invalid ID"}.to raise_error(ActiveRecord::RecordNotFound)
+    end
   end
 end
