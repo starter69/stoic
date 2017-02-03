@@ -1,8 +1,16 @@
+require 'dynopoker'
+
 StoicPenknife::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
   config.cache_classes = true
+
+  Dynopoker.configure do |config|
+    config.address = 'http://stoicpenknife.com'
+        #  config.enable = false # default is true
+    config.poke_frequency = 1740 # default is 1800s (30min)
+  end
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both thread web servers

@@ -1,13 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-require 'dynopoker'
-
-Dynopoker.configure do |config|
-  config.address = 'http://stoicpenknife.com'
-      #  config.enable = false # default is true
-  config.poke_frequency = 1740 # default is 1800s (30min)
-end
 # config.action_mailer.raise_delivery_errors = true
 
 # config.action_mailer.delivery_method = :smtp
