@@ -9,7 +9,7 @@
   # GET /exercises.json
   def index
     @exercises = Exercise.where(user_id:current_user.id)
-    @global_exercises = Exercise.where(global:true)
+    @global_exercises = Exercise.where(global:true).order(:updated_at)
   end
 
   # GET /exercises/1
