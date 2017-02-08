@@ -21,26 +21,17 @@ RSpec.describe ExercisesController, type: :controller do
       expect {get :show, id: "invalid ID"}.to raise_error(ActiveRecord::RecordNotFound)
     end
 
-    it 'successfully fetches all rehearsals for that particular exercise for that particular user' do
+    it 'assigns the return value of exercise#rehearsals_for_user to the rehearsals ivar' do
       exercise = FactoryGirl.create(:exercise)
-      rehearsal = FactoryGirl.create(:rehearsal, exercise: exercise, user: user)
-      all_users_rehearsals_for_exercise = [rehearsal]
+      allow(Exercise).to receive(:find).with(exercise.id.to_s).and_return(exercise)
+
+      rehearsals_for_user = double('rehearsals_for_user')
+      allow(exercise).to receive(:rehearsals_for_user).with(user).and_return(rehearsals_for_user)
 
       get :show, id: exercise.id
       rehearsals_ivar = assigns(:rehearsals)
 
-      expect(rehearsals_ivar).to eq(all_users_rehearsals_for_exercise)
-    end
-
-    it 'does not fetch other users rehearsals' do
-      user_two = FactoryGirl.build_stubbed(:user)
-      exercise = FactoryGirl.create(:exercise)
-      rehearsal = FactoryGirl.create(:rehearsal, exercise: exercise, user: user_two)
-
-      get :show, id: exercise.id
-      rehearsals_ivar = assigns(:rehearsals)
-
-      expect(rehearsals_ivar).to_not include(rehearsal)
+      expect(rehearsals_ivar).to eq(rehearsals_for_user)
     end
 
     context 'when the exercise has no tags' do
