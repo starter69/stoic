@@ -20,12 +20,7 @@
       @doctrines = nil
     else 
       @tags = @exercise.tags
-      doctrines = Doctrine.tagged_with(@tags.first.name)
-      if doctrines.empty?
-        @doctrines = nil
-      else
-        @doctrines = doctrines
-      end
+      @doctrines = Doctrine.tagged_with(@tags.first.name)
     end 
   end
 

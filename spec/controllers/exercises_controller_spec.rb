@@ -68,7 +68,7 @@ RSpec.describe ExercisesController, type: :controller do
       end
 
       context 'when the first tag associated with an exercise has no doctrines' do
-        it 'sets the doctrines ivar to nil' do
+        it 'sets the doctrines ivar to be empty' do
           exercise = FactoryGirl.create(:exercise)
           tag = FactoryGirl.create(:tag)
           exercise_tagging = FactoryGirl.create(:exercise_tagging, exercise: exercise, tag: tag)
@@ -76,7 +76,7 @@ RSpec.describe ExercisesController, type: :controller do
           get :show, id: exercise.id
           doctrines_ivar = assigns(:doctrines)
 
-          expect(doctrines_ivar).to be_nil
+          expect(doctrines_ivar).to be_empty
         end
       end
       
