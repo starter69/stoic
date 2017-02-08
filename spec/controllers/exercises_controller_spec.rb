@@ -42,5 +42,59 @@ RSpec.describe ExercisesController, type: :controller do
 
       expect(rehearsals_ivar).to_not include(rehearsal)
     end
+
+    context 'when the exercise has no tags' do
+      it 'doctrines ivar is nil' do
+        exercise = FactoryGirl.create(:exercise)
+
+        get :show, id: exercise.id 
+        doctrines_ivar = assigns(:doctrines) 
+
+        expect(doctrines_ivar).to be_nil
+      end
+    end
+
+    context 'when the exercise has tags' do
+      it 'tags ivar is set to the exercises ivars tags' do
+        exercise = FactoryGirl.create(:exercise)
+        tag = FactoryGirl.create(:tag)
+        exercise_tagging = FactoryGirl.create(:exercise_tagging, exercise: exercise, tag: tag)
+        exercise_tags = [tag]
+
+        get :show, id: exercise.id
+        tags_ivar = assigns(:tags)
+
+        expect(tags_ivar).to eq(exercise_tags)
+      end
+
+      context 'when the first tag associated with an exercise has no doctrines' do
+        it 'sets the doctrines ivar to nil' do
+          exercise = FactoryGirl.create(:exercise)
+          tag = FactoryGirl.create(:tag)
+          exercise_tagging = FactoryGirl.create(:exercise_tagging, exercise: exercise, tag: tag)
+
+          get :show, id: exercise.id
+          doctrines_ivar = assigns(:doctrines)
+
+          expect(doctrines_ivar).to be_nil
+        end
+      end
+      
+      context 'when the first tag associated with an exercise has doctrines' do
+        it 'sets the doctrines ivar to the doctrines associated with the first tag' do
+          exercise = FactoryGirl.create(:exercise)
+          tag = FactoryGirl.create(:tag)
+          exercise_tagging = FactoryGirl.create(:exercise_tagging, exercise: exercise, tag: tag)
+          doctrine = FactoryGirl.create(:doctrine)
+          doctrine_tagging = FactoryGirl.create(:doctrine_tagging, tag: tag, doctrine: doctrine)
+          doctrines_for_first_tag = [doctrine]
+
+          get :show, id: exercise.id
+          doctrines_ivar = assigns(:doctrines)
+
+          expect(doctrines_ivar).to eq(doctrines_for_first_tag)
+        end
+      end
+    end
   end
 end
