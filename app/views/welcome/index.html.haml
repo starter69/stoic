@@ -1,7 +1,11 @@
 %center
   .page-header
-    %h2
-      Stoic Penknife
+    .container.logo
+      .row.logo
+        .col-sm-6.logo
+          = image_tag "stoic_penknife_logo_army.png", class: "img-responsive"
+        .col-sm-6
+          = image_tag "white_title.png",  class: "img-responsive"
     %big An Application to Practice Ancient Philosophical Technologies of the Soul
 
 %center
@@ -10,24 +14,16 @@
       .col-sm-3
         .panel.panel-default
           .panel-body
-            = image_tag "doctrine.png", class: "img-responsive img-rounded" 
+            = image_tag "doctrine.png", class: "img-responsive img-rounded"
             .caption
               %h5 Stoic Philosophy Explained
               %p How did the ancient world understand Stoicism? Learn about the philosophy behind Stoicism and its exercises.
-            = button_to "The Stoic Doctrines", doctrines_index_path, method: :get, class: "btn btn-danger btn-large"
+            = button_to "Learn How Stoic Philosophy Works", doctrines_index_path, method: :get, class: "btn btn-danger"
       .col-sm-6.col
         .panel.panel-default
           .panel-body
             = image_tag "exercise.png", class: "img-rounded img-responsive"
             .caption
               %h5 Practice Ancient Stoic Exercises
-              %p How can you live Stoic philosophy? Practice written exercises from Seneca, Epictetus and Marcus Aurelius - and create your own.
-            = button_to "My Stoic Exercises", exercises_path, method: :get, class: "btn btn-warning btn-large"
-      .col-sm-3.col
-        .panel.panel-default
-          .panel-body
-            = image_tag "quotation.png", class: "img-rounded img-responsive"
-            .caption
-              %h5 Read Stoic Passages
-              %p Read passages from Stoics like  Marcus Aurelius that are often templates for their own philosophical exercises.
-            = button_to "Stoic Quotations", quotations_path, method: :get, class: "btn btn-primary btn-large"
+              %p Practice written exercises from Seneca, Epictetus and Marcus Aurelius - and create your own.
+            = button_to "Practice Stoic Exercises", exercises_path, method: :get, class: "btn btn-warning"

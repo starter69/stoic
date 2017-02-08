@@ -1,6 +1,17 @@
 // Place all the styles related to the Doctrines controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  .welcome {
+    background-color: rgb(225,66,44) !important;
+  }
+}
+
+.logo {
+    display: flex;
+    align-items: center !important;
+    vertical-align: middle !important;
+}
 
 .big-label { display: inline; padding: .2em .6em .3em; font-size: 100%; font-weight: bold; line-height: 1;
   color: #fff;
