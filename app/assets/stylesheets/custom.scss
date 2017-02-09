@@ -6,7 +6,7 @@ body {
     background-color: rgb(77,134,184) !important;
   }
   .stoic-red {
-    background-color: rgb(199,89,72) !important;
+    background-color: rgb(204,100,85) !important;
   }
   .stoic-green {
     background-color: rgb(135,170,106) !important;
@@ -16,6 +16,12 @@ body {
   }
   .stoic-brown {
     background-color: rgb(162,137,117) !important;
+  }
+  .stoic-black {
+    background-color: rgb(4,4,4) !important;
+  }
+  .stoic-yellow {
+    background-color: rgb(190,172,80) !important;
   }
   
 }
@@ -33,7 +39,7 @@ body {
 
 .btn-stoic-action {
   color: #fff;
-  background-color: rgb(77,134,184);
+  background-color: rgb(80,139,192);
   border-color: #357ebd;
 }
 .btn-stoic-action:hover,
@@ -42,7 +48,7 @@ body {
 .btn-stoic-action.active,
 .open > .dropdown-toggle.btn-stoic-action {
   color: #fff;
-  background-color: rgb(135,170,106); 
+  background-color: rgb(4,4,4); 
   border-color: #285e8e;
 }
 .btn-stoic-action:active,
