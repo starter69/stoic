@@ -11,6 +11,10 @@ class Exercise < ActiveRecord::Base
   validates :general_description, presence: true
   validate :maximum_number_of_e_questions
 
+  def rehearsals_for_user(user)
+    self.rehearsals.where(user: user)
+  end
+
   def self.tagged_with(name)
     Tag.find_by_name!(name).exercises
   end

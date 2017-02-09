@@ -5,10 +5,6 @@ FactoryGirl.define do
     category 'Dankeliste'
   end
 
-  factory :tag do
-    name 'Love and Roses 2'
-  end
-
   trait :with_tag do
     after(:create) do |quotation|
       #quotation.tags << create(:tag, name: "Germany")

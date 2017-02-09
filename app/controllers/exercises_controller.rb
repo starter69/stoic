@@ -1,6 +1,6 @@
   class ExercisesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_exercise, only: [:show, :edit, :update, :destroy]
+  before_action :set_exercise, only: [:edit, :update, :destroy]
 
   #Load CanCan roles for Controller
   load_and_authorize_resource
@@ -15,17 +15,10 @@
   # GET /exercises/1
   # GET /exercises/1.json
   def show
-    @rehearsals = @exercise.rehearsals.where(user_id:current_user.id)
-    if @exercise.tags.empty?
-      @doctrines = nil
-    else 
-      @tags = @exercise.tags
-      if Doctrine.all.tagged_with(@tags.first.name).empty?
-        @doctrines = nil
-      else
-        @doctrines = Doctrine.all.tagged_with(@tags.first.name)
-      end
-    end 
+    @exercise = Exercise.find(params[:id])
+    @rehearsals = @exercise.rehearsals_for_user(current_user)
+    @tags = @exercise.tags
+    @doctrines = @tags.first.try(:doctrines)
   end
 
   # GET /exercises/new
