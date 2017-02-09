@@ -18,12 +18,7 @@
     @exercise = Exercise.find(params[:id])
     @rehearsals = @exercise.rehearsals_for_user(current_user)
     @tags = @exercise.tags
-
-    if @tags.empty?
-      @doctrines = nil
-    else 
-      @doctrines = Doctrine.tagged_with(@tags.first.name)
-    end 
+    @doctrines = @tags.first.try(:doctrines)
   end
 
   # GET /exercises/new
