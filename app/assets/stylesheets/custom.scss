@@ -2,15 +2,75 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  .welcome {
-    background-color: rgb(225,66,44) !important;
+  .stoic-blue {
+    background-color: rgb(77,134,184) !important;
+  }
+  .stoic-red {
+    background-color: rgb(199,89,72) !important;
+  }
+  .stoic-green {
+    background-color: rgb(135,170,106) !important;
+  }
+  .stoic-grey {
+    background-color: rgb(134,134,134) !important;
+  }
+  .stoic-brown {
+    background-color: rgb(162,137,117) !important;
+  }
+  
+}
+
+.welcome-title {
+    display: flex;
+    align-items: top !important;
+}
+
+#logo {
+  img {
+    max-width: 100%
   }
 }
 
-.logo {
-    display: flex;
-    align-items: center !important;
-    vertical-align: middle !important;
+.btn-stoic-action {
+  color: #fff;
+  background-color: rgb(77,134,184);
+  border-color: #357ebd;
+}
+.btn-stoic-action:hover,
+.btn-stoic-action:focus,
+.btn-stoic-action:active,
+.btn-stoic-action.active,
+.open > .dropdown-toggle.btn-stoic-action {
+  color: #fff;
+  background-color: rgb(135,170,106); 
+  border-color: #285e8e;
+}
+.btn-stoic-action:active,
+.btn-stoic-action.active,
+.open > .dropdown-toggle.btn-stoic-action {
+  background-image: none;
+}
+.btn-stoic-action.disabled,
+.btn-stoic-action[disabled],
+fieldset[disabled] .btn-stoic-action,
+.btn-stoic-action.disabled:hover,
+.btn-stoic-action[disabled]:hover,
+fieldset[disabled] .btn-stoic-action:hover,
+.btn-stoic-action.disabled:focus,
+.btn-stoic-action[disabled]:focus,
+fieldset[disabled] .btn-stoic-action:focus,
+.btn-stoic-action.disabled:active,
+.btn-stoic-action[disabled]:active,
+fieldset[disabled] .btn-stoic-action:active,
+.btn-stoic-action.disabled.active,
+.btn-stoic-action[disabled].active,
+fieldset[disabled] .btn-stoic-action.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+.btn-stoic-action .badge {
+  color: #428bca;
+  background-color: #fff;
 }
 
 .big-label { display: inline; padding: .2em .6em .3em; font-size: 100%; font-weight: bold; line-height: 1;

@@ -1,30 +1,29 @@
 %center
-  .page-header
-    .container
+  .container
+    .page-header
       .row
-        .logo
-          .col-sm-6.logo
-            = image_tag "stoic_penknife_logo_army.png", class: "img-responsive"
+        .welcome-title
+          .col-sm-6#logo
+            = image_tag "stoic_penknife_logo_sea.png", class: "img-responsive"
           .col-sm-6
             = image_tag "white_title.png",  class: "img-responsive"
-    %big An Application to Practice Ancient Philosophical Technologies of the Soul
+            %br
+            %big An Application to Practice Ancient Philosophical Technologies of the Soul
+            %br
+            %br
+            .panel.panel-default.stoic-brown
+              .panel-body
+                = image_tag "exercise.png", class: "img-rounded img-responsive"
+                .caption
+                  %h4 Practice Ancient Stoic Exercises
+                  %p Practice written exercises from Seneca, Epictetus and Marcus Aurelius - and create your own.
+                = button_to "Practice Stoic Exercises", exercises_path, method: :get, class: "btn btn-lg btn-stoic-action"
+            .panel.panel-default.stoic-brown
+              .panel-body
+                .caption
+                  %h4 How Does Stoic Philosophy Work?
+                  %p How did the ancient world understand Stoic Philosophers and the exercises they practiced to work changes in their own minds? What is Stoic Penknife?
+                .col-md-4 
+                  = button_to "Learn How Stoic Philosophy Works", doctrines_index_path, method: :get, class: "btn btn-default"
+                  = button_to "What is Stoic Penknife?", doctrines_index_path, method: :get, class: "btn btn-default"
 
-%center
-  .container
-    .row
-      .col-sm-3
-        .panel.panel-default
-          .panel-body
-            = image_tag "doctrine.png", class: "img-responsive img-rounded"
-            .caption
-              %h5 Stoic Philosophy Explained
-              %p How did the ancient world understand Stoicism? Learn about the philosophy behind Stoicism and its exercises.
-            = button_to "Learn How Stoic Philosophy Works", doctrines_index_path, method: :get, class: "btn btn-danger"
-      .col-sm-6.col
-        .panel.panel-default
-          .panel-body
-            = image_tag "exercise.png", class: "img-rounded img-responsive"
-            .caption
-              %h5 Practice Ancient Stoic Exercises
-              %p Practice written exercises from Seneca, Epictetus and Marcus Aurelius - and create your own.
-            = button_to "Practice Stoic Exercises", exercises_path, method: :get, class: "btn btn-warning"
