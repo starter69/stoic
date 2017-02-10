@@ -1,8 +1,8 @@
 .container
   .row
     .col-md-8
-      .panel.panel-warning
-        %h3.panel-heading
+      .panel.panel-default.stoic-white.stoic-dark-text
+        %h3.panel-heading.stoic-light-blue
           = @exercise.title
         .panel-body
           = @exercise.general_description
@@ -11,35 +11,35 @@
           %p
             %b
               Philosophical Categories:
-            = raw @exercise.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
+            = raw @exercise.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-stoic-white" }.join('  ')
     .col-md-4
       %br
     .col-md-4
-      = link_to 'Rehearse this Exercise', new_rehearsal_path(:exercise => @exercise.id), class: "btn btn-warning btn-lg"
+      = link_to 'Rehearse this Exercise', new_rehearsal_path(:exercise => @exercise.id), class: "btn btn-stoic-action btn-lg"
     .col-md-4
       %br
     .col-md-4
-      = link_to 'Back to Exercise List', exercises_path, class: "btn btn-default"
+      = link_to 'Back to Exercise List', exercises_path, class: "btn btn-stoic-white"
     .col-md-4
       %br
     .col-md-4
       - if can? :update, @exercise
-        = link_to 'Edit Exercise', edit_exercise_path(@exercise), class: "btn btn-default"
-        = link_to 'Delete Exercise', @exercise, :method => :delete, :data => { :confirm => "Are you certain that you'd like to delete this philosophical exercise?" }, class: "btn btn-default"
+        = link_to 'Edit Exercise', edit_exercise_path(@exercise), class: "btn btn-stoic-white"
+        = link_to 'Delete Exercise', @exercise, :method => :delete, :data => { :confirm => "Are you certain that you'd like to delete this philosophical exercise?" }, class: "btn btn-stoic-white"
       - if @exercise.global
         %br
         %br
-        .label.label-info Global Exercise
+        .label.label-primary Global Exercise
       - else
         %br
         %br
         .label.label-success Custom Exercise
 
   .row
-    %h3.page-header.exercise_title
+    %h3.page-header
       Past Rehearsals
     .table-responsive
-      %table.table.table-striped.table-condensed
+      %table.table.table-striped.table-condensed.stoic-dark-text.stoic-striped
         %tbody
         %th
         %th Place
@@ -48,7 +48,7 @@
           %th= truncate(e_question.question, length: 100)
         - @rehearsals.each do |rehearsal|
           %tr
-            %td= link_to 'Read', rehearsal_path(rehearsal), class: "btn btn-warning btn-lg"
+            %td= link_to 'Read', rehearsal_path(rehearsal), class: "btn btn-stoic-white btn-lg"
             %td= rehearsal.city
             %td= rehearsal.created_at.strftime("%d.%m.%Y")
 
@@ -70,7 +70,7 @@
 .container
   .row
     .col-md-4
-      .panel.panel-warning
+      .panel.panel-warning.stoic-grey
         %b Steps in the Exercise
         %table.table.table-bordered.table-responsive
           %tbody
@@ -81,4 +81,4 @@
       .panel.panel-warning
         %b Doctrines Pertaining to This Exercise
         - unless @doctrines.nil?
-          = render file: "doctrines/#{@doctrines.file_name}.html.haml"
+          = render file: "doctrines/#{@doctrines.first.file_name}.html.haml"
