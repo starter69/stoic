@@ -1,11 +1,13 @@
 %center
   .container
-    .page-header
+    .welcome-title 
       .row
         .col-sm-6
+          %br
           = image_tag "stoic_penknife_logo_sea.png", class: "img-responsive"
           %br
         .col-sm-6
+          %br
           = image_tag "white_title.png",  class: "img-responsive"
           %br
           %big An Application to Practice Ancient Philosophical Technologies of the Soul
@@ -23,7 +25,6 @@
               .caption
                 %h4 How Does Stoic Philosophy Work?
                 %p How did the ancient world understand Stoic Philosophers and the exercises they practiced to work changes in their own minds? What is Stoic Penknife?
-              .col-md-4 
-                = button_to "Learn How Stoic Philosophy Works", doctrines_index_path, method: :get, class: "btn btn-default"
-                = button_to "What is Stoic Penknife?", doctrines_index_path, method: :get, class: "btn btn-default"
-
+            = link_to "Learn How Stoic Philosophy Works", doctrines_index_path, method: :get, class: "btn btn-stoic-white"
+            = link_to "What is Stoic Penknife?", doctrines_index_path, method: :get, class: "btn btn-stoic-white"
+            .panel-body

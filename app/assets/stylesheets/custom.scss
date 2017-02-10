@@ -23,7 +23,14 @@ body {
   .stoic-yellow {
     background-color: rgb(190,172,80) !important;
   }
-  
+  .stoic-white {
+    background-color: rgb(250,250,250) !important;
+  }
+}
+
+.welcome-title {
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
 }
 
 #logo {
@@ -70,6 +77,48 @@ fieldset[disabled] .btn-stoic-action.active {
   border-color: #357ebd;
 }
 .btn-stoic-action .badge {
+  color: #428bca;
+  background-color: #fff;
+}
+
+.btn-stoic-white {
+  color: #333;
+  background-color: rgb(250,250,250);
+  border-color: #333;
+}
+.btn-stoic-white:hover,
+.btn-stoic-white:focus,
+.btn-stoic-white:active,
+.btn-stoic-white.active,
+.open > .dropdown-toggle.btn-stoic-white {
+  color: #fff;
+  background-color: rgb(4,4,4); 
+  border-color: #285e8e;
+}
+.btn-stoic-white:active,
+.btn-stoic-white.active,
+.open > .dropdown-toggle.btn-stoic-white {
+  background-image: none;
+}
+.btn-stoic-white.disabled,
+.btn-stoic-white[disabled],
+fieldset[disabled] .btn-white-action,
+.btn-stoic-white.disabled:hover,
+.btn-stoic-white[disabled]:hover,
+fieldset[disabled] .btn-stoic-white:hover,
+.btn-stoic-white.disabled:focus,
+.btn-stoic-white[disabled]:focus,
+fieldset[disabled] .btn-stoic-white:focus,
+.btn-stoic-white.disabled:active,
+.btn-stoic-white[disabled]:active,
+fieldset[disabled] .btn-stoic-white:active,
+.btn-stoic-white.disabled.active,
+.btn-stoic-white[disabled].active,
+fieldset[disabled] .btn-stoic-white.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+.btn-stoic-white .badge {
   color: #428bca;
   background-color: #fff;
 }
