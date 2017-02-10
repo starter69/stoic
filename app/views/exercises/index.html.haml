@@ -1,8 +1,9 @@
 .container
   .row
-    %h2.page-header.exercise_title#exercise-yellow Stoic Philosophical Exercises
-    .panel.panel-warning
-      %h4.panel-heading.exercise_title These shared "global" exercises are available for everyone to practice
+    %h2.page-header.exercise_title Stoic Philosophical Exercises
+    %h4 Click an exercise to practice one of the ancient techniques of the Stoic philosophers.
+    .panel.panel-default.stoic-dark-text
+      %h4.panel-heading.stoic-light-green These shared "global" exercises are available for everyone to practice
       .table-responsive
         %table.table.table-striped.table-condensed
           %tr
@@ -12,19 +13,19 @@
             %th Philosophical Category Tags
           - @global_exercises.each do |global_exercise|
             %tr{class: "exercise_#{global_exercise.id}"}
-              %td= link_to global_exercise.title, global_exercise, class: "btn btn-default"
-              %td= link_to 'Rehearse', new_rehearsal_path(:exercise => global_exercise.id), class: "btn btn-warning"
+              %td= link_to global_exercise.title, global_exercise, class: "btn btn-stoic-white"
+              %td= link_to 'Rehearse', new_rehearsal_path(:exercise => global_exercise.id), class: "btn btn-stoic-green"
               %td= truncate(global_exercise.general_description, length: 250)
-              %td= raw global_exercise.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
+              %td= raw global_exercise.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-stoic-white" }.join('  ')
 .container
   .row
-    .panel.panel-warning
-      %h4.panel-heading.exercise_title Create, edit and rehearse your own custom exercises here
-      = link_to 'Create New Exercise', new_exercise_path, class: "btn btn-success"
+    .panel.panel-default.stoic-dark-text
+      %h4.panel-heading.stoic-light-yellow Create, edit and rehearse your own custom exercises here
+      = link_to 'Create New Exercise', new_exercise_path, class: "btn btn-stoic-yellow"
 
       %br
       %br
-      .table-responsive 
+      .table-responsive
         %table.table.table-striped.table-condensed
           %tr
             %th Exercise
@@ -33,8 +34,8 @@
             %th Philosophical Category Tags
           - @exercises.each do |exercise|
             %tr{class: "exercise_#{exercise.id}"}
-              %td= link_to exercise.title, exercise, class: "btn btn-default"
-              %td= link_to 'Rehearse', new_rehearsal_path(:exercise => exercise.id), class: "btn btn-warning"
+              %td= link_to exercise.title, exercise, class: "btn btn-stoic-white"
+              %td= link_to 'Rehearse', new_rehearsal_path(:exercise => exercise.id), class: "btn btn-stoic-yellow"
               %td= truncate(exercise.general_description, length: 250)
-              %td= raw exercise.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
+              %td= raw exercise.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-stoic-white" }.join('  ')
 
