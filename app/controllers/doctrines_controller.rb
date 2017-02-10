@@ -22,7 +22,7 @@ class DoctrinesController < ApplicationController
   end
 
   def doctrine_params
-    params.require(:doctrine).permit(:file_name, :tag_list)
+    params.require(:doctrine).permit(:file_name, :tag_list, :publish)
   end
 
 end

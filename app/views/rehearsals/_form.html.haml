@@ -19,8 +19,8 @@
               = builder.text_area :answer, class: "form-control", id: "form-border", rows: 3
               = hidden_field_tag "rehearsal[e_answers_attributes]#{index}[e_question_id]", e_answer.e_question.id
 
-  = hidden_field_tag 'rehearsal[exercise_id]', @rehearsal.exercise.id
-  = hidden_field_tag 'rehearsal[city]', @rehearsal_location
+            = hidden_field_tag 'rehearsal[exercise_id]', @rehearsal.exercise.id
+            = hidden_field_tag 'rehearsal[city]', @rehearsal_location
 
-  .actions
-    = f.submit "Finish Rehearsing #{@exercise.title}", class: "btn btn-warning btn-lg"
+    .actions
+      = f.submit "Finish Rehearsing #{@exercise.title}", class: "btn btn-stoic-green btn-lg"

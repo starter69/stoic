@@ -17,8 +17,11 @@
   def show
     @exercise = Exercise.find(params[:id])
     @rehearsals = @exercise.rehearsals_for_user(current_user)
-    @tags = @exercise.tags
-    @doctrines = @tags.first.try(:doctrines)
+    tags = @exercise.tags
+    published_doctrine = Doctrine.where(publish:true).first
+    relevant_tag = tags.where(name:published_doctrine).first
+    doctrines = relevant_tag.try(:doctrines)
+    @doctrine = doctrines.try(:first)
   end
 
   # GET /exercises/new

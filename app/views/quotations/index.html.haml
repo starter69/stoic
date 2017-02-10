@@ -17,7 +17,6 @@
               %td= quotation.created_at.strftime("%d %b. %Y")
               %td= link_to 'Edit', edit_quotation_path(quotation)
               %td= link_to 'Destroy', quotation, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
       %br
       - if can? :update, @quotations
         = link_to 'New Quotation', new_quotation_path

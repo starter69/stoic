@@ -20,6 +20,8 @@
                   - unless @exercise.tags.empty?
                     %br
                     %b Source:
-                    = link_to @exercise.tags.first.name, tag_path(@exercise.tags.first.name), class: "btn btn-default"
+                    = link_to @exercise.tags.first.name, tag_path(@exercise.tags.first.name), class: "btn btn-stoic-white"
         .panel-body
-          = link_to "Back to #{@exercise.title} exercise page", @exercise, class: "btn btn-default"
+          = link_to "Back to the exercise page", @exercise, class: "btn btn-stoic-white"
+          %br
+          %br

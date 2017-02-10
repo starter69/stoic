@@ -22,5 +22,8 @@
     %br
     = f.label :tag_list, "e.g. Assent, Sex, Freedom)"
     = f.text_area :tag_list, class: "form-control", rows: "4"
+  .field
+    = f.check_box :publish
+    = f.label :publish_to_exercise_page
   .actions
     = f.submit 'Save'

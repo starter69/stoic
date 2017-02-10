@@ -27,7 +27,7 @@ class RehearsalsController < ApplicationController
     end
     @rehearsal_location = request.location.city
     unless @exercise.tags.first.nil?
-      @quotation = Quotation.all.tagged_with(@exercise.tags.first.name).first
+      @quotation = Quotation.tagged_with(@exercise.tags.first.name).first
     else
       @quotation = nil
     end
