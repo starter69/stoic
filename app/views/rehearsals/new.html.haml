@@ -1,24 +1,25 @@
 .container
   .row
-    .col-md-10
-      .panel.panel-warning
+    .col-md-11
+      .panel.stoic-blue
         .panel-heading
-          %h2.page-header.exercise_title
+          %h3.page-header
             Rehearse
             = @exercise.title
         .panel-body
           = render 'form'
           - unless @quotation.nil?
-            .panel.panel-primary
-              .panel-body
-                %h4#quotation-blue Ancient Philosopher Who Practiced This Exercise
-                "
-                = @quotation.passage
-                "
-                %br
-                - unless @exercise.tags.empty?
+            .col-sm-3
+              .panel.panel-primary
+                .panel-body
+                  %h4#quotation-blue Ancient Philosopher Who Practiced This Exercise
+                  "
+                  = @quotation.passage
+                  "
                   %br
-                  %b Source:
-                  = link_to @exercise.tags.first.name, tag_path(@exercise.tags.first.name), class: "btn btn-default"
+                  - unless @exercise.tags.empty?
+                    %br
+                    %b Source:
+                    = link_to @exercise.tags.first.name, tag_path(@exercise.tags.first.name), class: "btn btn-default"
         .panel-body
           = link_to "Back to #{@exercise.title} exercise page", @exercise, class: "btn btn-default"
