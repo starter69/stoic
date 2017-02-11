@@ -83,5 +83,5 @@
     .col-md-8
       .panel.panel-warning
         %b Doctrines Pertaining to This Exercise
-        - unless @doctrine.nil?
-          = render file: "#{@doctrine.file_name}.html.haml"
+        - unless @published_doctrines.nil?
+          = render file: "doctrines/#{@published_doctrines.first.file_name}.html.haml"

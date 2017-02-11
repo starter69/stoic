@@ -8,19 +8,21 @@
             = @exercise.title
         .panel-body
           = render 'form'
-          - unless @quotation.nil?
+          - unless @quotations.nil? || @quotations.empty? 
             .col-sm-3
-              .panel.panel-primary
+              .panel.black-plain-stoic-border
                 .panel-body
                   %h4#quotation-blue Ancient Philosopher Who Practiced This Exercise
-                  "
-                  = @quotation.passage
-                  "
-                  %br
-                  - unless @exercise.tags.empty?
-                    %br
-                    %b Source:
-                    = link_to @exercise.tags.first.name, tag_path(@exercise.tags.first.name), class: "btn btn-stoic-white"
+                  .stoic-dark-text
+                    -@quotations.each do |quotation|
+                      "
+                      = quotation.passage
+                      "
+                      %br
+                      - unless @exercise.tags.empty?
+                        %br
+                        %b Source:
+                        = link_to @exercise.tags.first.name, tag_path(@exercise.tags.first.name), class: "btn btn-stoic-white"
         .panel-body
           = link_to "Back to the exercise page", @exercise, class: "btn btn-stoic-white"
           %br

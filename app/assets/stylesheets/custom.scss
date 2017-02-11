@@ -72,14 +72,11 @@ body {
 }
 
 .black-stoic-border {
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-bottom: 1px dotted #333;
-  border-top: 1px dotted #333;
-  border-left: 1px dotted #333;
-  border-right: 1px dotted #333;
+  padding: 5px;
+  border: 1px dotted #333;
+}
+.black-plain-stoic-border {
+  border: 2px solid rgb(204,100,85);
 }
 
 #logo {
@@ -340,7 +337,7 @@ a#quotation-label.active {
 }
 
 #form-border {
-  border-color: #8a6d3b;
+  border: 3px solid #333;
 }
 
 #quotation-text {
