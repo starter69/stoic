@@ -9,7 +9,7 @@
             %h4
               Originally rehearsed in
               %b 
-                -if @rehearsal.city? 
+                -if @rehearsal.city?
                   = @rehearsal.city
                 -else
                   Unknown City
@@ -25,8 +25,9 @@
               .panel-body.stoic-white.stoic-dark-text
                 - @rehearsal.e_answers.each_with_index do |e_answer, index|
                   %tr
-                    %h5.exercise_title
-                      %th= e_answer.e_question.question
+                    %h5.black-stoic-border  
+                      %th
+                        = e_answer.e_question.question
                   %p
                   %tr
                     %p

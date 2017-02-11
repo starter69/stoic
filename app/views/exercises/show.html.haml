@@ -33,7 +33,7 @@
       - else
         %br
         %br
-        .label.label-success Custom Exercise
+        .label.stoic-brown Custom Exercise
 
   .row
     %h3.page-header
@@ -42,15 +42,18 @@
       %table.table.table-striped.table-condensed.stoic-dark-text.stoic-striped
         %tbody
         %th
-        %th Place
         %th Day
+        %th Place
         - @exercise.e_questions.each do |e_question|
           %th= truncate(e_question.question, length: 100)
         - @rehearsals.each do |rehearsal|
           %tr
             %td= link_to 'Read', rehearsal_path(rehearsal), class: "btn btn-stoic-white btn-lg"
-            %td= rehearsal.city
             %td= rehearsal.created_at.strftime("%d.%m.%Y")
+            -if rehearsal.city?
+              %td= rehearsal.city
+            -else
+              %td Unknown City
 
             - rehearsal.e_answers.each do |e_answer|
               %td= truncate(e_answer.answer, length: 100)
@@ -63,10 +66,10 @@
         This exercise is published globally across all of Stoic Penknife and its users.
   - else
     %br
-    .panel.panel-success
+    .panel.stoic-brown
       .panel-heading
         %b Custom Exercise
-        This is a custom exercise created and owned only by you.
+        This is a custom exercise created by, and only visible to, you.
 .container
   .row
     .col-md-4

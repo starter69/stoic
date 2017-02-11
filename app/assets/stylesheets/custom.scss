@@ -71,6 +71,17 @@ body {
   border-top: 1px solid #eee;
 }
 
+.black-stoic-border {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #333;
+  border-top: 1px dotted #333;
+  border-left: 1px dotted #333;
+  border-right: 1px dotted #333;
+}
+
 #logo {
   img {
     max-width: 100%

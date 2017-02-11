@@ -13,8 +13,8 @@
             = render 'form'
           .panel-body
             %h4
-              Originally rehearsed in:
-              %p= Time.zone.name
+              Originally rehearsed in/on:
+              %p= @rehearsal.city 
               %p= @rehearsal.created_at.strftime("%B %d, %Y at %H:%M")
 
             = link_to "Back to #{@exercise.title} exercise page", @rehearsal.exercise, class: "btn btn-default"
