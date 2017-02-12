@@ -3,16 +3,16 @@
     .col-md-8
       %p#notice= notice
       %p#quotation-label= @quotation.title
-      .panel.panel-primary
-        .panel-body
+      .panel.stoic-yellow
+        .panel-body.black-thicker-stoic-border
           %h4#quotation-text= @quotation.passage
         %br
         %p
           %b
             Philosophical Category Tags:
-          = raw @quotation.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
+          = raw @quotation.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-stoic-white" }.join('  ')
         %br
-        = link_to 'Back to List of Quotations', quotations_path, class: "btn btn-primary"
+        = link_to 'Back to List of Quotations', quotations_path, class: "btn btn-stoic-white"
         %br
         %br
         - if can? :update, @quotations

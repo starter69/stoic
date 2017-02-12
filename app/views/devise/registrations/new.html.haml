@@ -1,27 +1,36 @@
 .container
   .row
-    %h2.page-header.exercise_title Sign Up To Use Stoic Penknife
-    .panel.panel-warning
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = devise_error_messages!
-        %div
-          %h4 We will never give away your email address, and we won't spam you with unnecessary mail. Neither action would be Stoic.
-          = f.label :email
+    %h2.page-header Sign Up To Use Stoic Penknife
+    .col-lg-7
+      .panel.stoic-white.black-thicker-stoic-border.stoic-dark-text
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
+          %div
+            %h4 We will never give away your email address, and we won't spam you with unnecessary mail. Neither action would be Stoic.
+            = f.label :email
+            %br/
+            = f.email_field :email, autofocus: true
+          %div
+            = f.label :password
+            - if @validatable
+              %i
+                (#{@minimum_password_length} characters minimum)
+            %br/
+            = f.password_field :password, autocomplete: "off"
+          %div
+            = f.label :password_confirmation
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "off"
           %br/
-          = f.email_field :email, autofocus: true
-        %div
-          = f.label :password
-          - if @validatable
-            %i
-              (#{@minimum_password_length} characters minimum)
+          %div= f.submit "Sign up to activate Stoic Penknife", class: "btn btn-lg btn-stoic-action"
           %br/
-          = f.password_field :password, autocomplete: "off"
-        %div
-          = f.label :password_confirmation
-          %br/
-          = f.password_field :password_confirmation, autocomplete: "off"
-        %br/
-        %div= f.submit "Sign up to activate Stoic Penknife", class: "btn btn-warning"
-        %br/
-        %h4 Why sign up? Why do we ask for your email address?
-        %h5 You can use all the elements of Stoic Penknife without signing up -- except for the Exercises. You need to have your own separate account so that when you rehearse an Exercise, your words, your reflections, remain private. We ask for your email address in order to be able to contact you and verify your account and send you an occasional update on the project (from which you can easily unsubscribe. You can also cancel your account at any time). Having your own account also enables you to create your own custom (private) Exercises. Right now all features on Stoic Penknife are free.
+          %h4 Why sign up? Why do we ask for an email address?
+          %p You can use all the elements of Stoic Penknife without signing up -- except for the Exercises. You need to have your own separate account so that when you rehearse an Exercise, your words, your reflections, remain private. We ask for your email address in order to be able to contact you and verify your account and send you an occasional update on the project (from which you can easily unsubscribe. You can also cancel your account at any time). Having your own account also enables you to create your own custom (private) Exercises.
+    .col-lg-1
+    .col-lg-4
+      %br
+      %center
+        = image_tag "stoic_penknife_logo_ink.png", class: "img-responsive"
+        %br
+        %br
+      %br

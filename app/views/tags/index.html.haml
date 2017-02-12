@@ -3,14 +3,12 @@
   .row
     %h3.page-header
       Features tagged in the Philosophical Category of
-      %u
-        = "#{params[:tag]}"
-    %h3.page-header.exercise_title
-      %u
-        %i
-          = "#{params[:tag]}"
+      %u= "#{params[:tag]}"
+    %h3.page-header
+      %i
+        %u= "#{params[:tag]}"
       Exercises
-    .panel.panel-warning
+    .panel.stoic-dark-text
       %table.table.table-striped.table-condensed.table-responsive
         %tr
           %th Exercise
@@ -19,40 +17,38 @@
           %th
         - @global_exercises.each do |global_exercise|
           %tr{class: "exercise_#{global_exercise.id}"}
-            %td= link_to global_exercise.title, global_exercise, class: "btn btn-default"
-            %td= link_to 'Rehearse', new_rehearsal_path(:exercise => global_exercise.id), class: "btn btn-warning"
+            %td= link_to global_exercise.title, global_exercise, class: "btn btn-stoic-white"
+            %td= link_to 'Rehearse', new_rehearsal_path(:exercise => global_exercise.id), class: "btn btn-stoic-action"
             %td= global_exercise.general_description
             %td
-              .label.label-info
+              .label.stoic-blue
                 Global Exercise
         - if user_signed_in?
           - @exercises.each do |exercise|
             %tr{class: "exercise_#{exercise.id}"}
-              %td= link_to exercise.title, exercise, class: "btn btn-default"
-              %td= link_to 'Rehearse', new_rehearsal_path(:exercise => exercise.id), class: "btn btn-warning"
+              %td= link_to exercise.title, exercise, class: "btn btn-stoic-white"
+              %td= link_to 'Rehearse', new_rehearsal_path(:exercise => exercise.id), class: "btn btn-stoic-action"
               %td= exercise.general_description
               %td
-                .label.label-success
+                .label.stoic-brown
                   Custom Exercise
 
     %h3.page-header.quotation_title
       %i
-        %u
-          = "#{params[:tag]}"
+        %u= "#{params[:tag]}"
       Quotations from Stoic Philosophers
-    .panel.panel-primary
+    .panel.stoic-dark-text
       %table.table.table-striped.table-responsive
         %tr
           %th Quotations from Stoic Philosophers like Marcus Aurelius, Seneca, Epictetus
         - @quotations.each do |quotation|
           %tr
-            %td= link_to quotation.title, quotation, class: "btn btn-primary"
+            %td= link_to quotation.title, quotation, class: "btn btn-stoic-yellow"
 
 
     %h3.page-header.doctrine_title
       %i
-        %u
-          = "#{params[:tag]}"
+        %u= "#{params[:tag]}"
       Stoic Doctrines
-    = @doctrines.each do |doctrine|
+    - @doctrines.each do |doctrine|
       = render file: "doctrines/#{doctrine.file_name}.html.haml"

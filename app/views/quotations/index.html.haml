@@ -1,18 +1,17 @@
 .container
   .row
-    %h2.page-header.quotation_title#quotation-blue Important Quotations from Stoic Philosophers
-    %h3.page-header.quotation_title.second_row_title
-      .small
-        Use these text passages from Stoic philosophers such as Seneca, Epictetus and the Roman Emperor and Stoic philosopher Marcus Aurelius (CE 121-180) to compare to your own daily thoughts and Stoic practice.
-
+    %h2.page-header Important Quotations from Stoic Philosophers
+    %b Use these text passages from Stoic philosophers such as Seneca, Epictetus and the Roman Emperor and Stoic philosopher Marcus Aurelius (CE 121-180) to compare to your own daily thoughts and Stoic practice.
+    %br
+    %br
 .container
   .row
     .panel.panel-primary
       %table.table.table-striped.table-responsive
         - @quotations.each do |quotation|
           %tr 
-            %td= link_to truncate(quotation.title, length: 400), quotation, class: "panel panel-primary panel-heading btn-group", id: "quotation-label"
-            %td= raw quotation.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join('  ')
+            %td= link_to truncate(quotation.title, length: 400), quotation, class: "panel panel-heading btn-group stoic-yellow", id: "quotation-label"
+            %td= raw quotation.tags.map(&:name).map { |t| link_to t, tag_path(t), class: "btn btn-stoic-white" }.join('  ')
             - if can? :update, quotation
               %td= quotation.created_at.strftime("%d %b. %Y")
               %td= link_to 'Edit', edit_quotation_path(quotation)
