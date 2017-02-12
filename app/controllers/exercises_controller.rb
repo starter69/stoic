@@ -18,11 +18,13 @@
     @exercise = Exercise.find(params[:id])
     @rehearsals = @exercise.rehearsals_for_user(current_user)
     all_tags = @exercise.tags
-    tagged_doctrines = Doctrine.tagged_with(all_tags.first.name)
-    all_tags.each do |tag|
-      tagged_doctrines << Doctrine.tagged_with(tag.name)
+    unless all_tags.nil? || all_tags.empty?
+      tagged_doctrines = Doctrine.tagged_with(all_tags.first.name)
+      all_tags.each do |tag|
+        tagged_doctrines << Doctrine.tagged_with(tag.name)
+      end
+      @published_doctrines = tagged_doctrines.where(publish:true)
     end
-    @published_doctrines = tagged_doctrines.where(publish:true)
   end
 
   # GET /exercises/new
