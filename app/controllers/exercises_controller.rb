@@ -18,6 +18,7 @@
     @exercise = Exercise.find(params[:id])
     @rehearsals = @exercise.rehearsals_for_user(current_user)
     all_tags = @exercise.tags
+      binding.pry
     unless all_tags.nil? || all_tags.empty?
       tagged_doctrines = Doctrine.tagged_with(all_tags.first.name)
       all_tags.each do |tag|
