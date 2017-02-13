@@ -8,13 +8,14 @@
             = @exercise.title
         .panel-body
           = render 'form'
-          - unless @quotations.nil? || @quotations.empty? 
+          - unless @published_quotations.nil? || @published_quotations.empty?
+            - binding.pry
             .col-sm-4
               .panel.black-plain-stoic-border
                 .panel-body
                   %h4#quotation-blue Ancient Philosopher Who Practiced This Exercise
                   .stoic-dark-text
-                    -@quotations.each do |quotation|
+                    - @published_quotations.each do |quotation|
                       "
                       = quotation.passage
                       "

@@ -84,4 +84,5 @@
       .panel.panel-warning
         %b Doctrines Pertaining to This Exercise
         - unless @published_doctrines.nil? || @published_doctrines.empty?
-          = render file: "doctrines/#{@published_doctrines.first.file_name}.html.haml"
+          - @published_doctrines.each do |doctrine|
+            = render file: "doctrines/#{doctrine.file_name}.html.haml"

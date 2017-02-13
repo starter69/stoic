@@ -5,6 +5,14 @@ class Quotation < ActiveRecord::Base
   def self.tagged_with(name)
     Tag.find_by_name!(name).quotations # This is doing two sql queries, first one to find all tags by name, second one to find the tags quotations
   end
+  
+  def self.find_quotations_with(multiple_tags)
+    quotations = []
+    multiple_tags.each do |tag|
+      quotations += Tag.find_by_name!(tag.name).quotations
+    end
+    quotations
+  end
 
   def tag_list
   tags.map(&:name).join(", ")

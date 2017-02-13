@@ -17,14 +17,9 @@
   def show
     @exercise = Exercise.find(params[:id])
     @rehearsals = @exercise.rehearsals_for_user(current_user)
-    all_tags = @exercise.tags
-    unless all_tags.nil? || all_tags.empty?
-      tagged_doctrines = Doctrine.tagged_with(all_tags.first.name)
-      all_tags.each do |tag|
-        tagged_doctrines << Doctrine.tagged_with(tag.name)
-      end
-      @published_doctrines = tagged_doctrines.where(publish:true)
-    end
+    exercise_tags = @exercise.tags
+    @published_doctrines = Doctrine.where(publish:true).find_doctrines_with(exercise_tags)
+    #I want all doctrines that share a tag with the tags on this exercise where publish is set to true.
   end
 
   # GET /exercises/new

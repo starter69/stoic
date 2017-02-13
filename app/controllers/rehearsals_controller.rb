@@ -26,13 +26,8 @@ class RehearsalsController < ApplicationController
       @rehearsal.e_answers.build(:e_question_id => e_question.id )
     end
     @rehearsal_location = request.location.city
-    unless @exercise.tags.first.nil?
-      all_tags = @exercise.tags
-      tagged_quotations = Quotation.tagged_with(all_tags.first.name)
-        all_tags.each do |tag|
-        @quotations = tagged_quotations.where(publish:true)
-      end
-    end
+    exercise_tags = @exercise.tags
+    @published_quotations = Quotation.where(publish:true).find_quotations_with(exercise_tags)
   end
 
   # GET /rehearsals/1/edit
