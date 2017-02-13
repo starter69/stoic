@@ -91,6 +91,17 @@ body {
   }
 }
 
+.stoic-introduction-title {
+}
+
+.stoic-introduction-title:hover,
+.stoic-introduction-title:focus,
+.stoic-introduction-title:active,
+.stoic-introduction-title.active,
+.open > .dropdown-toggle.stoic-introduction-title {
+  background-color: rgb(4,4,4) !important;
+}
+
 .btn-stoic-action {
   color: #fff;
   background-color: rgb(77,134,184);
