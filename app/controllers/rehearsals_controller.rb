@@ -25,7 +25,11 @@ class RehearsalsController < ApplicationController
     e_questions.each do |e_question|
       @rehearsal.e_answers.build(:e_question_id => e_question.id )
     end
-    @rehearsal_location = request.location.city
+
+    unless request.location.nil?
+      @rehearsal_location = request.location.city
+    end
+
     exercise_tags = @exercise.tags
     @published_quotations = Quotation.where(publish:true).find_quotations_with(exercise_tags)
   end
