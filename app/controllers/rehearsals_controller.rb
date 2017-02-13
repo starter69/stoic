@@ -28,7 +28,6 @@ class RehearsalsController < ApplicationController
     @rehearsal_location = request.location.city
     unless @exercise.tags.first.nil?
       all_tags = @exercise.tags
-      binding.pry
       tagged_quotations = Quotation.tagged_with(all_tags.first.name)
         all_tags.each do |tag|
         @quotations = tagged_quotations.where(publish:true)
