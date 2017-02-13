@@ -19,7 +19,6 @@
     @rehearsals = @exercise.rehearsals_for_user(current_user)
     exercise_tags = @exercise.tags
     @published_doctrines = Doctrine.where(publish:true).find_doctrines_with(exercise_tags)
-    #I want all doctrines that share a tag with the tags on this exercise where publish is set to true.
   end
 
   # GET /exercises/new
