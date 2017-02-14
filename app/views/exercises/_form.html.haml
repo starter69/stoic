@@ -1,7 +1,7 @@
 
 = form_for @exercise do |f|
   - if @exercise.errors.any?
-    #error_explanation
+    #error_explanation.stoic-dark-text
       %h2= "#{pluralize(@exercise.errors.count, "error")} prohibited this exercise from being saved:"
       %ul
         - @exercise.errors.full_messages.each do |msg|
@@ -37,7 +37,7 @@
       .links
         .clearfix
         %br
-        = link_to_add_association 'Add New Question', f, :e_questions, class: "btn btn-default"
+        = link_to_add_association 'Add New Question', f, :e_questions, class: "btn btn-stoic-white"
         %h5 There is a limit of 7 questions per exercise.
     %br
     - if current_user.admin
@@ -49,4 +49,4 @@
       %br
     .actions
       %center
-        = f.submit 'Save Exercise', class: "btn btn-warning btn-lg"
+        = f.submit 'Save Exercise', class: "btn btn-stoic-action btn-lg"
