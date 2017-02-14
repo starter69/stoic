@@ -6,12 +6,12 @@
         - @quotation.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .field.stoic-dark-text
     = f.label :title
     = f.text_field :title
-  .field
+  .field.stoic-dark-text 
     = f.label :passage
-    = f.text_area :passage
+    = f.text_area :passage, class: "form-control", rows: "4"
   .field
     = f.check_box :publish
     = f.label :publish_to_rehearsal_page

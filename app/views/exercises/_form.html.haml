@@ -1,4 +1,3 @@
-
 = form_for @exercise do |f|
   - if @exercise.errors.any?
     #error_explanation.stoic-dark-text
@@ -6,9 +5,9 @@
       %ul
         - @exercise.errors.full_messages.each do |msg|
           %li= msg
-  .field
+  .field 
     = f.hidden_field :user_id
-  .form-group.col-md-8
+  .form-group.col-md-8.stoic-dark-text
     .input-group
       .input-group-addon
         = f.label :title

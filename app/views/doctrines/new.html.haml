@@ -6,16 +6,16 @@
 
 = form_for @doctrine do |f|
   - if @doctrine.errors.any?
-    #error_explanation
+    #error_explanation.stoic-dark-text
       %h2= "#{pluralize(@quotation.errors.count, "error")} prohibited this quotation from being saved:"
       %ul
         - @doctrine.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .field.stoic-dark-text
     = f.label :doctrine_file_name
     = f.text_field :file_name
-  .field
+  .field.stoic-dark-text 
     = f.label :tag_list, "Category Tags"
     %br
     = f.label :tag_list, "(Separated by commas,"
