@@ -13,16 +13,16 @@
             %div
               Currently waiting confirmation for: #{resource.unconfirmed_email}
           %div
-            = f.label :password
+            = f.label :new_password
             %i (leave blank if you don't want to change it)
             %br/
             = f.password_field :password, autocomplete: "off"
           %div
-            = f.label :password_confirmation
+            = f.label :new_password_confirmation
             %br/
             = f.password_field :password_confirmation, autocomplete: "off"
           %div
-            = f.label :current_password
+            = f.label :old_password
             %i (we need your current password to confirm your changes)
             %br/
             = f.password_field :current_password, autocomplete: "off"
