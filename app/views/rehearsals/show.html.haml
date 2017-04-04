@@ -25,9 +25,9 @@
               .panel-body.stoic-white.stoic-dark-text
                 - @rehearsal.e_answers.each_with_index do |e_answer, index|
                   %tr
-                    %h5.black-stoic-border  
+                    %h5.black-stoic-border
                       %th
-                        = e_answer.e_question.question
+                        %b= e_answer.e_question.question
                   %p
                   %tr
                     %p
