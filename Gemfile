@@ -37,7 +37,6 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
   # Dynopoker is for Heroku to start a separate thread to ping the application and keep it awake in Heroku.
-  gem 'dynopoker'
   gem 'puma'
   gem 'puma-heroku'
 end
