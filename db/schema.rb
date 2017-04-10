@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210175500) do
+ActiveRecord::Schema.define(version: 20170410093448) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -91,6 +91,23 @@ ActiveRecord::Schema.define(version: 20170210175500) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.boolean  "global"
+  end
+
+  create_table "mailers", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_mailers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_mailers_on_reset_password_token", unique: true
   end
 
   create_table "quotation_taggings", force: :cascade do |t|
