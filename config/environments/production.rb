@@ -14,7 +14,7 @@ StoicPenknife::Application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'stoicpenknife.com',
+    domain:               'gmail.com',
     user_name:            'henry.stoicpenknife@gmail.com',
     password:             'socrates20',
     authentication:       'plain',
