@@ -31,6 +31,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   # Needed in new OS X Sierra for this version of Ruby with Pry
   gem 'rb-readline'
+  gem 'railroady'
 end
 
 group :production do
