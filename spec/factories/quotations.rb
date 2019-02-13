@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :quotation do
-    title    'Dankenliste'
+    title    'Dankenliste-2'
     passage  'Von ruhmvollen Andenken meines Vaters erhielt ich den Antrieb zu einem bescheidenen und zugleich männlichen Wesen.'
     category 'Dankeliste'
   end
