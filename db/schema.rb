@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410093448) do
+ActiveRecord::Schema.define(version: 20190214123006) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -86,7 +86,6 @@ ActiveRecord::Schema.define(version: 20170410093448) do
   create_table "exercises", force: :cascade do |t|
     t.string   "title",               limit: 255
     t.text     "general_description", limit: 255
-    t.string   "category",            limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
@@ -124,7 +123,6 @@ ActiveRecord::Schema.define(version: 20170410093448) do
     t.text     "passage"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "category",   limit: 255
     t.boolean  "publish"
   end
 
