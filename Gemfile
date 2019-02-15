@@ -32,6 +32,7 @@ group :development, :test do
   # Needed in new OS X Sierra for this version of Ruby with Pry
   gem 'rb-readline'
   gem 'railroady'
+  gem 'spring-commands-rspec'
 end
 
 group :production do
@@ -61,7 +62,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 2.6.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
